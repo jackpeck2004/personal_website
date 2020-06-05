@@ -2,7 +2,6 @@ import React from "react"
 import "../styles/Projects.scss"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import img from "../images/GiacomoPasin.jpeg"
 
 const languages = [
   {
@@ -56,8 +55,14 @@ const Projects = () => {
       <div className="AboutMe">
         <h1>About</h1>
         <div className="WhoAmI">
-          {/* <div className="image"></div> */}
-          <img src={img} className="image"/>
+          <img
+            src="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016"
+            width="1134"
+            height="2016"
+            srcset="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016 1x, https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=2268&h=4032 2x"
+            alt=""
+            className="image"
+          />
           <h2>Who am I?</h2>
           <p>
             I'm a high-school student @{" "}
