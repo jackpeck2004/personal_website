@@ -1,0 +1,125 @@
+$black: #011627;
+$font-color: white;
+$light-blue: #33a1fd;
+$highlight-color: #f45b69;
+$height: 50vh;
+
+.Grid {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  display: grid;
+  // justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+
+  .AboutMe {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+      "a a a a a a"
+      "b b b c c c";
+    grid-column-gap: 10vw;
+    grid-row-gap: 10vh;
+    width: 100%;
+
+    @media only screen and (max-width: 1200px) {
+      
+    grid-template-areas:
+      "a a a"
+      "b b b c c c";
+    }
+
+    & h1 {
+      margin: 0 auto;
+      grid-area: a;
+      margin: auto;
+      text-transform: uppercase;
+    }
+
+    .WhoAmI {
+      margin-left: 10vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      grid-area: b;
+      width: 30vw;
+
+      .image {
+        background: lightgray;
+        height: 20vh;
+        width: 20vh;
+      }
+      h2 {
+        font-size: 1em;
+      }
+
+      p {
+        font-size: 0.6em;
+        text-align: center;
+        width: 30vw;
+
+        .link {
+          color: $light-blue;
+        }
+      }
+    }
+
+    .ProgrammingLanguages {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30vw;
+      grid-area: c;
+      max-height: 60vh;
+      font-size: 0.6em;
+
+      h2 {
+        font-size: 1.2em;
+        color: $light-blue;
+      }
+
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-areas:
+          "a b c"
+          "d e f";
+        grid-column-gap: 1vw;
+        grid-row-gap: 1vh;
+
+        li {
+          $box-width: 10vh;
+          $box-min-width: 150px;
+          height: $box-width;
+          width: $box-width;
+          min-width: $box-min-width;
+          min-height: $box-min-width;
+          background: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 250ms ease-in-out;
+          box-shadow: 0 0 50px rgba(77, 77, 77, 0.151);
+          border: 2px solid transparent;
+
+          &:hover {
+            box-shadow: 0 0 80px rgba(77, 77, 77, 0.329);
+            border: 2px solid $light-blue;
+            color: $light-blue;
+          }
+        }
+      }
+    }
+  }
+  .projects {
+    background: white !important;
+    height: 100% !important;
+    padding: 5% 20%;
+  }
+}
