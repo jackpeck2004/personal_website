@@ -8,6 +8,7 @@ import "../styles/App.scss"
 import SEO from "../components/seo"
 
 import Home from "../components/Home"
+import Projects from "../components/Projects"
 
 const { Footer, Content } = Layout
 
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <Layout className="Layout">
       <Content className="Main">
         <Home />
+        <Projects />
       </Content>
     </Layout>
   </div>
