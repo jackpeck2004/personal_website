@@ -1,0 +1,94 @@
+// @import "~antd/dist/antd.css";
+
+// $background-color: #011627;
+$background-color: white;
+$font-color: black;
+$light-blue: #33a1fd;
+$highlight-color: #33a1fd;
+
+header {
+  h1 {
+    color: white;
+    background: red;
+    margin-right: auto;
+  }
+  display: grid;
+
+  padding: 0 20%;
+  position: fixed;
+  width: 100%;
+
+  .menu {
+    margin-left: auto;
+  }
+}
+
+.Layout {
+  footer {
+    margin-top: auto;
+  }
+
+  .Main {
+    font-size: 3em;
+
+
+    section {
+      background: $background-color;
+      height: 100vh;
+      display: grid;
+
+      div {
+        margin: auto 20%;
+
+        h1 {
+          font-family: "Raleway";
+          color: $font-color;
+
+          .name {
+            color: $highlight-color;
+            font-weight: 600;
+          }
+        }
+
+        Button.primary {
+          background: transparent;
+          font-size: 0.7em;
+          height: 100%;
+          padding: 1% 3%;
+          color: $font-color;
+          border: 2px solid $font-color;
+
+          &:hover {
+            background: $light-blue;
+            color: white;
+            border: 2px solid $light-blue;
+          }
+        }
+
+        p {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: background-color;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
