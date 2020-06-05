@@ -3,6 +3,8 @@ $font-color: white;
 $light-blue: #33a1fd;
 $highlight-color: #f45b69;
 $height: 50vh;
+$shadow: 0 0 50px rgba(77, 77, 77, 0.151);
+$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 
 .Grid {
   // display: flex;
@@ -26,10 +28,10 @@ $height: 50vh;
     width: 100%;
 
     @media only screen and (max-width: 1200px) {
-      
-    grid-template-areas:
-      "a a a"
-      "b b b c c c";
+      grid-template-areas:
+        "a a a"
+        "b b b "
+        "c c c";
     }
 
     & h1 {
@@ -49,10 +51,27 @@ $height: 50vh;
       width: 30vw;
 
       .image {
+        box-shadow: $shadow;
         background: lightgray;
-        height: 20vh;
-        width: 20vh;
+        $width: 20vh;
+        // image-rendering: crisp-edges;
+        object-fit: cover;
+        height: $width;
+        width: $width;
+        transition: 500ms;
+        border: 2px solid transparent;
+
+        &:hover {
+          position: relative;
+          z-index: 200;
+          // width: $width+5;
+          // height: $width+5;
+          box-shadow: $shadow-hover;
+          border: 2px solid $light-blue;
+          color: $light-blue;
+        }
       }
+
       h2 {
         font-size: 1em;
       }
@@ -105,11 +124,11 @@ $height: 50vh;
           justify-content: center;
           align-items: center;
           transition: 250ms ease-in-out;
-          box-shadow: 0 0 50px rgba(77, 77, 77, 0.151);
+          box-shadow: $shadow;
           border: 2px solid transparent;
 
           &:hover {
-            box-shadow: 0 0 80px rgba(77, 77, 77, 0.329);
+            box-shadow: $shadow-hover;
             border: 2px solid $light-blue;
             color: $light-blue;
           }
