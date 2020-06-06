@@ -1,0 +1,66 @@
+$black: #011627;
+$font-color: white;
+$light-blue: #33a1fd;
+$highlight-color: #f45b69;
+$height: 50vh;
+$shadow: 0 0 50px rgba(77, 77, 77, 0.151);
+$shadow-header: 0px 90px 85px -21px rgba(77, 77, 77, 0.151);
+$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
+
+.menu {
+  font-size: 0.5em;
+  position: sticky;
+  top: 0;
+  box-shadow: $shadow-header;
+
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 30px 10%;
+    padding: 0.5% 10%;
+    background-color: $font-color;
+
+    .logo {
+      cursor: pointer;
+    }
+
+    nav {
+        margin-top:1.1%;
+      .nav__links {
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+
+        li {
+          padding: 0px 20px;
+
+          .nav_link {
+            transition: color 0.3s ease 0s;
+            color: black;
+
+            &:hover {
+              color: $highlight-color;
+            }
+          }
+        }
+      }
+    }
+
+    .cta {
+      padding: 9px 25px;
+      background-color: transparent;
+      border: 2px solid $light-blue;
+      color: $light-blue;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease 0s;
+
+      &:hover {
+        background-color: $light-blue;
+        color: white;
+      }
+    }
+  }
+}
