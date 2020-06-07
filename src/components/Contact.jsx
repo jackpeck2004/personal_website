@@ -19,7 +19,10 @@ const tailLayout = {
 
 const ContactForm = () => {
   const onFinish = values => {
-    console.log('Success:', values)
+    fetch('https://getform.io/f/b1b1b9db-44d5-4727-9557-5d870d5bc512',{
+      method: 'POST',
+      body: values
+    });
   }
 
   const onFinishFailed = errorInfo => {
@@ -28,60 +31,60 @@ const ContactForm = () => {
 
   return (
     // <section className="contact">
-      <div className="ContactForm">
-        <h3>Contact Me!</h3>
-        <Form
-          className="Form"
-          {...layout}
-          name="basic"
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          id="contactForm"
+    <div className="ContactForm">
+      <h3>Contact Me!</h3>
+      <Form
+        className="Form"
+        {...layout}
+        name="basic"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        id="contactForm"
+      >
+        <Form.Item
+          label="Name"
+          name="name"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your name!',
+              type: 'string',
+            },
+          ]}
         >
-          <Form.Item
-            label="Name"
-            name="name"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your name!',
-                type: 'string',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
+          <Input />
+        </Form.Item>
 
-          <Form.Item
-            label="Email"
-            name="email"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your email!',
-                type: 'email',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your email!',
+              type: 'email',
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
 
-          <Form.Item name={['user', 'introduction']} label="Introduction">
-            <Input.TextArea />
-          </Form.Item>
+        <Form.Item name={['user', 'introduction']} label="Introduction">
+          <Input.TextArea />
+        </Form.Item>
 
-          <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
+        <Form.Item {...tailLayout}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
     // </section>
   )
 }
 
-export default ContactForm
+export default ContactForm;
