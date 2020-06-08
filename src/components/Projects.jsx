@@ -1,33 +1,33 @@
-import React from "react"
-import "../styles/Projects.scss"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import '../styles/Projects.scss'
+import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 const languages = [
   {
-    "name": "HTML",
-    "basic": false
+    name: 'HTML',
+    basic: false,
   },
   {
-    "name": "CSS",
-    "basic": false
+    name: 'CSS',
+    basic: false,
   },
   {
-    "name": "JavaScript",
-    "basic": false
+    name: 'JavaScript',
+    basic: false,
   },
   {
-    "name": "Python",
-    "basic": false
+    name: 'Python',
+    basic: false,
   },
   {
-    "name": "Swift",
-    "basic": true
+    name: 'Swift',
+    basic: true,
   },
   {
-    "name": "C++",
-    "basic": true
-  }
+    name: 'C++',
+    basic: true,
+  },
 ]
 
 const ProgrammingLanguages = ({ mobile }) => {
@@ -40,7 +40,10 @@ const ProgrammingLanguages = ({ mobile }) => {
             if (!lang.basic) return <li>{lang.name}</li>
 
             return (
-              <li>{lang.name}<br /> (basic)</li>
+              <li>
+                {lang.name}
+                <br /> (basic)
+              </li>
             )
           })}
         </ul>
@@ -65,26 +68,17 @@ const Projects = () => {
           />
           <h2>Who am I?</h2>
           <p>
-            I'm a high-school student @{" "}
-            <a href="https://h-is.com" className="link" target="_blank">H-International School of Treviso</a>, but
-            at the same time I am the CTO of{" "}
-            <a href="https://twin.services" className="link" target="_blank">T.W.I.N srl</a>
+            I'm a high-school student @{' '}
+            <a href="https://h-is.com" className="link" target="_blank">
+              H-International School of Treviso
+            </a>
+            , but at the same time I am the CTO of{' '}
+            <a href="https://twin.services" className="link" target="_blank">
+              T.W.I.N srl
+            </a>
           </p>
         </div>
-        {/* <div className="FavStack">
-                 <h2>Favourite Stack</h2>
-                 <ul>
-                     <li>React</li>
-                     <li>Node</li>
-                     <li>Express</li>
-                     <li>MySQL/MongoDB</li>
-                     <li>Typescript</li>
-                     <li>Git</li>
-                 </ul>
-             </div> */}
-
         <ProgrammingLanguages mobile={false} />
-
       </div>
       <section className="projects">
         <h1>Projects Coming Soon...</h1>
