@@ -1,11 +1,13 @@
-import React from "react"
-import Menu from "../components/Menu"
+import React from 'react'
+import Menu from '../components/Menu'
 
 const CovidPage = () => {
-    return(
-        <Menu />
-        <h1>tool coming soon</h1>
-    )
+  return (
+    <div>
+      <Menu />
+      <h1>tool coming soon</h1>
+    </div>
+  )
 }
 
 export default CovidPage
