@@ -19,11 +19,13 @@ const tailLayout = {
 
 const ContactForm = () => {
   const onFinish = values => {
-    // fetch('https://getform.io/f/b1b1b9db-44d5-4727-9557-5d870d5bc512', {
-    //   method: 'POST',
-    //   body: values
-    // });
-    //TODO: send email with form content
+    fetch('https://send.haboob.co/v1/hooks/rJ0iiT328/send/production', {
+      method: 'POST',
+      body: values
+    });
+    // https://send.haboob.co/v1/hooks/rJ0iiT328/send/production
+
+    // console.log(values)
   }
 
   const onFinishFailed = errorInfo => {
@@ -73,7 +75,7 @@ const ContactForm = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item name={['user', 'introduction']} label="Introduction">
+        <Form.Item name='content' label="Introduction">
           <Input.TextArea />
         </Form.Item>
 
