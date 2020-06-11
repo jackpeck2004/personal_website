@@ -151,30 +151,29 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       justify-content: center;
       align-items: center;
 
-      .WhoAmI{
+      .WhoAmI {
         translate: -5vw 0;
 
         h2 {
           width: 100vw;
         }
 
-        p{
+        p {
           width: 60vw;
         }
       }
 
-      .ProgrammingLanguages{
+      .ProgrammingLanguages {
         margin-top: 20vh;
 
         ul {
           display: grid;
 
-          li{
+          li {
             min-height: 1vh;
           }
         }
       }
-
     }
   }
 }
