@@ -1,29 +1,29 @@
-import React from 'react'
-import '../styles/Projects.scss'
+import React from "react"
+import "../styles/Projects.scss"
 
 const languages = [
   {
-    name: 'HTML',
+    name: "HTML",
     basic: false,
   },
   {
-    name: 'CSS',
+    name: "CSS",
     basic: false,
   },
   {
-    name: 'JavaScript',
+    name: "JavaScript",
     basic: false,
   },
   {
-    name: 'Python',
+    name: "Python",
     basic: false,
   },
   {
-    name: 'Swift',
+    name: "Swift",
     basic: true,
   },
   {
-    name: 'C++',
+    name: "C++",
     basic: true,
   },
 ]
@@ -66,11 +66,11 @@ const Projects = () => {
           />
           <h2>Who am I?</h2>
           <p>
-            I'm a high-school student @{' '}
+            I'm a high-school student @{" "}
             <a href="https://h-is.com" className="link" target="_blank">
               H-International School of Treviso
             </a>
-            , but at the same time I am the CTO of{' '}
+            , but at the same time I am the CTO of{" "}
             <a href="https://twin.services" className="link" target="_blank">
               T.W.I.N srl
             </a>

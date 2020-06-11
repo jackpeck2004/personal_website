@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import React from "react"
 import SEO from "../components/seo"
 
-
 const NotFoundPage = () => (
   <Layout className="Layout">
     <SEO title="404: Not found" />
