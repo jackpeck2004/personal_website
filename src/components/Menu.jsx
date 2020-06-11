@@ -1,7 +1,7 @@
-import React from 'react'
 import { Link } from 'gatsby'
-import '../styles/Menu.scss'
 import scrollTo from "gatsby-plugin-smoothscroll"
+import React from 'react'
+import '../styles/Menu.scss'
 
 const Menu = () => {
   return (

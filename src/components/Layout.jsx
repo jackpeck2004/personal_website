@@ -1,6 +1,6 @@
-import React from 'react'
-import SEO from '../components/seo'
-import { Layout as ALayout } from 'antd'
+import { Layout as ALayout } from 'antd';
+import React from 'react';
+import SEO from '../components/seo';
 
 const { Footer, Content } = ALayout;
 
