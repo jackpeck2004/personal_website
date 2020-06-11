@@ -1,7 +1,7 @@
-import React from 'react'
 import { Link } from 'gatsby'
-import '../styles/Menu.scss'
 import scrollTo from "gatsby-plugin-smoothscroll"
+import React from 'react'
+import '../styles/Menu.scss'
 
 const Menu = () => {
   return (
@@ -23,20 +23,11 @@ const Menu = () => {
             </li>
           </ul>
         </nav>
-        {/* <Link className="cta" to="/contact">
-          Contact
-        </Link> */}
         <a className="cta" onClick={() => scrollTo("#contactForm")}>
           Contact
         </a>
-        {/* <p class="menu cta">Menu</p> */}
       </div>
     </div>
-    // <div className="menu">
-    //     <h1>Ciao</h1>
-    //     <header>
-    //         <h1>Header</h1>
-    // </div>
   )
 }
 

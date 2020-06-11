@@ -12,7 +12,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
   position: sticky;
   top: 0;
   box-shadow: $shadow-header;
-
+  z-index: 1;
 
   .header {
     display: flex;

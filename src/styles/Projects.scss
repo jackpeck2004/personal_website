@@ -16,23 +16,17 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
   min-height: 100vh;
 
   .AboutMe {
+    z-index: 0;
     padding-top: 10vh;
     padding-bottom: 10vh;
     text-align: center;
     display: grid;
     grid-template-areas:
-      'a a a a a a'
-      'b b b c c c';
+      "a a a a a a"
+      "b b b c c c";
     grid-column-gap: 10vw;
     grid-row-gap: 10vh;
     width: 100%;
-
-    @media only screen and (max-width: 1200px) {
-      grid-template-areas:
-        'a a a'
-        'b b b '
-        'c c c';
-    }
 
     & h1 {
       margin: 0 auto;
@@ -107,8 +101,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         list-style: none;
         display: grid;
         grid-template-areas:
-          'a b c'
-          'd e f';
+          "a b c"
+          "d e f";
         grid-column-gap: 1vw;
         grid-row-gap: 1vh;
 
@@ -131,6 +125,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
             box-shadow: $shadow-hover;
             border: 2px solid $light-blue;
             color: $light-blue;
+            cursor: pointer;
           }
         }
       }
@@ -140,5 +135,46 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
     background: white !important;
     height: 100% !important;
     padding: 5% 20%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Grid {
+    .AboutMe {
+      // grid-template-areas:
+      //   "a a a"
+      //   "b b b "
+      //   "c c c";
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .WhoAmI{
+        translate: -5vw 0;
+
+        h2 {
+          width: 100vw;
+        }
+
+        p{
+          width: 60vw;
+        }
+      }
+
+      .ProgrammingLanguages{
+        margin-top: 20vh;
+
+        ul {
+          display: grid;
+
+          li{
+            min-height: 1vh;
+          }
+        }
+      }
+
+    }
   }
 }

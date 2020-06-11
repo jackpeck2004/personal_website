@@ -1,5 +1,5 @@
+import { Button, Form, Input } from "antd"
 import React from 'react'
-import { Form, Input, Button } from 'antd'
 import '../styles/Contact.scss'
 
 const layout = {

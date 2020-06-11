@@ -1,7 +1,5 @@
 import React from 'react'
 import '../styles/Projects.scss'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
 const languages = [
   {
