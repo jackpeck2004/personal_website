@@ -18,20 +18,21 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
   .AboutMe {
     padding-top: 10vh;
     padding-bottom: 10vh;
+    padding-right: 10vw;
     text-align: center;
     display: grid;
     grid-template-areas:
-      'a a a a a a'
-      'b b b c c c';
+      "a a a a a a"
+      "b b b c c c";
     grid-column-gap: 10vw;
     grid-row-gap: 10vh;
     width: 100%;
 
     @media only screen and (max-width: 1200px) {
       grid-template-areas:
-        'a a a'
-        'b b b '
-        'c c c';
+        "a a a"
+        "b b b "
+        "c c c";
     }
 
     & h1 {
@@ -107,8 +108,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         list-style: none;
         display: grid;
         grid-template-areas:
-          'a b c'
-          'd e f';
+          "a b c"
+          "d e f";
         grid-column-gap: 1vw;
         grid-row-gap: 1vh;
 
@@ -140,6 +141,5 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
   .projects {
     background: white !important;
     height: 100% !important;
-    padding: 5% 20%;
   }
 }
