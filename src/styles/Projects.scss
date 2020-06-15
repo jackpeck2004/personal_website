@@ -131,6 +131,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
             box-shadow: $shadow-hover;
             border: 2px solid $light-blue;
             color: $light-blue;
+            cursor: pointer;
           }
         }
       }
