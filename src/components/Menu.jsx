@@ -13,14 +13,17 @@ const Menu = () => {
         <nav>
           <ul className="nav__links">
             <li>
+              <a className="nav_link" onClick={() => scrollTo(".Home")}>Home</a>
+            </li>
+            <li>
               <a className="nav_link" onClick={() => scrollTo("#projects")}>About</a>
             </li>
             <li>
               <a className="nav_link" onClick={() => scrollTo(".projects")}>Projects</a>
             </li>
-            <li>
+            {/* <li>
               <Link className="nav_link" to="/covid19">Covid19</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
         {/* <Link className="cta" to="/contact">
