@@ -16,9 +16,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
   min-height: 100vh;
 
   .AboutMe {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    padding-right: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     text-align: center;
     display: grid;
     grid-template-areas:
@@ -50,6 +49,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       justify-content: center;
       grid-area: b;
       width: 30vw;
+      height: 60%;
 
       .image {
         box-shadow: $shadow;
@@ -90,7 +90,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 
     .ProgrammingLanguages {
       display: flex;
-      height: 100%;
+      // height: 100%;
+      height: 60%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -98,6 +99,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       grid-area: c;
       max-height: 60vh;
       font-size: 0.6em;
+      padding-top: 0;
 
       h2 {
         font-size: 1.2em;
@@ -137,9 +139,5 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         }
       }
     }
-  }
-  .projects {
-    background: white !important;
-    height: 100% !important;
   }
 }

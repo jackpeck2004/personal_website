@@ -1,7 +1,6 @@
 import React from "react"
 import "../styles/Projects.scss"
 import ProgrammingLanguages from "./ProgrammingLanguages"
-import ProjectSection from "./ProjectSection"
 import WhoAmI from "./WhoAmI"
 
 const Projects = () => {
@@ -11,7 +10,10 @@ const Projects = () => {
         <h1>About</h1>
         <WhoAmI />
         <ProgrammingLanguages mobile={false} />
-        <ProjectSection />
+        {/* <ProjectSection /> */}
+        {/* <section>
+          <h1>Projects coming soon</h1>
+        </section> */}
       </div>
     </div>
   )
