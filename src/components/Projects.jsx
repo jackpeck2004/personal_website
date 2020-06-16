@@ -11,8 +11,10 @@ const Projects = () => {
         <WhoAmI />
         <ProgrammingLanguages mobile={false} />
         {/* <ProjectSection /> */}
-        {/* <section>
-          <h1>Projects coming soon</h1>
+        {/* <section className="projects">
+          <div>
+            <h1>Projects coming soon</h1>
+          </div>
         </section> */}
       </div>
     </div>

@@ -7,11 +7,7 @@ $shadow: 0 0 50px rgba(77, 77, 77, 0.151);
 $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 
 .Grid {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   display: grid;
-  // justify-content: center;
   width: 100vw;
   min-height: 100vh;
 
@@ -32,6 +28,15 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         "a a a"
         "b b b "
         "c c c";
+    }
+
+    .projects {
+      text-transform: capitalize;
+      height: 10vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      display: block;
     }
 
     & h1 {
@@ -55,18 +60,16 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         box-shadow: $shadow;
         background: lightgray;
         $width: 20vh;
-        // image-rendering: crisp-edges;
         object-fit: cover;
         height: $width;
         width: $width;
         transition: 500ms;
         border: 2px solid transparent;
+        // z-index: 0;
 
         &:hover {
           position: relative;
-          z-index: 200;
-          // width: $width+5;
-          // height: $width+5;
+          z-index: 0;
           box-shadow: $shadow-hover;
           border: 2px solid $light-blue;
           color: $light-blue;
