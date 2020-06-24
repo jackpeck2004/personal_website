@@ -3,7 +3,7 @@ module.exports = {
     title: `Giacomo Pasin`,
     description: `Giacomo Pasin personal portfolio website. Discover all the projects made by Giacomo Pasin and interact with them. You can get in conntact with Giacomo Pasin as well thanks to this website.`,
     author: `Giacomo Pasin`,
-    keywords: ` gatsby, developer, react, software, website, full-stack, full stack, html, css, javascript, js, typescript, ts`
+    keywords: `Giacomo Pasin, Giacomo, giacomo, Pasin, pasin, gatsby, developer, react, software, website, full-stack, full stack, html, css, javascript, js, typescript, ts`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
