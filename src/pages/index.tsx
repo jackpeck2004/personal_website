@@ -1,10 +1,11 @@
+import { MenuOutlined } from "@ant-design/icons"
 import React from "react"
 import ContactForm from "../components/Contact"
 import Home from "../components/Home"
 import Layout from "../components/Layout"
 import Menu from "../components/Menu"
 import Projects from "../components/Projects"
-import Sidebar from "../components/Sidebar"
+import Sidebar, { openSidebar, sidebarState } from "../components/Sidebar"
 // import { Link } from "gatsby"
 // import Image from "../components/image"
 // import Layout from "../components/layout"
@@ -23,16 +24,34 @@ const IndexPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return (
-    <div>
-      <Layout title="Home">
-        <Home />
-        {windowDimensions.width >= 1000 ? <Menu /> : <Sidebar />}
-        <Projects />
-        <ContactForm />
-      </Layout>
-    </div>
-  )
+  if (windowDimensions.width >= 1000) {
+    return (
+      <div>
+        <Layout title="Home">
+          <Home />
+          <Menu />
+          <Projects />
+          <ContactForm />
+        </Layout>
+      </div>
+    )
+  }
+  else {
+
+    return (
+      <div>
+        <Sidebar initCollapsed={true} />
+        <button className="openSidebar" onClick={() => openSidebar(!sidebarState)}><MenuOutlined /></button>
+        <Layout title="Home">
+          <Home />
+          <Projects />
+          <ContactForm />
+        </Layout>
+      </div>
+    )
+  }
+
 }
+
 
 export default IndexPage

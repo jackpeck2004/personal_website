@@ -4,9 +4,18 @@ import "../styles/Sidebar.scss";
 //@ts-ignore
 import { Links } from "./Menu";
 
+interface SidebarProps {
+  initCollapsed: boolean
+}
 
-const Sidebar: React.FC = () => {
-  const [collapsed, setCollapsed] = React.useState(false);
+export let openSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+export let sidebarState: boolean;
+
+const Sidebar: React.FC<SidebarProps> = ({ initCollapsed }) => {
+  const [collapsed, setCollapsed] = React.useState(initCollapsed);
+
+  openSidebar = setCollapsed
+  sidebarState = collapsed
 
   if (collapsed) return null
 

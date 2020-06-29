@@ -2,9 +2,10 @@ $light-blue: #33a1fd;
 $sidebar-bg: white;
 $sidebar-textcolor: black;
 $sidebar-titlecolor: $light-blue;
-$sidebar-width: 20%;
+// $sidebar-width: 20%;
+$sidebar-width: 100%;
 $sidebar-height: 100vh;
-$sidebar-padding: 2% 5% 5% 5%; // top right bottom left
+$sidebar-padding: 20% 20% 5% 5%; // top right bottom left
 $sidebar-titlefont: "Raleway";
 $shadow-header: 0px 90px 85px -21px rgba(77, 77, 77, 0.151);
 $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
@@ -19,6 +20,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
     padding: $sidebar-padding;
     text-align: right;
     box-shadow: $shadow-header;
+    z-index: 10000;
+    animation: 500ms sidebar-open;
 
     button {
         background: none;
@@ -28,7 +31,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         cursor: pointer;
         transition: 500ms;
         position: fixed;
-        right: 2%;
+        right: 10%;
 
         &:hover {
             color: $sidebar-titlecolor;
@@ -50,6 +53,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         li {
             .nav_link {
                 color: $sidebar-textcolor;
+                animation-delay: 1s;
                 animation: 0.5s sidebar-item;
 
                 &:hover {
@@ -63,5 +67,11 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 @keyframes sidebar-item {
     0% {
         opacity: 0%;
+    }
+}
+
+@keyframes sidebar-open {
+    0% {
+        width: 0%;
     }
 }
