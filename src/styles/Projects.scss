@@ -9,21 +9,24 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 .Grid {
   margin-top: 10vh;
   display: grid;
-  width: 100vw;
+  // width: 100vw;
   min-height: 100vh;
 
   .AboutMe {
     margin-top: 10vh;
-    max-width: 100%;
+    // max-width: 20vw !important;
     margin-bottom: 10vh;
     text-align: center;
     display: grid;
+    // grid-template-areas:
+    //   "a a a a a a"
+    //   "b b b c c c";
     grid-template-areas:
-      "a a a a a a"
-      "b b b c c c";
-    grid-column-gap: 10vw;
+      "a a"
+      "b c";
+    // grid-column-gap: 10vw;
     grid-row-gap: 10vh;
-    width: 100%;
+    // width: 100%;
 
     @media only screen and (max-width: 1200px) {
       display: flex;
