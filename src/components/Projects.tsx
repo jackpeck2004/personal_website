@@ -9,7 +9,7 @@ const Projects = () => {
       <div className="AboutMe">
         <h1>About</h1>
         <WhoAmI />
-        <ProgrammingLanguages mobile={false} />
+        <ProgrammingLanguages />
         {/* <ProjectSection /> */}
         {/* <section className="projects">
           <div>

@@ -28,26 +28,27 @@ const languages = [
     },
 ]
 
-const ProgrammingLanguages = ({ mobile }) => {
-    if (!mobile) {
-        return (
-            <div className="ProgrammingLanguages">
-                <h2>Programmig Languages I Know</h2>
-                <ul>
-                    {languages.map((lang, idx) => {
-                        if (!lang.basic) return <li>{lang.name}</li>
+const ProgrammingLanguages: React.FC = () => {
+    // if (!isMobile) {
+    return (
+        <div className="ProgrammingLanguages">
+            <h2>Programming Languages I Know</h2>
+            <ul>
+                {languages.map((lang, idx) => {
+                    if (!lang.basic) return <li>{lang.name}</li>
 
-                        return (
-                            <li>
-                                {lang.name}
-                                <br /> (basic)
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-        )
-    }
+                    return (
+                        <li key={idx}>
+                            {lang.name}
+                            <br /> (basic)
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
+    )
+    // }
+
 }
 
 export default ProgrammingLanguages

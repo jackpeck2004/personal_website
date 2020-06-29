@@ -10,3 +10,8 @@ export const getWindowDimensions = (): WindowDimensions => {
     height
   };
 }
+
+export const isMobile = (): boolean => {
+  if(getWindowDimensions().width >= 1000) return false
+  return true
+}

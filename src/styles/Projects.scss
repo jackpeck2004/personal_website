@@ -7,12 +7,14 @@ $shadow: 0 0 50px rgba(77, 77, 77, 0.151);
 $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 
 .Grid {
+  margin-top: 10vh;
   display: grid;
   width: 100vw;
   min-height: 100vh;
 
   .AboutMe {
     margin-top: 10vh;
+    max-width: 100%;
     margin-bottom: 10vh;
     text-align: center;
     display: grid;
@@ -24,10 +26,18 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
     width: 100%;
 
     @media only screen and (max-width: 1200px) {
-      grid-template-areas:
-        "a a a"
-        "b b b "
-        "c c c";
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      .WhoAmI {
+        margin: 0 !important;
+        p {
+          width: 200% !important;
+        }
+      }
     }
 
     .projects {
@@ -102,7 +112,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       grid-area: c;
       max-height: 60vh;
       font-size: 0.6em;
-      padding-top: 0;
+      padding: 0;
 
       h2 {
         font-size: 1.2em;
@@ -117,6 +127,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
           "d e f";
         grid-column-gap: 1vw;
         grid-row-gap: 1vh;
+        padding-left: 0 !important;
+        margin-bottom: 10vh;
 
         li {
           $box-width: 10vh;
