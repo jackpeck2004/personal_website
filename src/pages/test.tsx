@@ -1,19 +1,12 @@
-import React from "react"
+import React from "react";
+import Sidebar from "../components/Sidebar";
 
-const Sidebar = () => {
+const Test: React.FC = () => {
+
   return (
-    <div className=''>
-      <h1>SideBar</h1>
-    </div>
-  );
-}
-
-const Test = () => {
-  return (
-    <div>
-      <Sidebar />
-    </div>
-
+      <div id="ciao">
+        <Sidebar />
+      </div>
   )
 }
 

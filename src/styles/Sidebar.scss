@@ -1,0 +1,67 @@
+$light-blue: #33a1fd;
+$sidebar-bg: white;
+$sidebar-textcolor: black;
+$sidebar-titlecolor: $light-blue;
+$sidebar-width: 20%;
+$sidebar-height: 100vh;
+$sidebar-padding: 2% 5% 5% 5%; // top right bottom left
+$sidebar-titlefont: "Raleway";
+$shadow-header: 0px 90px 85px -21px rgba(77, 77, 77, 0.151);
+$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
+
+.Sidebar {
+    background: $sidebar-bg;
+    color: $sidebar-textcolor;
+    height: $sidebar-height;
+    width: $sidebar-width;
+    position: fixed;
+    right: 0;
+    padding: $sidebar-padding;
+    text-align: right;
+    box-shadow: $shadow-header;
+
+    button {
+        background: none;
+        color: $sidebar-textcolor;
+        font-size: 2em;
+        border: none;
+        cursor: pointer;
+        transition: 500ms;
+        position: fixed;
+        right: 2%;
+
+        &:hover {
+            color: $sidebar-titlecolor;
+        }
+    }
+
+    h1 {
+        color: $sidebar-titlecolor;
+        font-family: $sidebar-titlefont;
+        font-weight: bold;
+    }
+    .nav__links {
+        list-style: none;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 20vh;
+        font-size: 1.5rem;
+        li {
+            .nav_link {
+                color: $sidebar-textcolor;
+                animation: 0.5s sidebar-item;
+
+                &:hover {
+                    color: $sidebar-titlecolor;
+                }
+            }
+        }
+    }
+}
+
+@keyframes sidebar-item {
+    0% {
+        opacity: 0%;
+    }
+}
