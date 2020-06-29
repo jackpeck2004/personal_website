@@ -11,11 +11,11 @@ const Projects = () => {
         <WhoAmI />
         <ProgrammingLanguages />
         {/* <ProjectSection /> */}
-        {/* <section className="projects">
+        <section className="projects">
           <div>
             <h1>Projects coming soon</h1>
           </div>
-        </section> */}
+        </section>
       </div>
     </div>
   )
