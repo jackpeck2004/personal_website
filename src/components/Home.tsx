@@ -7,7 +7,7 @@ import React from "react"
 const Home = () => {
   return (
     <div className="Home">
-      <section>
+      <section className=".section">
         <div className="Home">
           <Link to="/covid19">
             <Button>Covid Updates</Button>
@@ -17,7 +17,7 @@ const Home = () => {
             I'm a full-stack developer.
           </h1>
           <Button
-            onClick={() => scrollTo("#projects", { offset: 10000})}
+            onClick={() => scrollTo("#projects")}
             // onClick={() => alert()}
             className="primary"
           >
