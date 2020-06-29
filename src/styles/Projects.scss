@@ -7,31 +7,46 @@ $shadow: 0 0 50px rgba(77, 77, 77, 0.151);
 $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 
 .Grid {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
+  margin-top: 10vh;
   display: grid;
-  // justify-content: center;
   width: 100vw;
   min-height: 100vh;
 
   .AboutMe {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    margin-top: 10vh;
+    max-width: 100%;
+    margin-bottom: 10vh;
     text-align: center;
     display: grid;
     grid-template-areas:
-      'a a a a a a'
-      'b b b c c c';
+      "a a a a a a"
+      "b b b c c c";
     grid-column-gap: 10vw;
     grid-row-gap: 10vh;
     width: 100%;
 
     @media only screen and (max-width: 1200px) {
-      grid-template-areas:
-        'a a a'
-        'b b b '
-        'c c c';
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      .WhoAmI {
+        margin: 0 !important;
+        p {
+          width: 200% !important;
+        }
+      }
+    }
+
+    .projects {
+      text-transform: capitalize;
+      height: 10vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      display: block;
     }
 
     & h1 {
@@ -49,23 +64,22 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       justify-content: center;
       grid-area: b;
       width: 30vw;
+      height: 60%;
 
       .image {
         box-shadow: $shadow;
         background: lightgray;
         $width: 20vh;
-        // image-rendering: crisp-edges;
         object-fit: cover;
         height: $width;
         width: $width;
         transition: 500ms;
         border: 2px solid transparent;
+        // z-index: 0;
 
         &:hover {
           position: relative;
-          z-index: 200;
-          // width: $width+5;
-          // height: $width+5;
+          z-index: 0;
           box-shadow: $shadow-hover;
           border: 2px solid $light-blue;
           color: $light-blue;
@@ -89,7 +103,8 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
 
     .ProgrammingLanguages {
       display: flex;
-      height: 100%;
+      // height: 100%;
+      height: 60%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -97,6 +112,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       grid-area: c;
       max-height: 60vh;
       font-size: 0.6em;
+      padding: 0;
 
       h2 {
         font-size: 1.2em;
@@ -107,10 +123,12 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
         list-style: none;
         display: grid;
         grid-template-areas:
-          'a b c'
-          'd e f';
+          "a b c"
+          "d e f";
         grid-column-gap: 1vw;
         grid-row-gap: 1vh;
+        padding-left: 0 !important;
+        margin-bottom: 10vh;
 
         li {
           $box-width: 10vh;
@@ -131,14 +149,10 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
             box-shadow: $shadow-hover;
             border: 2px solid $light-blue;
             color: $light-blue;
+            cursor: pointer;
           }
         }
       }
     }
-  }
-  .projects {
-    background: white !important;
-    height: 100% !important;
-    padding: 5% 20%;
   }
 }
