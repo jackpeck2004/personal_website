@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Giacomo Pasin`,
-    description: `Giacomo Pasin personal website`,
+    description: `Giacomo Pasin personal portfolio website. Discover all the projects made by Giacomo Pasin and interact with them. You can get in conntact with Giacomo Pasin as well thanks to this website.`,
     author: `Giacomo Pasin`,
+    keywords: `Giacomo Pasin, Giacomo, giacomo, Pasin, pasin, gatsby, developer, react, software, website, full-stack, full stack, html, css, javascript, js, typescript, ts`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,11 +11,20 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-preact`,
+    `gatsby-plugin-react-next`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `React`, // defaults to "React"
+        allExtensions: true, // defaults to false
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,8 +1,8 @@
 import { Layout } from "antd"
 import { Link } from "gatsby"
 import React from "react"
+//@ts-ignore
 import SEO from "../components/seo"
-
 
 const NotFoundPage = () => (
   <Layout className="Layout">

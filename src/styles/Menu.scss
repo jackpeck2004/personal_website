@@ -1,18 +1,10 @@
-$black: #011627;
-$font-color: white;
-$light-blue: #33a1fd;
-$highlight-color: #f45b69;
-$height: 50vh;
-$shadow: 0 0 50px rgba(77, 77, 77, 0.151);
-$shadow-header: 0px 90px 85px -21px rgba(77, 77, 77, 0.151);
-$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
+@import '_variables.scss';
 
 .menu {
   font-size: 0.5em;
   position: sticky;
   top: 0;
   box-shadow: $shadow-header;
-  z-index: 1;
 
   .header {
     display: flex;
@@ -27,7 +19,9 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
     }
 
     nav {
-        margin-top:1.1%;
+      margin-top: 1.1%;
+      z-index: 10;
+
       .nav__links {
         list-style: none;
         text-decoration: none;
@@ -41,7 +35,7 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
             color: black;
 
             &:hover {
-                color: $light-blue;
+              color: $light-blue;
             }
           }
         }

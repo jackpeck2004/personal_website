@@ -1,4 +1,4 @@
-import { Button, Form, Input } from "antd"
+import { Button, Form, Input } from 'antd'
 import React from 'react'
 import '../styles/Contact.scss'
 
@@ -18,7 +18,7 @@ const tailLayout = {
 }
 
 const ContactForm = () => {
-  const onFinish = values => {
+  const onFinish = (values: any) => {
     fetch('https://send.haboob.co/v1/hooks/rJ0iiT328/send/production', {
       method: 'POST',
       body: values
@@ -28,7 +28,7 @@ const ContactForm = () => {
     // console.log(values)
   }
 
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
   }
 

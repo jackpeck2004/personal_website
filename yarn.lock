@@ -995,6 +995,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.2.0":
+  version "7.10.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
+  integrity sha512-RzGO0RLSdokm9Ipe/YD+7ww8X2Ro79qiXZF3HU9ljrM+qnJmH1Vqth+hbiQZy761LnMJTMitHDuKVYTk3k4dLw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.9.6":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.2.tgz#49dbbadcbc4b199df064d7d8b3e21c915b84abdb"
@@ -2307,6 +2314,14 @@
   version "16.9.35"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.35.tgz#a0830d172e8aadd9bd41709ba2281a3124bbd368"
   integrity sha512-q0n0SsWcGc8nDqH2GJfWQWUOmZSJhXV64CjVN5SvcNti3TdEaA3AH0D8DwNmMdzjMAC/78tB8nAZIlV8yTz+zQ==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@^16.9.41":
+  version "16.9.41"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.41.tgz#925137ee4d2ff406a0ecf29e8e9237390844002e"
+  integrity sha512-6cFei7F7L4wwuM+IND/Q2cV1koQUvJ8iSV+Gwn0c3kvABZ691g7sp3hfEQHOUBJtccl1gPi+EyNjMIl9nGA0ug==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -4638,7 +4653,7 @@ core-js-pure@^3.0.0:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.6.5.tgz#c79e75f5e38dbc85a662d91eea52b8256d53b813"
   integrity sha512-lacdXOimsiD0QyNf9BC/mxivNJ/ybBGJXQFKzRekp1WTHoVUWsUHEn+2T8GJAzzIhyOuXA+gOxCVN3l+5PLPUA==
 
-core-js@^2.4.0, core-js@^2.4.1, core-js@^2.6.11, core-js@^2.6.5:
+core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.1, core-js@^2.6.11, core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
@@ -7051,6 +7066,16 @@ gatsby-plugin-react-helmet@^3.3.2:
   integrity sha512-uRZlX4ejy0Txlw+9qbIVkULsuc6iniSwDgD+Ed6BOryKmF42qaqmdbcc78ZwPVN2SZJCDhcZKXoJf6QftTwwDg==
   dependencies:
     "@babel/runtime" "^7.9.6"
+
+gatsby-plugin-react-next@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-next/-/gatsby-plugin-react-next-1.0.11.tgz#715cab5ea86f64664f96af3e7f3640eecd9de5e3"
+  integrity sha1-cVyrXqhvZGZPlq8+fzZA7s2d5eM=
+  dependencies:
+    babel-runtime "^6.26.0"
+    core-js "^2.5.1"
+    react "^16.0.0"
+    react-dom "^16.0.0"
 
 gatsby-plugin-sass@^2.3.3:
   version "2.3.3"
@@ -12442,7 +12467,7 @@ react-dev-utils@^4.2.3:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.12.0:
+react-dom@^16.0.0, react-dom@^16.12.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -12515,6 +12540,16 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-media@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/react-media/-/react-media-1.10.0.tgz#7b0c5fe8ac55a53ce31b5249db3aaf8a22ff7703"
+  integrity sha512-FjgYmFoaPTImST06jqotuu0Mk8LOXiGYS/fIyiXuLnf20l3DPniBwtrxi604/HxxjqvmHS3oz5rAwnqdvosV4A==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    invariant "^2.2.2"
+    json2mq "^0.2.0"
+    prop-types "^15.5.10"
+
 react-reconciler@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.24.0.tgz#5a396b2c2f5efe8554134a5935f49f546723f2dd"
@@ -12578,7 +12613,7 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react@^16.12.0, react@^16.8.0:
+react@^16.0.0, react@^16.12.0, react@^16.8.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
