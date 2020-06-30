@@ -42,13 +42,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-        // <div>
-        //   <Sidebar initCollapsed={true} />
-        //   <button className="openSidebar" onClick={() => openSidebar(!sidebarState)}><MenuOutlined /></button>
-        //   <Layout title="Home">
-        //     <Home />
-        //     <Projects />
-        //     <ContactForm />
-        //   </Layout>
-        //   </div>
