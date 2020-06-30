@@ -1,39 +1,32 @@
-$black: #011627;
-$font-color: white;
-$light-blue: #33a1fd;
-$highlight-color: #f45b69;
-$height: 50vh;
-$shadow: 0 0 50px rgba(77, 77, 77, 0.151);
-$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
+@import '_variables.scss';
 
 .Grid {
   margin-top: 10vh;
   display: grid;
   // width: 100vw;
   min-height: 100vh;
+  // background-color: blue;
 
   .AboutMe {
-    margin-top: 10vh;
-    // max-width: 20vw !important;
-    margin-bottom: 10vh;
+    // margin: 10vh 0 10vh 0;
+    // background: #f78080;
     text-align: center;
     display: grid;
-    // grid-template-areas:
-    //   "a a a a a a"
-    //   "b b b c c c";
     grid-template-areas:
       "a a"
       "b c";
     // grid-column-gap: 10vw;
     grid-row-gap: 10vh;
-    // width: 100%;
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1500px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 0;
+
+      .container {
+        flex-direction: column;
 
       .WhoAmI {
         margin: 0 !important;
@@ -41,6 +34,12 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
           width: 200% !important;
         }
       }
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
     }
 
     .projects {
@@ -59,103 +58,5 @@ $shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
       text-transform: uppercase;
     }
 
-    .WhoAmI {
-      margin-left: 10vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      grid-area: b;
-      width: 30vw;
-      height: 60%;
-
-      .image {
-        box-shadow: $shadow;
-        background: lightgray;
-        $width: 20vh;
-        object-fit: cover;
-        height: $width;
-        width: $width;
-        transition: 500ms;
-        border: 2px solid transparent;
-        // z-index: 0;
-
-        &:hover {
-          position: relative;
-          z-index: 0;
-          box-shadow: $shadow-hover;
-          border: 2px solid $light-blue;
-          color: $light-blue;
-        }
-      }
-
-      h2 {
-        font-size: 1em;
-      }
-
-      p {
-        font-size: 0.6em;
-        text-align: center;
-        width: 30vw;
-
-        .link {
-          color: $light-blue;
-        }
-      }
-    }
-
-    .ProgrammingLanguages {
-      display: flex;
-      // height: 100%;
-      height: 60%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 30vw;
-      grid-area: c;
-      max-height: 60vh;
-      font-size: 0.6em;
-      padding: 0;
-
-      h2 {
-        font-size: 1.2em;
-        color: $light-blue;
-      }
-
-      ul {
-        list-style: none;
-        display: grid;
-        grid-template-areas:
-          "a b c"
-          "d e f";
-        grid-column-gap: 1vw;
-        grid-row-gap: 1vh;
-        padding-left: 0 !important;
-        margin-bottom: 10vh;
-
-        li {
-          $box-width: 10vh;
-          $box-min-width: 150px;
-          height: $box-width;
-          width: $box-width;
-          min-width: $box-min-width;
-          min-height: $box-min-width;
-          background: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: 250ms ease-in-out;
-          box-shadow: $shadow;
-          border: 2px solid transparent;
-
-          &:hover {
-            box-shadow: $shadow-hover;
-            border: 2px solid $light-blue;
-            color: $light-blue;
-            cursor: pointer;
-          }
-        }
-      }
-    }
   }
 }

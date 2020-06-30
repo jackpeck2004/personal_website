@@ -1,11 +1,4 @@
-$black: #011627;
-$font-color: white;
-$light-blue: #33a1fd;
-$highlight-color: #f45b69;
-$height: 50vh;
-$shadow: 0 0 50px rgba(77, 77, 77, 0.151);
-$shadow-header: 0px 90px 85px -21px rgba(77, 77, 77, 0.151);
-$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
+@import '_variables.scss';
 
 .menu {
   font-size: 0.5em;

@@ -1,14 +1,4 @@
-$light-blue: #33a1fd;
-$sidebar-bg: white;
-$sidebar-textcolor: black;
-$sidebar-titlecolor: $light-blue;
-// $sidebar-width: 20%;
-$sidebar-width: 100%;
-$sidebar-height: 100vh;
-$sidebar-padding: 20% 20% 5% 5%; // top right bottom left
-$sidebar-titlefont: "Raleway";
-$shadow-header: 0px 90px 85px -21px rgba(77, 77, 77, 0.151);
-$shadow-hover: 0 0 80px rgba(77, 77, 77, 0.329);
+@import '_variables.scss';
 
 .Sidebar {
     background: $sidebar-bg;
