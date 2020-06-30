@@ -48,7 +48,7 @@
     "ts"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "rm -rf .cache; gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
