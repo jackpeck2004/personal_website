@@ -29,9 +29,7 @@ export const Links = () => (
 const Menu = () => (
   <div className="menu">
     <div className="header">
-      <Link to="/" className="logo">
-        Giacomo Pasin
-          </Link>
+      <Link to="/" className="logo"> Giacomo Pasin </Link>
       <Links />
       <a className="cta" onClick={() => scrollTo("#contactForm")}>
         Contact
