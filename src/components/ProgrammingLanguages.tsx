@@ -1,5 +1,5 @@
-
 import React from "react"
+import '../styles/ProgrammingLanguages.scss'
 
 const languages = [
     {
