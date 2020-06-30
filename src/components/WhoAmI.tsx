@@ -8,7 +8,7 @@ const WhoAmI = () => {
                 src="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016"
                 width="1134"
                 height="2016"
-                srcset="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016 1x, https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=2268&h=4032 2x"
+                // srcset="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016 1x, https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=2268&h=4032 2x"
                 alt=""
                 className="image"
             />
