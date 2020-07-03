@@ -7,7 +7,7 @@ import React from "react"
 const Home = () => {
   return (
     <div className="Home">
-      <section className=".section">
+      <section className="section">
         <div className="Home">
           <Link to="/covid19">
             <Button>Covid Updates</Button>

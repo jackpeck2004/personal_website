@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import "variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
 
 .openSidebar {
@@ -20,16 +20,16 @@
 }
 
 header {
+  display: grid;
+  padding: 0 20%;
+  position: fixed;
+  width: 100%;
+
   h1 {
     color: white;
     background: red;
     margin-right: auto;
   }
-  display: grid;
-
-  padding: 0 20%;
-  position: fixed;
-  width: 100%;
 
   .menu {
     margin-left: auto;
@@ -71,7 +71,7 @@ header {
           }
         }
 
-        Button.primary {
+        .primary {
           background: transparent;
           font-size: 0.7em;
           height: 100%;
