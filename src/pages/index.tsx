@@ -12,14 +12,19 @@ import Sidebar, { openSidebar, sidebarState } from "../components/Sidebar"
 // import Layout from "../components/layout"
 import "../styles/App.scss"
 
-const IndexPage = () => {
+const IndexPage: React = () => {
   return (
     <Media queries={{ small: { maxWidth: 999 } }}>
-      {matches =>
+      {(matches) =>
         matches.small ? (
           <div>
             <Sidebar initCollapsed={true} />
-            <button className="openSidebar" onClick={() => openSidebar(!sidebarState)}><MenuOutlined /></button>
+            <button
+              className="openSidebar"
+              onClick={() => openSidebar(!sidebarState)}
+            >
+              <MenuOutlined />
+            </button>
             <Layout title="Home">
               <Home />
               <Projects />
@@ -27,15 +32,15 @@ const IndexPage = () => {
             </Layout>
           </div>
         ) : (
-            <div>
-              <Layout title="Home">
-                <Home />
-                <Menu />
-                <Projects />
-                <ContactForm />
-              </Layout>
-            </div>
-          )
+          <div>
+            <Layout title="Home">
+              <Home />
+              {/* <Menu /> */}
+              <Projects />
+              <ContactForm />
+            </Layout>
+          </div>
+        )
       }
     </Media>
   )
