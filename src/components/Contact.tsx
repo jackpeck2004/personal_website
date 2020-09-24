@@ -1,6 +1,8 @@
 import { Button, Form, Input } from 'antd'
 import React from 'react'
 import '../styles/Contact.scss'
+import axios from "axios"
+// import { Store } from 'antd/lib/form/interface'
 
 const layout = {
   labelCol: {
@@ -19,13 +21,24 @@ const tailLayout = {
 
 const ContactForm = () => {
   const onFinish = (values: any) => {
-    fetch('https://send.haboob.co/v1/hooks/rJ0iiT328/send/production', {
-      method: 'POST',
-      body: values
-    });
-    // https://send.haboob.co/v1/hooks/rJ0iiT328/send/production
+    // const msg: any = {
+    //   email: {
+    //     ...values
+    //   }
+    // }
 
-    // console.log(values)
+    let location:string = window.location.href;
+    if(location.endsWith('/')) location = location.slice(0,-1);
+    const url:string = location + '/api/email'
+
+    axios.post("/api/email", {
+      email: {
+        ...values
+      }
+    })
+    
+
+
   }
 
   const onFinishFailed = (errorInfo: any) => {
@@ -75,7 +88,7 @@ const ContactForm = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item name='content' label="Introduction">
+        <Form.Item name='content' label="Message">
           <Input.TextArea />
         </Form.Item>
 
