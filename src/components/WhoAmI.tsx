@@ -5,7 +5,7 @@ const WhoAmI = () => {
     return (
         <div className="WhoAmI">
             <img
-                src="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016"
+                src="https://uisidict.sirv.com/Images/GiacomoPasin.jpg"
                 width="1134"
                 height="2016"
                 // srcset="https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=1134&h=2016 1x, https://uisidict.sirv.com/Images/GiacomoPasin.jpeg?w=2268&h=4032 2x"

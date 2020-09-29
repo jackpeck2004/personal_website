@@ -6,7 +6,6 @@
   "author": "Giacomo Pasin <giacomo.pasin@gmail.com>",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
-    "@sendgrid/mail": "^7.2.6",
     "@types/react": "^16.9.41",
     "@vercel/node": "^1.8.3",
     "antd": "^4.3.1",

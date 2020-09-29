@@ -1,5 +1,5 @@
 import { Button } from "antd"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import React from "react"
 
@@ -7,11 +7,11 @@ import React from "react"
 const Home = () => {
   return (
     <div className="Home">
-      <section className="section">
+      <section className="section home">
         <div className="Home">
-          <Link to="/covid19">
+          {/* <Link to="/covid19">
             <Button>Covid Updates</Button>
-          </Link>
+          </Link> */}
           <h1>
             Hello, I'm <span className="name">Giacomo Pasin</span>. <br />
             I'm a full-stack developer.

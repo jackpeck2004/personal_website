@@ -46,6 +46,13 @@ header {
 
     section {
       background: $background-color;
+
+      &.home {
+        background-image: url("https://images.unsplash.com/photo-1601164768085-c3a5665db36f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+        background-size: cover;
+        background-repeat: no-repeat;
+        backdrop-filter: blur(8px);
+      }
       height: 100vh;
       display: grid;
       width: 100%;
