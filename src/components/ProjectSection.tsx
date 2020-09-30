@@ -1,50 +1,24 @@
-import React from "react";
-import '../styles/ProjectSection.scss';
+import React from "react"
+import "../styles/ProjectSection.scss"
 
-// const columns = [
-//     {
-//         title: "Name",
-//         dataIndex: 'name',
-//         key: 'name',
-//         render: text => <a>{text}</a>
-//     },
-//     {
-//         title: 'Languages',
-//         dataIndex: 'languages',
-//         key: 'languages',
-//         render: tags => (
-//             <>
-//                 {tags.map(tag => {
-//                     let color = tag.length > 5 ? 'geekblue' : 'green';
-//                     if (tag === 'loser') {
-//                         color = 'volcano';
-//                     }
-//                     return (
-//                         <Tag color={color} key={tag}>
-//                             {tag.toUpperCase()}
-//                         </Tag>
-//                     );
-//                 })}
-//             </>
-//         ),
-//     }
+interface ProjectProps {
+  isTmp: boolean
+}
 
-// ]
-
-// const data = [
-//     {
-//         name: "Loop",
-//         languages: ["cool", "teacher"]
-//     }
-// ]
-
-const ProjectSection = () => {
+const ProjectSection: React.FC<ProjectProps> = (props) => {
+  if (props.isTmp === true) {
     return (
-        <section className="projects">
-            <h1>Projects Coming Soon...</h1>
-        </section>
-
+      <section className="projects">
+        <h1>Projects Coming Soon...</h1>
+      </section>
     )
+  }
+
+  return (
+    <section className="projects">
+      <h1>Propjects</h1>
+    </section>
+  )
 }
 
 export default ProjectSection
