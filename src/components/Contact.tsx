@@ -1,7 +1,7 @@
-import { Button, Form, Input } from 'antd'
-import React from 'react'
-import '../styles/Contact.scss'
+import { Button, Form, Input } from "antd"
 import axios from "axios"
+import React from "react"
+import "../styles/Contact.scss"
 // import { Store } from 'antd/lib/form/interface'
 
 const layout = {
@@ -27,22 +27,19 @@ const ContactForm = () => {
     //   }
     // }
 
-    let location:string = window.location.href;
-    if(location.endsWith('/')) location = location.slice(0,-1);
-    const url:string = location + '/api/email'
+    // let location: string = window.location.href
+    // if (location.endsWith("/")) location = location.slice(0, -1)
+    // const url: string = location + "/api/email"
 
     axios.post("/api/email", {
       email: {
-        ...values
-      }
+        ...values,
+      },
     })
-    
-
-
   }
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo)
+    console.log("Failed:", errorInfo)
   }
 
   return (
@@ -66,8 +63,8 @@ const ContactForm = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your name!',
-              type: 'string',
+              message: "Please input your name!",
+              type: "string",
             },
           ]}
         >
@@ -80,15 +77,15 @@ const ContactForm = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your email!',
-              type: 'email',
+              message: "Please input your email!",
+              type: "email",
             },
           ]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item name='content' label="Message">
+        <Form.Item name="content" label="Message">
           <Input.TextArea />
         </Form.Item>
 

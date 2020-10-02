@@ -1,8 +1,12 @@
 @import "variables.scss";
 
 .Grid {
-    .projects {
-        height: 20vh !important;
-        padding: 2% 20%;
-    }
+  .projects-tmp {
+    height: 20vh !important;
+    padding: 2% 20%;
+  }
+  .projects {
+    height: 100% !important;
+    padding: 2% 20%;
+  }
 }

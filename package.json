@@ -32,6 +32,9 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/nodemailer": "^6.4.0",
+    "eslint-plugin-react": "^7.21.2",
+    "nodemailer": "^6.4.12",
     "prettier": "2.0.5"
   },
   "keywords": [
