@@ -1,42 +1,26 @@
-import React from "react"
-import "../styles/ProjectSection.scss"
+import React from 'react';
+import '../styles/ProjectSection.scss';
 
 interface ProjectProps {
-<<<<<<< HEAD
-  isTmp: boolean
-}
-
-const ProjectSection: React.FC<ProjectProps> = (props) => {
-  if (props.isTmp === true) {
-    return (
-      <section className="projects">
-=======
-  isTemp: boolean
+  isTemp: boolean;
 }
 
 const data = {
-  head: ["H1", "H2", "H3"],
+  head: ['H1', 'H2', 'H3'],
   body: [
-    ["1", "2", "3"],
-    ["ciao", "ciao", "ciao"],
+    ['1', '2', '3'],
+    ['ciao', 'ciao', 'ciao'],
   ],
-}
+};
 
 const ProjectSection: React.FC<ProjectProps> = (props) => {
   if (props.isTemp) {
     return (
       <section className="projects-tmp">
->>>>>>> 01_Projects
         <h1>Projects Coming Soon...</h1>
       </section>
-    )
+    );
   }
-<<<<<<< HEAD
-
-  return (
-    <section className="projects">
-      <h1>Propjects</h1>
-=======
   return (
     <section className="projects">
       <h1>Hello</h1>
@@ -56,9 +40,8 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
           ))}
         </tbody>
       </table>
->>>>>>> 01_Projects
     </section>
-  )
-}
+  );
+};
 
-export default ProjectSection
+export default ProjectSection;
