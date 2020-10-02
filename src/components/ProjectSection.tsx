@@ -1,50 +1,47 @@
-import React from "react";
-import '../styles/ProjectSection.scss';
+import React from "react"
+import "../styles/ProjectSection.scss"
 
-// const columns = [
-//     {
-//         title: "Name",
-//         dataIndex: 'name',
-//         key: 'name',
-//         render: text => <a>{text}</a>
-//     },
-//     {
-//         title: 'Languages',
-//         dataIndex: 'languages',
-//         key: 'languages',
-//         render: tags => (
-//             <>
-//                 {tags.map(tag => {
-//                     let color = tag.length > 5 ? 'geekblue' : 'green';
-//                     if (tag === 'loser') {
-//                         color = 'volcano';
-//                     }
-//                     return (
-//                         <Tag color={color} key={tag}>
-//                             {tag.toUpperCase()}
-//                         </Tag>
-//                     );
-//                 })}
-//             </>
-//         ),
-//     }
+interface ProjectProps {
+  isTemp: boolean
+}
 
-// ]
+const data = {
+  head: ["H1", "H2", "H3"],
+  body: [
+    ["1", "2", "3"],
+    ["ciao", "ciao", "ciao"],
+  ],
+}
 
-// const data = [
-//     {
-//         name: "Loop",
-//         languages: ["cool", "teacher"]
-//     }
-// ]
-
-const ProjectSection = () => {
+const ProjectSection: React.FC<ProjectProps> = (props) => {
+  if (props.isTemp) {
     return (
-        <section className="projects">
-            <h1>Projects Coming Soon...</h1>
-        </section>
-
+      <section className="projects-tmp">
+        <h1>Projects Coming Soon...</h1>
+      </section>
     )
+  }
+  return (
+    <section className="projects">
+      <h1>Hello</h1>
+      <table>
+        <thead>
+          {data.head.map((value: String) => (
+            <td>{value}</td>
+          ))}
+        </thead>
+        <tbody>
+          {data.body.map((row: Array<String>) => (
+            <tr>
+              {row.map((value: String) => (
+                <td>{value}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )
 }
 
 export default ProjectSection
