@@ -14,7 +14,7 @@ const Projects = () => {
           <ProgrammingLanguages />
         </div>
       </div>
-      <ProjectSection isTemp />
+      <ProjectSection />
     </div>
   );
 };

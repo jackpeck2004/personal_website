@@ -1,14 +1,13 @@
-import { Button } from "antd"
+import { Button } from 'antd';
 // import { Link } from "gatsby"
-import scrollTo from "gatsby-plugin-smoothscroll"
-import React from "react"
-
+import scrollTo from 'gatsby-plugin-smoothscroll';
+import React from 'react';
 
 const Home = () => {
   return (
     <div className="Home">
       <section className="section home">
-        <div className="Home">
+        <div className="Home margin">
           {/* <Link to="/covid19">
             <Button>Covid Updates</Button>
           </Link> */}
@@ -17,7 +16,7 @@ const Home = () => {
             I'm a full-stack developer.
           </h1>
           <Button
-            onClick={() => scrollTo("#projects")}
+            onClick={() => scrollTo('#projects')}
             // onClick={() => alert()}
             className="primary"
           >
@@ -26,7 +25,7 @@ const Home = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

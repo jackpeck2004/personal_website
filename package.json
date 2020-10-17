@@ -53,7 +53,7 @@
     "ts"
   ],
   "scripts": {
-    "vercel:dev": "vercel dev",
+    "vercel:dev": "export ENV=\"DEV\"; vercel dev",
     "build": "rm -rf .cache; gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
