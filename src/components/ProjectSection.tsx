@@ -61,6 +61,7 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       </section>
     );
   }
+
   return (
     <section className="projects">
       <h1>Projects</h1>
