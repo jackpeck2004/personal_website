@@ -1,5 +1,6 @@
 import { NowRequest, NowResponse } from '@vercel/node';
 import nodemailer from 'nodemailer';
+//@ts-ignore
 import * as config from './config.json';
 
 type Email = {
