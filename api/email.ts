@@ -3,6 +3,17 @@ import nodemailer from 'nodemailer';
 //@ts-ignore
 import * as config from './config.json';
 
+const mailConfig =
+  process.env.ENV === 'DEV'
+    ? {
+        user: config.MailAddr,
+        pass: config.MailPass,
+      }
+    : {
+        user: process.env.mailAddr,
+        pass: config.env.mailPass,
+      };
+
 type Email = {
   from: string;
   to: string;
@@ -21,8 +32,8 @@ export default (request: NowRequest, response: NowResponse) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: config.MailAddr,
-      pass: config.MailPass,
+      user: mailConfig.user,
+      pass: mailConfig.pass,
     },
   });
 
@@ -31,7 +42,7 @@ export default (request: NowRequest, response: NowResponse) => {
   const msg: Email = {
     from: requestMessage.email,
     to: 'giacomo.pasin@gmail.com',
-    subject: `Contact - ${requestMessage.name}`,
+    subject: `Contact - ${requestMessage.name} ${requestMessage.email}`,
     text: requestMessage.content,
   };
 

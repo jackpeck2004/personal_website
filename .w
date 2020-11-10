@@ -39,7 +39,7 @@ const templates = [
 ];
 
 const ProjectSection: React.FC<ProjectProps> = (props) => {
-  const projects = [
+  const [projects] = React.useState([
     {
       key: '1',
       name: 'Looop Communication System',
@@ -52,8 +52,7 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       language: ['Typescript'],
       framework: ['Gatsby', 'Vercel', 'Ant Design'],
     },
-  ];
-
+  ]);
   if (props.isTemp) {
     return (
       <section className="projects-tmp">
@@ -61,43 +60,33 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       </section>
     );
   }
-
   return (
     <section className="projects">
       <h1>Projects</h1>
       {/* <Table data={data}></Table> */}
       {/*<Table className="table" dataSource={projects} columns={templates} />*/}
-      <table style={{ fontSize: '0.5em' }}>
-        <thead
-          style={{
-            color: 'black',
-            borderBottom: '1px solid black',
-          }}
-        >
+      <table>
+        <thead>
           <td>Name</td>
           <td>Language</td>
           <td>Framework</td>
         </thead>
         <tbody>
-          {projects.map((project: any) => (
-            <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          {projects.map((project: any) => {
+            <tr>
               <td>{project.name}</td>
               <td>
                 <ul>
-                  {project.language.map((lang: string) => {
-                    return <li>{lang}</li>;
-                  })}
+                  <li>test</li>
                 </ul>
               </td>
               <td>
                 <ul>
-                  {project.framework.map((fw: string) => {
-                    return <li>{fw}</li>;
-                  })}
+                  <li>test</li>
                 </ul>
               </td>
-            </tr>
-          ))}
+            </tr>;
+          })}
         </tbody>
       </table>
     </section>

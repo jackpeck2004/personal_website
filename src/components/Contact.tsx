@@ -1,7 +1,7 @@
-import { Button, Form, Input } from "antd"
-import axios from "axios"
-import React from "react"
-import "../styles/Contact.scss"
+import { Button, Form, Input } from 'antd';
+import axios from 'axios';
+import React from 'react';
+import '../styles/Contact.scss';
 // import { Store } from 'antd/lib/form/interface'
 
 const layout = {
@@ -11,13 +11,13 @@ const layout = {
   wrapperCol: {
     span: 16,
   },
-}
+};
 const tailLayout = {
   wrapperCol: {
     offset: 8,
     span: 16,
   },
-}
+};
 
 const ContactForm = () => {
   const onFinish = (values: any) => {
@@ -31,16 +31,19 @@ const ContactForm = () => {
     // if (location.endsWith("/")) location = location.slice(0, -1)
     // const url: string = location + "/api/email"
 
-    axios.post("/api/email", {
+    axios.post('/api/email', {
       email: {
         ...values,
       },
-    })
-  }
+    });
+
+    location.reload();
+  };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo)
-  }
+    alert('Error, failed to send message');
+    console.log(errorInfo);
+  };
 
   return (
     // <section className="contact">
@@ -63,8 +66,8 @@ const ContactForm = () => {
           rules={[
             {
               required: true,
-              message: "Please input your name!",
-              type: "string",
+              message: 'Please input your name!',
+              type: 'string',
             },
           ]}
         >
@@ -77,8 +80,8 @@ const ContactForm = () => {
           rules={[
             {
               required: true,
-              message: "Please input your email!",
-              type: "email",
+              message: 'Please input your email!',
+              type: 'email',
             },
           ]}
         >
@@ -97,7 +100,7 @@ const ContactForm = () => {
       </Form>
     </div>
     // </section>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

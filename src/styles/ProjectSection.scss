@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 .Grid {
   .projects-tmp {
@@ -8,5 +8,20 @@
   .projects {
     height: 100% !important;
     padding: 2% 20%;
+    .table {
+      width: auto;
+      max-width: 80vw;
+      .ant-table-tbody {
+        display: flex;
+        flex-direction: column;
+        .ant-table-row {
+          .ant-table-cell {
+            width: 100vw;
+          }
+        }
+      }
+      margin: 0;
+    }
   }
+  margin: 0 !important;
 }
