@@ -1,42 +1,9 @@
-import { Table } from 'antd';
 import React from 'react';
 import '../styles/ProjectSection.scss';
 
 interface ProjectProps {
   isTemp?: boolean;
 }
-
-const templates = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: 'Language',
-    dataIndex: 'language',
-    key: 'lang',
-    render: (langs: Array<string>) => (
-      <ul>
-        {langs.map((lang: string) => (
-          <li>{lang}</li>
-        ))}
-      </ul>
-    ),
-  },
-  {
-    title: 'Framework',
-    dataIndex: 'framework',
-    key: 'framework',
-    render: (frameworks: Array<string>) => (
-      <ul>
-        {frameworks.map((fw: string) => (
-          <li>{fw}</li>
-        ))}
-      </ul>
-    ),
-  },
-];
 
 const ProjectSection: React.FC<ProjectProps> = (props) => {
   const projects = [
@@ -52,6 +19,12 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       language: ['Typescript'],
       framework: ['Gatsby', 'Vercel', 'Ant Design'],
     },
+    {
+      key: '3',
+      name: 'Orientamento Website',
+      language: ['php'],
+      framework: ['Wordpress', 'Skeleton CSS'],
+    },
   ];
 
   if (props.isTemp) {
@@ -65,8 +38,6 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
   return (
     <section className="projects">
       <h1>Projects</h1>
-      {/* <Table data={data}></Table> */}
-      {/*<Table className="table" dataSource={projects} columns={templates} />*/}
       <table style={{ fontSize: '0.5em' }}>
         <thead
           style={{
