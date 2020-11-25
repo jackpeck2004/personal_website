@@ -38,39 +38,23 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
   return (
     <section className="projects">
       <h1>Projects</h1>
-      <table style={{ fontSize: '0.5em' }}>
-        <thead
-          style={{
-            color: 'black',
-            borderBottom: '1px solid black',
-          }}
-        >
-          <td>Name</td>
-          <td>Language</td>
-          <td>Framework</td>
-        </thead>
-        <tbody>
-          {projects.map((project: any) => (
-            <tr style={{ borderBottom: '1px solid lightgrey' }}>
-              <td>{project.name}</td>
-              <td>
-                <ul>
-                  {project.language.map((lang: string) => {
-                    return <li>{lang}</li>;
-                  })}
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  {project.framework.map((fw: string) => {
-                    return <li>{fw}</li>;
-                  })}
-                </ul>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="projectDisplay">
+        {projects.map((project, i) => {
+          return (
+            <div className="project" key={i}>
+              <div className="projectContainer">
+                <p className="projectLanguage">
+                  Languages: {project.language.join(', ')}
+                </p>
+                <p className="projectFramework">
+                  Framework: {project.framework.join(', ')}
+                </p>
+                <p className="projectName">{project.name}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };
