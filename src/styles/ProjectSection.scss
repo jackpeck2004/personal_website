@@ -12,16 +12,10 @@
     .projectDisplay {
       $gap: 20px;
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
       grid-column-gap: $gap;
       grid-row-gap: $gap;
 
-      @media only screen and (max-width: 1200px) {
-        grid-template-columns: auto;
-      }
-      @media only screen and (min-width: 2000px) {
-        grid-template-columns: auto auto auto;
-      }
 
       p {
         font-size: 20px
@@ -31,11 +25,13 @@
         $color: #ff6666;
         $color2: white;
             $box-width: 100%;
+            $box-height: 20vh;
+            $box-min-height:350px;
             $box-min-width: 150px;
-            height: $box-width;
+            height: $box-height;
             width: $box-width;
             min-width: $box-min-width;
-            min-height: $box-min-width;
+            min-height: $box-min-height;
             //background: white;
             background: $color2;
             border-radius: 25px;
@@ -60,6 +56,15 @@
               font-size: 0.7em;
             }
       }
+
+      @media only screen and (max-width: 1200px) {
+        grid-template-columns: 1fr;
+      }
+      /*
+       *@media only screen and (min-width: 2000px) {
+       *  grid-template-columns: 1fr 1fr 1fr;
+       *}
+       */
     }
   }
   margin: 0 !important;
