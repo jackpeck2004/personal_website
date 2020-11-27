@@ -11,6 +11,11 @@
 
   .margin {
     margin: auto 20%;
+
+    @media only screen and (max-width: 1000px) {
+      margin: auto 10%;
+
+    }
   }
 
   h1 {
