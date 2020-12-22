@@ -5,6 +5,24 @@ interface ProjectProps {
   isTemp?: boolean;
 }
 
+interface CardProps {
+  project: any;
+}
+
+const ProjectCard: React.FC<CardProps> = ({ project }) => {
+  return (
+    <div className="projectContainer">
+      <p className="projectLanguage">
+        Languages: {project.language.join(', ')}
+      </p>
+      <p className="projectFramework">
+        Framework: {project.framework.join(', ')}
+      </p>
+      <p className="projectName">{project.name}</p>
+    </div>
+  );
+};
+
 const ProjectSection: React.FC<ProjectProps> = (props) => {
   const projects = [
     {
@@ -12,18 +30,21 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       name: 'Looop Communication System',
       language: ['Javascript', 'Typescript'],
       framework: ['React', 'Node.js'],
+      link: null,
     },
     {
       key: '2',
       name: 'Personal Website',
       language: ['Typescript'],
       framework: ['Gatsby', 'Vercel', 'Ant Design'],
+      link: null,
     },
     {
       key: '3',
       name: 'Orientamento Website',
       language: ['php'],
       framework: ['Wordpress', 'Skeleton CSS'],
+      link: 'https://dev-orientamento.pantheonsite.io',
     },
   ];
 
@@ -42,15 +63,18 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
         {projects.map((project, i) => {
           return (
             <div className="project" key={i}>
-              <div className="projectContainer">
-                <p className="projectLanguage">
-                  Languages: {project.language.join(', ')}
-                </p>
-                <p className="projectFramework">
-                  Framework: {project.framework.join(', ')}
-                </p>
-                <p className="projectName">{project.name}</p>
-              </div>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  className="projectLink"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <ProjectCard project={project} />
+                </a>
+              ) : (
+                <ProjectCard project={project} />
+              )}
             </div>
           );
         })}
