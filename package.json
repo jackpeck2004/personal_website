@@ -27,6 +27,7 @@
     "preact": "^10.4.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-airform": "0.0.2",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-media": "^1.10.0"

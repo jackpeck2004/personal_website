@@ -21,16 +21,6 @@ const tailLayout = {
 
 const ContactForm = () => {
   const onFinish = (values: any) => {
-    // const msg: any = {
-    //   email: {
-    //     ...values
-    //   }
-    // }
-
-    // let location: string = window.location.href
-    // if (location.endsWith("/")) location = location.slice(0, -1)
-    // const url: string = location + "/api/email"
-
     axios.post('/api/email', {
       email: {
         ...values,
