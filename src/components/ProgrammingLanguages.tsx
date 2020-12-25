@@ -26,6 +26,14 @@ const languages = [
     name: 'Typescript',
     basic: false,
   },
+  {
+    name: 'PHP',
+    basic: true,
+  },
+  {
+    name: 'Blade',
+    basic: false,
+  },
 ];
 
 const ProgrammingLanguages: React.FC = () => {
