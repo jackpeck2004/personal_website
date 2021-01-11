@@ -2,16 +2,20 @@ import React from 'react';
 import '../styles/ProgrammingLanguages.scss';
 
 const languages = [
-  {
-    name: 'HTML',
-    basic: false,
-  },
-  {
-    name: 'CSS',
-    basic: false,
-  },
+  // {
+  //   name: 'HTML',
+  //   basic: false,
+  // },
+  // {
+  //   name: 'CSS',
+  //   basic: false,
+  // },
   {
     name: 'JavaScript',
+    basic: false,
+  },
+  {
+    name: 'Typescript',
     basic: false,
   },
   {
@@ -23,12 +27,8 @@ const languages = [
     basic: true,
   },
   {
-    name: 'Typescript',
-    basic: false,
-  },
-  {
     name: 'PHP',
-    basic: true,
+    basic: false,
   },
   {
     name: 'Blade',
