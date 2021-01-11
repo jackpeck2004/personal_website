@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/ProgrammingLanguages.scss';
+import React from "react";
+import "../styles/ProgrammingLanguages.scss";
 
 const languages = [
   // {
@@ -11,27 +11,27 @@ const languages = [
   //   basic: false,
   // },
   {
-    name: 'JavaScript',
+    name: "JavaScript",
     basic: false,
   },
   {
-    name: 'Typescript',
+    name: "Typescript",
     basic: false,
   },
   {
-    name: 'Python',
+    name: "Python",
     basic: false,
   },
   {
-    name: 'Swift',
+    name: "Swift",
     basic: true,
   },
   {
-    name: 'PHP',
+    name: "PHP",
     basic: false,
   },
   {
-    name: 'Blade',
+    name: "Blade",
     basic: false,
   },
 ];

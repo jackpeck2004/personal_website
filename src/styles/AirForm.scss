@@ -1,6 +1,4 @@
-
 .contactFormSection {
-
   padding: 0 20%;
   .airform {
     display: flex;
@@ -18,7 +16,8 @@
       justify-content: flex-end;
       align-items: center;
 
-      textarea, input {
+      textarea,
+      input {
         width: 80%;
         border: 1px solid lightgrey;
         padding: 1%;
@@ -30,7 +29,6 @@
       label {
         margin-right: 20px;
       }
-
     }
 
     .submitForm {

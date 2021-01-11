@@ -1,14 +1,14 @@
-import { Layout as ALayout } from 'antd';
-import React from 'react';
+import { Layout as ALayout } from "antd";
+import React from "react";
 //@ts-ignore
-import SEO from '../components/seo';
+import SEO from "../components/seo";
 import "../styles/App.scss";
 
 const { Footer, Content } = ALayout;
 
 interface LayoutProps {
-  children: any,
-  title: string
+  children: any;
+  title: string;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, title }) => {
@@ -16,13 +16,11 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
     <div>
       <SEO title={title} />
       <ALayout className="Layout">
-        <Content className="Main">
-          {children}
-        </Content>
+        <Content className="Main">{children}</Content>
         <Footer>© {new Date().getFullYear()} - Giacomo Pasin</Footer>
       </ALayout>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

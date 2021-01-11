@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 .Grid {
   .projects-tmp {
@@ -25,45 +25,44 @@
       grid-column-gap: $gap;
       grid-row-gap: $gap;
 
-
       p {
-        font-size: 20px
+        font-size: 20px;
       }
 
       .project {
         $color: #ff6666;
         $color2: white;
-            $box-width: 100%;
-            $box-height: 20vh;
-            $box-min-height:350px;
-            $box-min-width: 150px;
-            height: $box-height;
-            width: $box-width;
-            min-width: $box-min-width;
-            min-height: $box-min-height;
-            //background: white;
-            background: $color2;
-            border-radius: 25px;
-            transition: 250ms ease-in-out;
-            box-shadow: $shadow;
-            border: 2px solid $light-blue;
-            padding: 0% 10%;
-            display: flex;
-            align-items:flex-end;
-            &:hover {
-                box-shadow: $shadow-hover;
-                //border: 2px solid $color;
-                border: 2px solid $light-blue;
-                background: white;
-                cursor: pointer;
-            }
+        $box-width: 100%;
+        $box-height: 20vh;
+        $box-min-height: 350px;
+        $box-min-width: 150px;
+        height: $box-height;
+        width: $box-width;
+        min-width: $box-min-width;
+        min-height: $box-min-height;
+        //background: white;
+        background: $color2;
+        border-radius: 25px;
+        transition: 250ms ease-in-out;
+        box-shadow: $shadow;
+        border: 2px solid $light-blue;
+        padding: 0% 10%;
+        display: flex;
+        align-items: flex-end;
+        &:hover {
+          box-shadow: $shadow-hover;
+          //border: 2px solid $color;
+          border: 2px solid $light-blue;
+          background: white;
+          cursor: pointer;
+        }
 
-            .projectName {
-              color: $light-blue;
-              font-family: "Raleway";
-              font-weight: bold;
-              font-size: 0.7em;
-            }
+        .projectName {
+          color: $light-blue;
+          font-family: "Raleway";
+          font-weight: bold;
+          font-size: 0.7em;
+        }
       }
 
       @media only screen and (max-width: 1200px) {

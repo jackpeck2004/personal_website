@@ -1,7 +1,7 @@
-import { graphql, useStaticQuery } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import { Helmet } from "react-helmet"
+import { graphql, useStaticQuery } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import { Helmet } from "react-helmet";
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -17,10 +17,10 @@ function SEO({ description, lang, meta, title }) {
         }
       }
     `
-  )
+  );
 
   // const metaDescription = description || site.siteMetadata.description
-  const metaDescription = site.siteMetadata.description
+  const metaDescription = site.siteMetadata.description;
 
   return (
     <Helmet
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `keywords`,
-          content: site.siteMetadata.keywords
+          content: site.siteMetadata.keywords,
         },
         {
           name: `twitter:card`,
@@ -68,20 +68,20 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;

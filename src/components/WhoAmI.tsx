@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/WhoAmI.scss';
+import React from "react";
+import "../styles/WhoAmI.scss";
 
 const WhoAmI = () => {
   return (
@@ -13,7 +13,7 @@ const WhoAmI = () => {
       />
       <h2>Who am I?</h2>
       <p>
-        I'm an IB Diploma student @{' '}
+        I'm an IB Diploma student @{" "}
         <a
           href="https://www.h-is.com/en/schools/treviso"
           className="link"
@@ -21,7 +21,7 @@ const WhoAmI = () => {
         >
           H-International School of Treviso
         </a>
-        , meanwhile being the CTO of{' '}
+        , meanwhile being the CTO of{" "}
         <a href="https://twin.services" className="link" target="_blank">
           T.W.I.N srl
         </a>
@@ -31,4 +31,3 @@ const WhoAmI = () => {
 };
 
 export default WhoAmI;
-

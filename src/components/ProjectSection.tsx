@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/ProjectSection.scss';
+import React from "react";
+import "../styles/ProjectSection.scss";
 
 interface ProjectProps {
   isTemp?: boolean;
@@ -13,10 +13,10 @@ const ProjectCard: React.FC<CardProps> = ({ project }) => {
   return (
     <div className="projectContainer">
       <p className="projectLanguage">
-        Languages: {project.language.join(', ')}
+        Languages: {project.language.join(", ")}
       </p>
       <p className="projectFramework">
-        Framework: {project.framework.join(', ')}
+        Framework: {project.framework.join(", ")}
       </p>
       <p className="projectName">{project.name}</p>
     </div>
@@ -26,25 +26,25 @@ const ProjectCard: React.FC<CardProps> = ({ project }) => {
 const ProjectSection: React.FC<ProjectProps> = (props) => {
   const projects = [
     {
-      key: '1',
-      name: 'Looop Communication System',
-      language: ['Javascript', 'Typescript'],
-      framework: ['React', 'Node.js'],
+      key: "1",
+      name: "Looop Communication System",
+      language: ["Javascript", "Typescript"],
+      framework: ["React", "Node.js"],
       link: null,
     },
     {
-      key: '2',
-      name: 'Personal Website',
-      language: ['Typescript'],
-      framework: ['Gatsby', 'Vercel', 'Ant Design'],
+      key: "2",
+      name: "Personal Website",
+      language: ["Typescript"],
+      framework: ["Gatsby", "Vercel", "Ant Design"],
       link: null,
     },
     {
-      key: '3',
-      name: 'Orientamento Website',
-      language: ['php'],
-      framework: ['Wordpress', 'Skeleton CSS'],
-      link: 'https://dev-orientamento.pantheonsite.io',
+      key: "3",
+      name: "Orientamento Website",
+      language: ["php"],
+      framework: ["Wordpress", "Skeleton CSS"],
+      link: "https://dev-orientamento.pantheonsite.io",
     },
   ];
 

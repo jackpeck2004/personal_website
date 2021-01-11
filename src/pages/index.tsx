@@ -1,15 +1,15 @@
 //import { MenuOutlined } from '@ant-design/icons';
-import React from 'react';
+import React from "react";
 //import Media from 'react-media';
 //import ContactForm from '../components/Contact';
-import Home from '../components/Home';
-import Layout from '../components/Layout';
-import Projects from '../components/Projects';
+import Home from "../components/Home";
+import Layout from "../components/Layout";
+import Projects from "../components/Projects";
 //import Sidebar, { openSidebar, sidebarState } from '../components/Sidebar';
-import '../styles/App.scss';
-import Airform from 'react-airform';
-import '../styles/AirForm.scss';
-import { Button } from 'antd';
+import "../styles/App.scss";
+import Airform from "react-airform";
+import "../styles/AirForm.scss";
+import { Button } from "antd";
 
 const ContactFormNew: React.FC = () => {
   return (

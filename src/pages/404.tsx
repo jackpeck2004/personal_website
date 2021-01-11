@@ -1,11 +1,11 @@
-import React from 'react';
-import { Layout } from 'antd';
+import React from "react";
+import { Layout } from "antd";
 //@ts-ignore
-import ErrorIcon from '../assets/Error404Icon.svg';
+import ErrorIcon from "../assets/Error404Icon.svg";
 //@ts-ignore
-import SEO from '../components/seo';
-import '../styles/Error.scss';
-import Link from 'gatsby-link';
+import SEO from "../components/seo";
+import "../styles/Error.scss";
+import Link from "gatsby-link";
 
 const NotFoundPage: React.FC = () => (
   <Layout className="Layout">
@@ -16,7 +16,7 @@ const NotFoundPage: React.FC = () => (
       </h2>
       <h1>Page Not Found</h1>
       <p>
-        Go to{' '}
+        Go to{" "}
         <Link to="/">
           <b>Home</b>
         </Link>

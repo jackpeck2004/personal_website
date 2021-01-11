@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 .Grid {
   margin-top: 10vh;
@@ -28,12 +28,12 @@
       .container {
         flex-direction: column;
 
-      .WhoAmI {
-        margin: 0 !important;
-        p {
-          width: 200% !important;
+        .WhoAmI {
+          margin: 0 !important;
+          p {
+            width: 200% !important;
+          }
         }
-      }
       }
     }
 
@@ -57,7 +57,6 @@
       margin: auto;
       text-transform: uppercase;
     }
-
   }
 }
 

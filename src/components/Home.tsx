@@ -1,10 +1,10 @@
-import { Button } from 'antd';
+import { Button } from "antd";
 // import { Link } from "gatsby"
-import scrollTo from 'gatsby-plugin-smoothscroll';
-import React from 'react';
+import scrollTo from "gatsby-plugin-smoothscroll";
+import React from "react";
 
 const Home = () => {
-  const title = 'an IB Student';
+  const title = "an IB Student";
   return (
     <div className="Home">
       {/* <section className="section home"> */}
@@ -19,7 +19,7 @@ const Home = () => {
             I'm {title}.
           </h1>
           <Button
-            onClick={() => scrollTo('#projects')}
+            onClick={() => scrollTo("#projects")}
             // onClick={() => alert()}
             className="primary"
           >

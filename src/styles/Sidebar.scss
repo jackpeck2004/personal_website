@@ -1,67 +1,67 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 .Sidebar {
-    background: $sidebar-bg;
-    color: $sidebar-textcolor;
-    height: $sidebar-height;
-    width: $sidebar-width;
-    position: fixed;
-    right: 0;
-    padding: $sidebar-padding;
-    text-align: right;
-    box-shadow: $shadow-header;
-    z-index: 10000;
-    animation: 500ms sidebar-open;
+  background: $sidebar-bg;
+  color: $sidebar-textcolor;
+  height: $sidebar-height;
+  width: $sidebar-width;
+  position: fixed;
+  right: 0;
+  padding: $sidebar-padding;
+  text-align: right;
+  box-shadow: $shadow-header;
+  z-index: 10000;
+  animation: 500ms sidebar-open;
 
-    button {
-        background: none;
+  button {
+    background: none;
+    color: $sidebar-textcolor;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    transition: 500ms;
+    position: fixed;
+    right: 10%;
+
+    &:hover {
+      color: $sidebar-titlecolor;
+    }
+  }
+
+  h1 {
+    color: $sidebar-titlecolor;
+    font-family: $sidebar-titlefont;
+    font-weight: bold;
+  }
+  .nav__links {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20vh;
+    font-size: 1.5rem;
+    li {
+      .nav_link {
         color: $sidebar-textcolor;
-        font-size: 2em;
-        border: none;
-        cursor: pointer;
-        transition: 500ms;
-        position: fixed;
-        right: 10%;
+        animation-delay: 1s;
+        animation: 0.5s sidebar-item;
 
         &:hover {
-            color: $sidebar-titlecolor;
+          color: $sidebar-titlecolor;
         }
+      }
     }
-
-    h1 {
-        color: $sidebar-titlecolor;
-        font-family: $sidebar-titlefont;
-        font-weight: bold;
-    }
-    .nav__links {
-        list-style: none;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 20vh;
-        font-size: 1.5rem;
-        li {
-            .nav_link {
-                color: $sidebar-textcolor;
-                animation-delay: 1s;
-                animation: 0.5s sidebar-item;
-
-                &:hover {
-                    color: $sidebar-titlecolor;
-                }
-            }
-        }
-    }
+  }
 }
 
 @keyframes sidebar-item {
-    0% {
-        opacity: 0%;
-    }
+  0% {
+    opacity: 0%;
+  }
 }
 
 @keyframes sidebar-open {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 }
