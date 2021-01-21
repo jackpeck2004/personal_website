@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import React from 'react';
-import '../styles/Menu.scss';
-import MobileMenu from './MobileMenu';
-//@ts-ignore
-import HamburgerIcon from '../assets/hamburger.svg';
 //@ts-ignore
 import CrossIcon from '../assets/cross.svg';
+//@ts-ignore
+import HamburgerIcon from '../assets/hamburger.svg';
+import '../styles/Menu.scss';
+import MobileMenu from './MobileMenu';
 
 const st = (target: string) => {
   scrollTo(target, 'start');
@@ -62,6 +61,9 @@ const Menu = () => {
           {openMenu && (
             <MobileMenu onClick={() => setOpenMenu(!openMenu)} Links={Links} />
           )}
+        </div>
+        <div className="desktop">
+          <Links />
         </div>
       </div>
     </div>
