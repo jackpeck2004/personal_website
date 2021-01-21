@@ -1,15 +1,19 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import React from 'react';
 import '../styles/Menu.scss';
-import { openSidebar, sidebarState } from './Sidebar';
+import MobileMenu from './MobileMenu';
+//@ts-ignore
+import HamburgerIcon from '../assets/hamburger.svg';
+//@ts-ignore
+import CrossIcon from '../assets/cross.svg';
 
 const st = (target: string) => {
   scrollTo(target);
-  openSidebar(!sidebarState);
 };
 
-export const Links = () => (
+export const Links: React.FC = () => (
   <nav>
     <ul className="nav__links">
       <li>
@@ -31,13 +35,32 @@ export const Links = () => (
   </nav>
 );
 
-const Menu = () => (
-  <div className="menu">
-    <div className="left logo">
-      <a onClick={() => st('.Home')}>Giacomo Pasin</a>
+const Menu = () => {
+  const [openMenu, setOpenMenu] = React.useState(false);
+  return (
+    <div className="menu">
+      <div className="left logo">
+        <a onClick={() => st('.Home')}>Giacomo Pasin</a>
+      </div>
+      <div className="right">
+        <div className="mobile">
+          <button
+            className={`${openMenu ? 'fixed' : ''}`}
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            {!openMenu ? (
+              <HamburgerIcon className="icon" />
+            ) : (
+              <CrossIcon className="icon" />
+            )}
+          </button>
+          {openMenu && (
+            <MobileMenu onClick={() => setOpenMenu(!openMenu)} Links={Links} />
+          )}
+        </div>
+      </div>
     </div>
-    <div className="right"></div>
-  </div>
-);
+  );
+};
 
 export default Menu;

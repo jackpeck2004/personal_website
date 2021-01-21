@@ -8,6 +8,7 @@
   height: 100px;
   font-size: 1rem;
   z-index: 100;
+  box-shadow: $shadow-header;
 
   display: flex;
   justify-content: space-between;
@@ -17,6 +18,64 @@
     padding-left: 20px;
     &.logo {
       font-size: 20px;
+    }
+  }
+
+  .right {
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mobile {
+      button {
+        background: none;
+        border: none;
+        z-index: 200;
+
+        &.fixed {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+        }
+
+        &:focus {
+          border: none;
+        }
+
+        .icon {
+          width: 50px;
+        }
+      }
+
+      .mobileMenuScreen {
+        background: white;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        z-index: 150;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        nav {
+          .nav__links {
+            list-style: none;
+            text-align: center;
+            font-size: 2em;
+
+            li {
+              margin: 20px 0;
+            }
+          }
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        display: none;
+      }
     }
   }
 }
