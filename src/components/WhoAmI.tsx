@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import '../styles/WhoAmI.scss';
 
 const WhoAmI = () => {
   return (
-    <div className="WhoAmI">
+    <div className="WhoAmI" id="whoami">
       <img
         src="https://uisidict.sirv.com/Images/GiacomoPasin.jpg"
         width="1134"
@@ -31,4 +32,3 @@ const WhoAmI = () => {
 };
 
 export default WhoAmI;
-
