@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 .Grid {
   margin-top: 10vh;
@@ -13,8 +13,8 @@
     text-align: center;
     display: grid;
     grid-template-areas:
-      "a a"
-      "b c";
+      'a a'
+      'b c';
     // grid-column-gap: 10vw;
     grid-row-gap: 10vh;
 
@@ -61,12 +61,21 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .projects {
+    h1 {
+      margin-top: 120px;
+    }
+  }
   .Grid {
     .AboutMe {
       // grid-template-areas:
       //   "a a a"
       //   "b b b "
       //   "c c c";
+
+      h1 {
+        margin-top: 120px;
+      }
 
       display: flex;
       flex-direction: column;

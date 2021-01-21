@@ -10,7 +10,7 @@ import HamburgerIcon from '../assets/hamburger.svg';
 import CrossIcon from '../assets/cross.svg';
 
 const st = (target: string) => {
-  scrollTo(target);
+  scrollTo(target, 'start');
 };
 
 export const Links: React.FC = () => (
@@ -29,6 +29,11 @@ export const Links: React.FC = () => (
       <li>
         <a className="nav_link" onClick={() => st('.projects')}>
           Projects
+        </a>
+      </li>
+      <li>
+        <a className="nav_link" onClick={() => st('.contactFormSection')}>
+          Contact
         </a>
       </li>
     </ul>
