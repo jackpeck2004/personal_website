@@ -5,7 +5,7 @@ import "../styles/Sidebar.scss";
 import { Links } from "./Menu";
 
 interface SidebarProps {
-  initCollapsed: boolean
+  initCollapsed: boolean;
 }
 
 export let openSidebar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,13 +14,13 @@ export let sidebarState: boolean;
 const Sidebar: React.FC<SidebarProps> = ({ initCollapsed }) => {
   const [collapsed, setCollapsed] = React.useState(initCollapsed);
 
-  openSidebar = setCollapsed
-  sidebarState = collapsed
+  openSidebar = setCollapsed;
+  sidebarState = collapsed;
 
-  if (collapsed) return null
+  if (collapsed) return null;
 
   return (
-    <div className='Sidebar'>
+    <div className="Sidebar">
       <button onClick={() => setCollapsed(!collapsed)}>
         <CaretRightFilled />
       </button>
@@ -28,6 +28,6 @@ const Sidebar: React.FC<SidebarProps> = ({ initCollapsed }) => {
       <Links />
     </div>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;

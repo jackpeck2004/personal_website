@@ -1,7 +1,7 @@
-import { Button, Form, Input } from 'antd';
-import axios from 'axios';
-import React from 'react';
-import '../styles/Contact.scss';
+import { Button, Form, Input } from "antd";
+import axios from "axios";
+import React from "react";
+import "../styles/Contact.scss";
 // import { Store } from 'antd/lib/form/interface'
 
 const layout = {
@@ -21,7 +21,7 @@ const tailLayout = {
 
 const ContactForm = () => {
   const onFinish = (values: any) => {
-    axios.post('/api/email', {
+    axios.post("/api/email", {
       email: {
         ...values,
       },
@@ -31,7 +31,7 @@ const ContactForm = () => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    alert('Error, failed to send message');
+    alert("Error, failed to send message");
     console.log(errorInfo);
   };
 
@@ -56,8 +56,8 @@ const ContactForm = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your name!',
-              type: 'string',
+              message: "Please input your name!",
+              type: "string",
             },
           ]}
         >
@@ -70,8 +70,8 @@ const ContactForm = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your email!',
-              type: 'email',
+              message: "Please input your email!",
+              type: "email",
             },
           ]}
         >

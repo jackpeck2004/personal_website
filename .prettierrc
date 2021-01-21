@@ -1,7 +1,7 @@
 {
   "arrowParens": "always",
   "semi": true,
-  "singleQuote": true,
+  "singleQuote": false,
   "trailingComma": "es5",
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false

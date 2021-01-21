@@ -1,29 +1,37 @@
-import React from 'react';
-import '../styles/ProgrammingLanguages.scss';
+import React from "react";
+import "../styles/ProgrammingLanguages.scss";
 
 const languages = [
+  // {
+  //   name: 'HTML',
+  //   basic: false,
+  // },
+  // {
+  //   name: 'CSS',
+  //   basic: false,
+  // },
   {
-    name: 'HTML',
+    name: "JavaScript",
     basic: false,
   },
   {
-    name: 'CSS',
+    name: "Typescript",
     basic: false,
   },
   {
-    name: 'JavaScript',
+    name: "Python",
     basic: false,
   },
   {
-    name: 'Python',
-    basic: false,
-  },
-  {
-    name: 'Swift',
+    name: "Swift",
     basic: true,
   },
   {
-    name: 'Typescript',
+    name: "PHP",
+    basic: false,
+  },
+  {
+    name: "Blade",
     basic: false,
   },
 ];
