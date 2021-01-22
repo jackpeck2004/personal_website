@@ -1,8 +1,8 @@
-import React from "react";
-import "../styles/Projects.scss";
-import ProgrammingLanguages from "./ProgrammingLanguages";
-import ProjectSection from "./ProjectSection";
-import WhoAmI from "./WhoAmI";
+import React from 'react';
+import '../styles/Projects.scss';
+import ProgrammingLanguages from './ProgrammingLanguages';
+import ProjectSection from './ProjectSection';
+import WhoAmI from './WhoAmI';
 
 const Projects = () => {
   return (

@@ -1,62 +1,118 @@
 @import "variables.scss";
 
-div {
-  .Main {
-    .menu {
-      font-size: 0.5em;
-      position: sticky;
-      top: 0;
-      box-shadow: $shadow-header;
-      z-index: 10000;
+.menu {
+  background: white;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  height: 100px;
+  font-size: 1rem;
+  z-index: 100;
+  box-shadow: $shadow-header;
 
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        // padding: 30px 10%;
-        padding: 0.5% 10%;
-        background-color: $font-color;
+  .container {
+    height: 100%;
+    margin: 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .logo {
-          cursor: pointer;
+    @media only screen and (min-width: $xxl) {
+      margin: 0 20%;
+    }
+
+    @media only screen and (min-width: $xl) {
+      margin: 0 15%;
+    }
+
+    @media only screen and (max-width: $xl) {
+      margin: 0 10%;
+    }
+
+    .left {
+      padding-left: 20px;
+      &.logo {
+        font-size: 20px;
+      }
+    }
+
+    .right {
+      padding-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .mobile {
+        button {
+          background: none;
+          border: none;
+          z-index: 200;
+
+          &.fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+          }
+
+          &:focus {
+            border: none;
+          }
+
+          .icon {
+            width: 50px;
+          }
         }
 
-        nav {
-          margin-top: 1.1%;
-          z-index: 10;
+        .mobileMenuScreen {
+          background: white;
+          position: fixed;
+          height: 100vh;
+          width: 100vw;
+          z-index: 150;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-          .nav__links {
-            list-style: none;
-            text-decoration: none;
-            display: flex;
+          nav {
+            .nav__links {
+              list-style: none;
+              text-align: center;
+              font-size: 2em;
 
-            li {
-              padding: 0px 20px;
-
-              .nav_link {
-                transition: color 0.3s ease 0s;
-                color: black;
-
-                &:hover {
-                  color: $light-blue;
-                }
+              li {
+                margin: 20px 0;
               }
             }
           }
         }
 
-        .cta {
-          padding: 9px 25px;
-          background-color: transparent;
-          border: 2px solid $light-blue;
-          color: $light-blue;
-          border-radius: 50px;
-          cursor: pointer;
-          transition: background-color 0.3s ease 0s;
+        @media only screen and (min-width: $lg) {
+          display: none;
+        }
+      }
 
-          &:hover {
-            background-color: $light-blue;
-            color: white;
+      .desktop {
+        nav {
+          .nav__links {
+            list-style: none;
+            min-width: 500px;
+            width: 25vw;
+            display: flex;
+            justify-content: space-between;
+
+            .nav_link {
+              color: black;
+
+              &:hover {
+                color: $light-blue;
+              }
+            }
+          }
+
+          @media only screen and (max-width: $lg) {
+            display: none;
           }
         }
       }
