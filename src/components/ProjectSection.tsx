@@ -46,6 +46,13 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       framework: ["Wordpress", "Skeleton CSS"],
       link: "https://dev-orientamento.pantheonsite.io",
     },
+    {
+      key: "4",
+      name: "T.W.I.N Media Center",
+      language: ["php", "blade"],
+      framework: ["Wordpress", "Laravel"],
+      link: "https://twin.services/it/media-center",
+    },
   ];
 
   if (props.isTemp) {
