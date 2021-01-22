@@ -1,6 +1,13 @@
 @import "variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
 
+// @media only screen and (max-width: 992px) {
+h2 {
+  padding-top: 120px;
+  font-size: 1.2em;
+}
+// }
+
 .section {
   height: 100vh;
   display: grid;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "variables.scss";
 
 div {
@@ -63,3 +64,126 @@ div {
     }
   }
 }
+=======
+@import "variables.scss";
+
+.menu {
+  background: white;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  height: 100px;
+  font-size: 1rem;
+  z-index: 100;
+  box-shadow: $shadow-header;
+
+  .container {
+    height: 100%;
+    margin: 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (min-width: $xxl) {
+      margin: 0 20%;
+    }
+
+    @media only screen and (min-width: $xl) {
+      margin: 0 15%;
+    }
+
+    @media only screen and (max-width: $xl) {
+      margin: 0 10%;
+    }
+
+    .left {
+      padding-left: 20px;
+      &.logo {
+        font-size: 20px;
+      }
+    }
+
+    .right {
+      padding-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .mobile {
+        button {
+          background: none;
+          border: none;
+          z-index: 200;
+
+          &.fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+          }
+
+          &:focus {
+            border: none;
+          }
+
+          .icon {
+            width: 50px;
+          }
+        }
+
+        .mobileMenuScreen {
+          background: white;
+          position: fixed;
+          height: 100vh;
+          width: 100vw;
+          z-index: 150;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          nav {
+            .nav__links {
+              list-style: none;
+              text-align: center;
+              font-size: 2em;
+
+              li {
+                margin: 20px 0;
+              }
+            }
+          }
+        }
+
+        @media only screen and (min-width: $lg) {
+          display: none;
+        }
+      }
+
+      .desktop {
+        nav {
+          .nav__links {
+            list-style: none;
+            min-width: 500px;
+            width: 25vw;
+            display: flex;
+            justify-content: space-between;
+
+            .nav_link {
+              color: black;
+
+              &:hover {
+                color: $light-blue;
+              }
+            }
+          }
+
+          @media only screen and (max-width: $lg) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+>>>>>>> dev
