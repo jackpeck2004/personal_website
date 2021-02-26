@@ -53,6 +53,13 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       framework: ["Wordpress", "Laravel"],
       link: "https://twin.services/media-center",
     },
+    {
+      key: "5",
+      name: "Simple Blockchain",
+      language: ["Python"],
+      framework: [],
+      link: "https://github.com/jackpeck2004/Blockchain#readme",
+    },
   ];
 
   if (props.isTemp) {
