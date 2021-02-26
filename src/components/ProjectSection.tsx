@@ -51,7 +51,7 @@ const ProjectSection: React.FC<ProjectProps> = (props) => {
       name: "T.W.I.N Media Center",
       language: ["php", "blade"],
       framework: ["Wordpress", "Laravel"],
-      link: "https://twin.services/it/media-center",
+      link: "https://twin.services/media-center",
     },
   ];
 
