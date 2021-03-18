@@ -51,7 +51,10 @@ const Meta: React.FC<MetaProps> = ({ pageTitle }) => {
       {/* <meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
       <title>{siteTitle}</title>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet"
+      />
     </Head>
   );
 };

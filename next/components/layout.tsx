@@ -1,6 +1,6 @@
 import React from 'react';
 import Meta from './meta';
-import Topbar from './navbar';
+import Topbar from './topbar';
 
 interface LayoutProps {
   pageTitle?: string;

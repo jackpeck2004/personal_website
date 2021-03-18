@@ -4,13 +4,13 @@ module.exports = {
   theme: {
     extend: {
       transitionDuration: {
-        '2000': '2000ms',
-        '4000': '4000ms'
-      }
+        2000: '2000ms',
+        4000: '4000ms',
+      },
     },
     fontFamily: {
-      'title': ['Quicksand']
-    }
+      title: ['Quicksand'],
+    },
   },
   variants: {
     extend: {},
