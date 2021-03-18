@@ -43,17 +43,17 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <article className="container mx-auto">
-        <div className="mt-96">
-          <h2 className="font-bold text-8xl">
+        <div className="mt-32 md:mt-64 lg:mt-96">
+          <h2 className="font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             {/*Hi,<br />*/} I'm Giacomo Pasin. <br />
             I'm a IB Student and
             <br /> Software Developer
           </h2>
-          <div className="grid grid-cols-3 gap-16 mt-12">
+          <div className="grid md:grid-cols-3 gap-16 mt-12">
             {highlights.map(({ title, description }, idx) => (
               <div key={idx} className="py-2 border-t-2">
-                <h3 className="lowercase text-4xl">{title}</h3>
-                <p className="mt-2 lowercase text-lg">{description}</p>
+                <h3 className="lowercase text-2xl md:text-4xl">{title}</h3>
+                <p className="mt-2 lowercase text-md">{description}</p>
               </div>
             ))}
           </div>
