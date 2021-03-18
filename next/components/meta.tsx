@@ -1,6 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import { SITE_NAME } from "../lib/constants";
+import React from 'react';
+import Head from 'next/head';
+import { SITE_NAME } from '../lib/constants';
 
 interface MetaProps {
   pageTitle?: string;
@@ -46,10 +46,12 @@ const Meta: React.FC<MetaProps> = ({ pageTitle }) => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={"Giacomo Pasin developer portfolio and personal website"}
+        content={'Giacomo Pasin developer portfolio and personal website'}
       />
       {/* <meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
       <title>{siteTitle}</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
     </Head>
   );
 };
