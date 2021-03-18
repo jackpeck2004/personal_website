@@ -11,6 +11,7 @@ const Scroller: React.FC = () => {
 
 
     setInterval(function() {
+      //@ts-ignore
       obj.style.cssText = "background-color: " + colors[currentIndex];
       currentIndex++;
       if (currentIndex == undefined || currentIndex >= colors.length) {
