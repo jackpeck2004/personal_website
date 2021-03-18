@@ -32,7 +32,7 @@ const Home: React.FC = () => {
       description: (
         <p>
           I'm currently the chief technology officer at{' '}
-          <a href="twin.services" className="uppercase underline">
+          <a target="_blank" href="https://twin.services" className="uppercase underline">
             T.W.I.N <span className="lowercase">srl</span>
           </a>
         </p>
