@@ -7,6 +7,9 @@ module.exports = {
         2000: '2000ms',
         4000: '4000ms',
       },
+      margin: {
+        '20vh': '20vh',
+      },
     },
     fontFamily: {
       title: ['Quicksand'],
