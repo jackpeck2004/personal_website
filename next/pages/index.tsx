@@ -32,7 +32,11 @@ const Home: React.FC = () => {
       description: (
         <p>
           I'm currently the chief technology officer at{' '}
-          <a target="_blank" href="https://twin.services" className="uppercase underline">
+          <a
+            target="_blank"
+            href="https://twin.services"
+            className="uppercase underline"
+          >
             T.W.I.N <span className="lowercase">srl</span>
           </a>
         </p>
@@ -43,10 +47,10 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <article className="container mx-auto">
-        <div className="mt-32 md:mt-64 lg:mt-96">
+        <div className="mt-20vh">
           <h2 className="font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             {/*Hi,<br />*/} I'm Giacomo Pasin. <br />
-            I'm a IB Student and
+            IB Student and
             <br /> Software Developer
           </h2>
           <div className="grid md:grid-cols-3 gap-16 mt-12">
