@@ -7,7 +7,7 @@ const Topbar: React.FC = () => {
     <>
       <div className="h-20 flex items-center">
         <div className="container mx-auto">
-          <a href="/" className="uppercase font-title font-bold text-2xl">
+          <a href="/" className="uppercase font-semibold text-2xl">
             {SITE_NAME}
           </a>
         </div>
