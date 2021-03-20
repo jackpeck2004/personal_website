@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './footer';
 import Menu from './menu';
 import Meta from './meta';
 import Topbar from './topbar';
@@ -18,6 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
         <main>{children}</main>
       </div>
       {/* Footer */}
+      <Footer />
     </>
   );
 };
