@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
+import Projects from '../components/pageSections/projects';
 import { FixedLengthArray } from '../lib/types';
 
 interface Highlight {
@@ -63,17 +64,7 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="mt-32">
-          <h2
-            id="projects"
-            className="font-bold lowercase text-2xl sm:text-4xl md:text-5cl lg:text-6xl xl:text-7xl"
-          >
-            Projects
-          </h2>
-          <p className="mt-10">
-            <i>projects coming soon...</i>
-          </p>
-        </div>
+        <Projects />
       </article>
     </Layout>
   );
