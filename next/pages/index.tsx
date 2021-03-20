@@ -36,6 +36,7 @@ const Home: React.FC = () => {
             target="_blank"
             href="https://twin.services"
             className="uppercase underline"
+            rel="noopener"
           >
             T.W.I.N <span className="lowercase">srl</span>
           </a>
