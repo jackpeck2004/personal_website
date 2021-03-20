@@ -50,9 +50,9 @@ const Home: React.FC = () => {
       <article className="container mx-auto">
         <div className="mt-20vh">
           <h2 className="font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-            {/*Hi,<br />*/} I'm Giacomo Pasin. <br />
-            IB Student and
-            <br /> Software Developer
+            I'm Giacomo Pasin. <br />
+            IB Student and <br />
+            Software Developer
           </h2>
           <div className="grid md:grid-cols-3 gap-16 mt-12">
             {highlights.map(({ title, description }, idx) => (
