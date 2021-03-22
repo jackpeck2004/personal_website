@@ -42,6 +42,7 @@ func main() {
 
 	r.HandleFunc("/projects", getProjects).Methods("GET")
 	r.HandleFunc("/project/{id}", getProject).Methods("GET")
+	r.HandleFunc("/project", createProject).Methods("POST")
 
 	log.Printf("Server Listening on port 8000...")
 	log.Fatal(http.ListenAndServe(":8000", r))

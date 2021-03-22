@@ -20,8 +20,8 @@ func rowToProject(row *sql.Rows) (models.Project, error) {
 		description string
 		languages string
 		frameworks string
-		githubUrl *string
-		projectUrl *string
+		githubUrl sql.NullString
+		projectUrl sql.NullString
 		createdAt *time.Time
 		updatedAt *time.Time
 	)
@@ -100,8 +100,8 @@ func getProject(w http.ResponseWriter, r *http.Request) {
 		description string
 		languages string
 		frameworks string
-		githubUrl *string
-		projectUrl *string
+		githubUrl sql.NullString
+		projectUrl sql.NullString
 		createdAt *time.Time
 		updatedAt *time.Time
 	)
@@ -138,5 +138,62 @@ func getProject(w http.ResponseWriter, r *http.Request) {
 
 
 	encoder.Encode(project)
+
+}
+
+func createProject(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var project models.Project
+
+	_ = json.NewDecoder(r.Body).Decode(&project)
+
+	now := time.Now()
+
+	project.CreatedAt = &now
+	project.UpdatedAt = &now
+
+	// var gurl *string
+	// var purl *string
+
+
+	// if project.GithubUrl.Valid {
+	// 	tmp := ""
+	// 	tmp = project.GithubUrl.String
+	// 	gurl = &tmp
+	// }
+
+	// if project.ProjectUrl.Valid {
+	// 	tmp := ""
+	// 	tmp = project.ProjectUrl.String
+	// 	purl = &tmp
+	// }
+
+	sql := fmt.Sprintf(`INSERT INTO projects VALUES (
+		null,
+		'%s',
+		'%s',
+		'%s',
+		'%s',
+		'%s',
+		'%s',
+		CURRENT_TIMESTAMP(),
+		CURRENT_TIMESTAMP())`,
+		project.Name,
+		project.Description,
+		strings.Join(project.Languages, ", "),
+		strings.Join(project.Frameworks, ", "),
+		project.GithubUrl,
+		project.ProjectUrl,
+	)
+
+    res, err := db.Exec(sql)
+
+	if err != nil {
+		log.Printf("Error when inserting project into db: %s", err)
+		return
+	}
+
+	fmt.Println(res)
+	
 
 }
