@@ -7,7 +7,7 @@ interface AccordianProps {
 }
 
 const ProjectAccordian: React.FC<AccordianProps> = ({ project, id }) => {
-  const [show, setShow] = React.useState<bool>(false);
+  const [show, setShow] = React.useState<boolean>(false);
 
   const [divClasses, setDivClasses] = React.useState<string>(
     'cursor-pointer border-b-2 divide-y py-4'
