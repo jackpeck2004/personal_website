@@ -1,6 +1,27 @@
 import React from 'react';
+import ProjectAccordian from '../projectAccordian';
+import { Project } from '../../lib/types';
 
 const Projects: React.FC = () => {
+  const [projects, setProjects] = React.useState<Project[]>([
+    {
+      name: 'Simple Blockchain',
+      description:
+        "This project is a blockchain implementation created using linked lists based on the information and lecture given to us in the IB CompSci HL course. It was created to check my understanding and in order to better percieve it's possible usages and structure.",
+      languages: ['Python'],
+      frameworks: [],
+      githubUrl: 'https://github.com/jackpeck2004/Blockchain',
+    },
+    {
+      name: 'T.W.I.N Media Center',
+      description:
+        'A section of the website where the company can display press releases and share them with the investor community.',
+      languages: ['php', 'Blade'],
+      frameworks: ['WordPress', 'Laravel'],
+      projectUrl: 'https://twin.services/media-center',
+    },
+  ]);
+
   return (
     <div className="mt-32">
       <h2
@@ -10,7 +31,9 @@ const Projects: React.FC = () => {
         Projects
       </h2>
       <p className="mt-10">
-        <i>projects coming soon...</i>
+        {projects.map((project: Project, idx: number) => (
+          <ProjectAccordian key={idx} id={idx} project={project} />
+        ))}
       </p>
     </div>
   );
