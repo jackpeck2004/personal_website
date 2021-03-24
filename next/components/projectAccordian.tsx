@@ -44,7 +44,7 @@ const ProjectAccordian: React.FC<AccordianProps> = ({ project, id }) => {
               </ul>
             )}
           </div>
-          <div className="flex mt-4 text-gray-500 underline ">
+          <div className="flex mt-4 dark:text-gray-400 text-gray-500 underline ">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}

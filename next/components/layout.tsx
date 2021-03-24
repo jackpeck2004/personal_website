@@ -11,7 +11,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
   return (
-    <>
+    <div className="dark:bg-black dark:text-white">
       <Topbar />
       <Menu />
       {pageTitle ? <Meta pageTitle={pageTitle} /> : <Meta />}
@@ -20,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
       </div>
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 };
 
