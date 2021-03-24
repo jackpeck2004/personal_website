@@ -8,6 +8,7 @@ const Topbar: React.FC = () => {
   React.useEffect(() => {
     if (
       localStorage.theme === 'dark' ||
+      //@ts-ignore
       (!'theme' in localStorage &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
