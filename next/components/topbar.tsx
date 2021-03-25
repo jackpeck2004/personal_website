@@ -18,7 +18,7 @@ const Topbar: React.FC = () => {
     }
   }, []);
 
-  const toggleDark: void = () => {
+  const toggleDark = () => {
     let htmlClasses = document.querySelector('html').classList;
     if (localStorage.theme == 'dark') {
       htmlClasses.remove('dark');
