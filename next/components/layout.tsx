@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
       <Topbar />
       <Menu />
       {pageTitle ? <Meta pageTitle={pageTitle} /> : <Meta />}
-      <div>
+      <div className="min-h-screen">
         <main>{children}</main>
       </div>
       {/* Footer */}
