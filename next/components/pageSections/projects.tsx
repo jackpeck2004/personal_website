@@ -20,6 +20,15 @@ const Projects: React.FC = () => {
       frameworks: ['WordPress', 'Laravel'],
       projectUrl: 'https://twin.services/media-center',
     },
+    {
+      name: 'EigenVector Centrality Web Scraper',
+      description:
+        'A simple web scraper which creates an Eigenvector centrality graph starting from a web page. It saves the graphs to json and reads if already exists. It was started a school project and is not developed personally in free time to expand knowledge on web science algorithms',
+      languages: ['Python'],
+      frameworks: [],
+      githubUrl:
+        'https://github.com/jackpeck2004/cs/tree/main/DP1/HL_09_Crawler',
+    },
   ]);
 
   return (
