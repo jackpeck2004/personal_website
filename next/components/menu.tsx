@@ -28,6 +28,7 @@ const Menu: React.FC = () => {
             to={link.anchor}
             smooth={true}
             spy={true}
+            key={idx}
           >
             {link.desc}
           </Link>
