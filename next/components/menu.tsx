@@ -20,19 +20,20 @@ const Menu: React.FC = () => {
   ];
 
   return (
-    <div className="fixed transform -rotate-90 top-64 -right-16 md:right-0 uppercase flex flex-row-reversed w-48 justify-between">
+    <div
+      className="fixed transform -rotate-90 top-64 -right-16 2xl:right-0 uppercase flex flex-row-reversed w-48 justify-between">
       {links &&
-        links.map((link: ScrollLink, idx: number) => (
-          <Link
-            className="cursor-pointer"
-            to={link.anchor}
-            smooth={true}
-            spy={true}
-            key={idx}
-          >
-            {link.desc}
-          </Link>
-        ))}
+      links.map((link: ScrollLink, idx: number) => (
+        <Link
+          className="cursor-pointer"
+          to={link.anchor}
+          smooth={true}
+          spy={true}
+          key={idx}
+        >
+          {link.desc}
+        </Link>
+      ))}
     </div>
   );
 };
