@@ -29,6 +29,13 @@ const Projects: React.FC = () => {
       githubUrl:
         'https://github.com/jackpeck2004/cs/tree/main/DP1/HL_09_Crawler',
     },
+    {
+      name: '.ia',
+      description:
+        'A search engine for social media influential people on twitter and linkedin. It is created as a project for my IB CompSci Internal Assessment. More coming soon...',
+      languages: ['JavaScript', 'GraphQL'],
+      frameworks: ['Vue', 'apollo', 'express'],
+    },
   ]);
 
   return (
