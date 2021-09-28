@@ -29,12 +29,21 @@ const Projects: React.FC = () => {
       githubUrl:
         'https://github.com/jackpeck2004/cs/tree/main/DP1/HL_09_Crawler',
     },
+    // {
+    //   name: '.ia',
+    //   description:
+    //     'A search engine for social media influential people on twitter and linkedin. It is created as a project for my IB CompSci Internal Assessment. More coming soon...',
+    //   languages: ['JavaScript', 'GraphQL'],
+    //   frameworks: ['Vue', 'apollo', 'express'],
+    // },
     {
-      name: '.ia',
+      name: 'H-IS Careers Guidance',
       description:
-        'A search engine for social media influential people on twitter and linkedin. It is created as a project for my IB CompSci Internal Assessment. More coming soon...',
-      languages: ['JavaScript', 'GraphQL'],
-      frameworks: ['Vue', 'apollo', 'express'],
+        'A website for Careers Guidance at my high school. Made to enable every student to remain up to date through a single location accessible from anywhere through the web. Furthermore, it allows the department responsible for the guidance to easily update latest events and blog posts.',
+      languages: ['php'],
+      frameworks: ['WordPress'],
+      githubUrl: 'https://github.com/jackpeck2004/orientamento_website',
+      projectUrl: 'https://careersguidance.h-is.com',
     },
   ]);
 
