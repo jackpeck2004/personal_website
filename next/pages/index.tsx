@@ -48,7 +48,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      <article className="container mx-auto">
+      <article className="container mx-auto sm:px-16 px-6">
         <div className="mt-20vh">
           <h2 className="font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             I'm Giacomo Pasin. <br />

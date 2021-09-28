@@ -32,7 +32,7 @@ const Topbar: React.FC = () => {
 
   return (
     <>
-      <div className="h-20 flex items-center">
+      <div className="h-20 flex items-center px-4 lg:mx-8">
         <div className="container mx-auto flex justify-between">
           <a href="/" className="uppercase font-semibold text-2xl">
             {SITE_NAME}
