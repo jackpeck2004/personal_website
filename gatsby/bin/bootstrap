@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-echo "starting bootstrap";
-
-./bin/cleanup;
-./bin/install;

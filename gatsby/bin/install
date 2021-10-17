@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-echo "cleaning up";
-npm install;
-npm update;
-npm audit;
-npm audit fix;

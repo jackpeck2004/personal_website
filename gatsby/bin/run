@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-echo "starting development server";
-npm run vercel:dev
