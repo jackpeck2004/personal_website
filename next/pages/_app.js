@@ -1,5 +1,4 @@
 import Layout from "../components/layouts/main";
-import "../styles/index.scss";
 
 const Website = ({ Component, pageProps, router }) => {
   return (

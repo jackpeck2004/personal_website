@@ -1,7 +1,7 @@
 {
-  "name": "NextJS Template",
+  "name": "Giacomo Pasin Portfolio Website",
   "version": "1.0.0",
-  "description": "Simple NextJS barebones template",
+  "description": "Giacomo Pasin personal website made to showcase projects and get to know him",
   "main": "index.js",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "keywords": [],
-  "author": "Giacomo Pasin<giacomo@twin.services>",
+  "author": "Giacomo Pasin<giacomo.pasin@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.1.3",

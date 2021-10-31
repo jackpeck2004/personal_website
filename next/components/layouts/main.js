@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../navigation/Navbar.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Main = ({ children, router }) => {
@@ -11,7 +10,7 @@ const Main = ({ children, router }) => {
 	        To set tab-bar color for safari uncomment:
 	        <meta name="theme-color" content="#ffffff" />
 	    */}
-        <title>NextJs Template</title>
+        <title>Giacomo Pasin</title>
       </Head>
       <div>{children}</div>
     </>

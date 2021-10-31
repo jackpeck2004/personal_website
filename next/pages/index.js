@@ -1,9 +1,11 @@
 import { Container } from "react-bootstrap";
-import Image from "next/image";
 
 const Page = () => {
   return (
-  {/*Index page, this will be the page loaded when you type /*/}
+  	<>
+	  {/*Index page, this will be the page loaded when you type /*/}
+	  <h1>hello</h1>
+  	</>
   );
 };
 
