@@ -1,9 +1,74 @@
+import Link from "next/link";
+import styled from "@emotion/styled";
+import { Container } from "react-bootstrap";
+
+const Body = styled.div`
+  background: ${props => props.theme.colors.primaryBackground};
+  min-height: 94vh;
+  color: ${props => props.theme.colors.primary};
+`;
+
+const Title = styled.h1`
+  padding-top: 20vh;
+  font-size: 8rem;
+  font-weight: bold;
+`;
+
+const Characteristics = styled.div`
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+`;
+
+const Characteristic = styled.div`
+  border-top: 3px solid lightgrey;
+`;
+
+const CharTitle = styled.h3`
+  margin-top: 10px;
+`;
+
+const Anchor = styled.a`
+  color: ${props => props.theme.colors.primary};
+`;
+
 const Page = () => {
   return (
-    <>
+    <Body>
       {/*Index page, this will be the page loaded when you type /*/}
-      <h1>hello</h1>
-    </>
+      <Container>
+        <Title>
+          I&apos;m Giacomo Pasin. <br /> IB Student and <br /> Software
+          Developer
+        </Title>
+        <Characteristics>
+          <Characteristic>
+            <CharTitle>my passions</CharTitle>
+            <span>
+              software development, electrical engineering, technology,
+              basketball and food
+            </span>
+          </Characteristic>
+          <Characteristic>
+            <CharTitle>my academics</CharTitle>
+            <span>
+              currently in ib diploma program studying physics hl, compsci hl
+              and maths hl
+            </span>
+          </Characteristic>
+          <Characteristic>
+            <CharTitle>my work experience</CharTitle>
+            <span>
+              i&apos;m currently the chief technology officer at{" "}
+              <Link href="https://twin.services" passHref={true}>
+                <Anchor target="_blank">T.W.I.N srl</Anchor>
+              </Link>
+            </span>
+          </Characteristic>
+        </Characteristics>
+      </Container>
+    </Body>
   );
 };
 
