@@ -1,17 +1,13 @@
 import Link from "next/link";
+import { Title } from "../components/common/headings";
 import styled from "@emotion/styled";
 import { Container } from "react-bootstrap";
+import Projects from "../components/partials/projects";
 
 const Body = styled.div`
   background: ${props => props.theme.colors.primaryBackground};
   min-height: 94vh;
   color: ${props => props.theme.colors.primary};
-`;
-
-const Title = styled.h1`
-  padding-top: 20vh;
-  font-size: 8rem;
-  font-weight: bold;
 `;
 
 const Characteristics = styled.div`
@@ -67,6 +63,7 @@ const Page = () => {
             </span>
           </Characteristic>
         </Characteristics>
+        <Projects />
       </Container>
     </Body>
   );

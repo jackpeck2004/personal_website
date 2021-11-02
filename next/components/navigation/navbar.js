@@ -1,7 +1,8 @@
-import styled from "@emotion/styled";
-import { SunIcon, MoonIcon } from "@heroicons/react/outline";
-import { Container } from "react-bootstrap";
 import Button from "../common/button";
+import { Link, animateScroll as scroll } from "react-scroll";
+import styled from "@emotion/styled";
+import { Container } from "react-bootstrap";
+import { SunIcon, MoonIcon } from "@heroicons/react/outline";
 
 const iconStyle = { width: "2rem", height: "2rem" };
 
@@ -17,19 +18,41 @@ const Sub = styled.div`
   align-items: center;
 `;
 
+const Menu = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Anchor = styled.a`
+  margin: 0 15px;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+`;
+
 const Navbar = ({ currentTheme, changeThemeFn }) => {
   return (
     <Bar>
       <Container>
         <Sub>
-          <h1>Giacomo Pasin</h1>
-          <Button circular border onClick={() => changeThemeFn(!currentTheme)}>
-            {currentTheme ? (
-              <SunIcon style={iconStyle} />
-            ) : (
-              <MoonIcon style={{ ...iconStyle, color: "white" }} />
-            )}
-          </Button>
+          <h1 onClick={() => scroll.scrollToTop()}>Giacomo Pasin</h1>
+          <Menu>
+            <Link to="projects" smooth spy>
+              <Anchor>Projects</Anchor>
+            </Link>
+            <Button
+              circular
+              border
+              onClick={() => changeThemeFn(!currentTheme)}
+            >
+              {currentTheme ? (
+                <SunIcon style={iconStyle} />
+              ) : (
+                <MoonIcon style={{ ...iconStyle, color: "white" }} />
+              )}
+            </Button>
+          </Menu>
         </Sub>
       </Container>
     </Bar>
