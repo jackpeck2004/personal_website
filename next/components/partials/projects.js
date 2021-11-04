@@ -1,37 +1,74 @@
 import styled from "@emotion/styled";
 import { SubHeading } from "../common/headings";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const ProjectSection = styled.section`
   margin-top: 10vh;
-	display: grid;
-	grid-template-columns; 1fr 1fr 1fr;
-	grid-column-gap: 100px;
 `;
 
-const Project = () => (
-  <Card style={{ width: "18rem" }}>
-    <Card.Img variant="top" src="holder.js/100px180" />
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-  </Card>
-);
+const Projects = styled.div`
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+`;
 
-const Projects = () => {
+const Project = ({
+  title,
+  langs,
+  frameworks,
+  description,
+  gitHubUrl,
+  liveUrl
+}) => {
   return (
-    <ProjectSection id="projects">
+    <Card style={{ background: "transparent", border: "1px solid lightgrey" }}>
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">
+          Langs: {langs && langs.join(", ")}
+          <br />
+          {frameworks.length ? "Frameworks: " + frameworks.join(", ") : ""}
+        </Card.Subtitle>
+
+        <Card.Text>{description}</Card.Text>
+        {gitHubUrl && (
+          <Card.Link href={gitHubUrl} target="_blank">
+            GitHub
+          </Card.Link>
+        )}
+        {liveUrl && (
+          <Card.Link href={liveUrl} target="_blank">
+            Live
+          </Card.Link>
+        )}
+      </Card.Body>
+    </Card>
+  );
+};
+
+const Section = ({ projects }) => {
+  return (
+    <ProjectSection>
       <SubHeading>Projects</SubHeading>
       <Projects>
-        <Project />
+        {projects &&
+          projects.map((project, idx) => {
+            return (
+              <Project
+                key={idx}
+                title={project.title}
+                langs={project.languages}
+                frameworks={project.frameworks}
+                description={project.description}
+                liveUrl={project.live && project.live}
+                gitHubUrl={project.github && project.github}
+              />
+            );
+          })}
       </Projects>
     </ProjectSection>
   );
 };
 
-export default Projects;
+export default Section;

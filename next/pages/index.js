@@ -1,9 +1,17 @@
 import Link from "next/link";
+import matter from "gray-matter";
+import fs from "fs";
+import Projects from "../components/partials/projects";
 import { Title } from "../components/common/headings";
 import styled from "@emotion/styled";
 import { Container } from "react-bootstrap";
-import Projects from "../components/partials/projects";
 
+// const ProjectSection = styled.section`
+//   margin-top: 10vh;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-column-gap: 40px;
+// `;
 const Body = styled.div`
   background: ${props => props.theme.colors.primaryBackground};
   min-height: 94vh;
@@ -29,7 +37,9 @@ const Anchor = styled.a`
   color: ${props => props.theme.colors.primary};
 `;
 
-const Page = () => {
+const Page = ({ projects }) => {
+  console.log(projects);
+
   return (
     <Body>
       {/*Index page, this will be the page loaded when you type /*/}
@@ -63,10 +73,47 @@ const Page = () => {
             </span>
           </Characteristic>
         </Characteristics>
-        <Projects />
+        <Projects projects={projects} />
       </Container>
     </Body>
   );
 };
+
+export async function getStaticProps() {
+  const filePath = "_content/projects";
+  const files = fs.readdirSync(filePath);
+
+  const projects = files.map(file => {
+    const data = fs.readFileSync(`${filePath}/${file}`).toString();
+
+    const d = matter(data).data;
+
+    let frameworks = [];
+    if (d.frameworks) frameworks = d.frameworks.split(", ");
+
+    let languages = [];
+    if (d.languages) languages = d.languages.split(", ");
+
+    if (frameworks.length) delete d["frameworks"];
+    if (languages.length) delete d["languages"];
+
+    const f = {
+      frameworks,
+      languages,
+      ...d
+    };
+
+    return {
+      ...f,
+      slug: file.split(".")[0]
+    };
+  });
+
+  return {
+    props: {
+      projects
+    }
+  };
+}
 
 export default Page;
