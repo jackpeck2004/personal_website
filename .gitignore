@@ -2,6 +2,7 @@
 node_modules
 .next
 next/.next
+.nvmrc
 
 /node_modules
 /.pnp

@@ -6,12 +6,6 @@ import { Title } from "../components/common/headings";
 import styled from "@emotion/styled";
 import { Container } from "react-bootstrap";
 
-// const ProjectSection = styled.section`
-//   margin-top: 10vh;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-column-gap: 40px;
-// `;
 const Body = styled.div`
   background: ${props => props.theme.colors.primaryBackground};
   min-height: 94vh;
