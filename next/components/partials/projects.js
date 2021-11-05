@@ -11,6 +11,7 @@ const Projects = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 40px;
+  grid-row-gap: 40px;
 `;
 
 const Project = ({
