@@ -6,7 +6,10 @@ import { ThemeProvider } from "@emotion/react";
 
 const lightTheme = {
   colors: {
+    // Text (or normal colors)
     primary: "black",
+    muted: "lightgrey",
+    // Backgrounds
     primaryBackground: "white",
     hoverBackground: "black"
   }
@@ -14,7 +17,10 @@ const lightTheme = {
 
 const darkTheme = {
   colors: {
+    // Text (or normal colors)
     primary: "white",
+    muted: "lightgrey",
+    // Backgrounds
     primaryBackground: "black",
     hoverBackground: "white"
   }
