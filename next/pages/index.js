@@ -102,7 +102,7 @@ export async function getStaticProps() {
       ...f,
       slug: file.split(".")[0]
     };
-  });
+  }).sort((a, b) => b.title < a.title);
 
   return {
     props: {
