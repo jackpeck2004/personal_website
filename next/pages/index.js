@@ -10,6 +10,7 @@ const Body = styled.div`
   background: ${props => props.theme.colors.primaryBackground};
   min-height: 94vh;
   color: ${props => props.theme.colors.primary};
+  padding: 2vh 0;
 `;
 
 const Characteristics = styled.div`
@@ -20,7 +21,7 @@ const Characteristics = styled.div`
 `;
 
 const Characteristic = styled.div`
-  border-top: 3px solid lightgrey;
+  border-top: 3px solid ${props => props.theme.colors.muted};
 `;
 
 const CharTitle = styled.h3`
@@ -35,7 +36,7 @@ const Page = ({ projects }) => {
   console.log(projects);
 
   return (
-    <Body>
+    <Body id="home">
       {/*Index page, this will be the page loaded when you type /*/}
       <Container>
         <Title>
