@@ -3,6 +3,8 @@ node_modules
 .next
 next/.next
 .nvmrc
+tags
+.idea
 
 /node_modules
 /.pnp
