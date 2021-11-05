@@ -49,7 +49,7 @@ const Project = ({
 
 const Section = ({ projects }) => {
   return (
-    <ProjectSection>
+    <ProjectSection id="projects">
       <SubHeading>Projects</SubHeading>
       <Projects>
         {projects &&

@@ -10,6 +10,9 @@ const Bar = styled.div`
   background-color: ${props => props.theme.colors.primaryBackground};
   color: ${props => props.theme.colors.primary};
   padding: 1vh 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
 `;
 
 const Sub = styled.div`
@@ -36,8 +39,11 @@ const Navbar = ({ currentTheme, changeThemeFn }) => {
     <Bar>
       <Container>
         <Sub>
-          <h1 onClick={() => scroll.scrollToTop()}>Giacomo Pasin</h1>
+          <h1 style={{cursor: "pointer"}} onClick={() => scroll.scrollToTop()}>Giacomo Pasin</h1>
           <Menu>
+            <Link to="home" smooth spy>
+              <Anchor>Home</Anchor>
+            </Link>
             <Link to="projects" smooth spy>
               <Anchor>Projects</Anchor>
             </Link>
