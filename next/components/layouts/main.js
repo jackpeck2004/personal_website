@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Navbar from "../navigation/navbar";
+import Footer from "../navigation/footer";
 import "bootstrap/dist/css/bootstrap.css";
 import { ThemeProvider } from "@emotion/react";
 
@@ -9,6 +10,7 @@ const lightTheme = {
     // Text (or normal colors)
     primary: "black",
     muted: "lightgrey",
+
     // Backgrounds
     primaryBackground: "white",
     hoverBackground: "black"
@@ -20,6 +22,7 @@ const darkTheme = {
     // Text (or normal colors)
     primary: "white",
     muted: "lightgrey",
+
     // Backgrounds
     primaryBackground: "black",
     hoverBackground: "white"
@@ -42,6 +45,7 @@ const Main = ({ children, router: _router }) => {
         </Head>
         <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} />
         {children}
+        <Footer />
       </ThemeProvider>
     </>
   );
