@@ -1,8 +1,8 @@
 import Button from "../common/button";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll, Link } from "react-scroll";
 import styled from "@emotion/styled";
 import { Container } from "react-bootstrap";
-import { SunIcon, MoonIcon } from "@heroicons/react/outline";
+import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 
 const iconStyle = { width: "2rem", height: "2rem" };
 
@@ -39,7 +39,12 @@ const Navbar = ({ currentTheme, changeThemeFn }) => {
     <Bar>
       <Container>
         <Sub>
-          <h1 style={{cursor: "pointer"}} onClick={() => scroll.scrollToTop()}>Giacomo Pasin</h1>
+          <h1
+            style={{ cursor: "pointer" }}
+            onClick={() => scroll.scrollToTop()}
+          >
+            Giacomo Pasin
+          </h1>
           <Menu>
             <Link to="home" smooth spy>
               <Anchor>Home</Anchor>
