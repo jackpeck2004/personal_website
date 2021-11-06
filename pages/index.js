@@ -78,31 +78,33 @@ export async function getStaticProps() {
   const filePath = "_content/projects";
   const files = fs.readdirSync(filePath);
 
-  const projects = files.map(file => {
-    const data = fs.readFileSync(`${filePath}/${file}`).toString();
+  const projects = files
+    .map(file => {
+      const data = fs.readFileSync(`${filePath}/${file}`).toString();
 
-    const d = matter(data).data;
+      const d = matter(data).data;
 
-    let frameworks = [];
-    if (d.frameworks) frameworks = d.frameworks.split(", ");
+      let frameworks = [];
+      if (d.frameworks) frameworks = d.frameworks.split(", ");
 
-    let languages = [];
-    if (d.languages) languages = d.languages.split(", ");
+      let languages = [];
+      if (d.languages) languages = d.languages.split(", ");
 
-    if (frameworks.length) delete d["frameworks"];
-    if (languages.length) delete d["languages"];
+      if (frameworks.length) delete d["frameworks"];
+      if (languages.length) delete d["languages"];
 
-    const f = {
-      frameworks,
-      languages,
-      ...d
-    };
+      const f = {
+        frameworks,
+        languages,
+        ...d
+      };
 
-    return {
-      ...f,
-      slug: file.split(".")[0]
-    };
-  }).sort((a, b) => b.title < a.title);
+      return {
+        ...f,
+        slug: file.split(".")[0]
+      };
+    })
+    .sort((a, b) => b.title < a.title);
 
   return {
     props: {
