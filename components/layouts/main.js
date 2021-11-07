@@ -4,34 +4,13 @@ import Navbar from "../navigation/navbar";
 import Footer from "../navigation/footer";
 import "bootstrap/dist/css/bootstrap.css";
 import { ThemeProvider } from "@emotion/react";
-
-const lightTheme = {
-  colors: {
-    // Text (or normal colors)
-    primary: "black",
-    muted: "lightgrey",
-
-    // Backgrounds
-    primaryBackground: "white",
-    hoverBackground: "black"
-  }
-};
-
-const darkTheme = {
-  colors: {
-    // Text (or normal colors)
-    primary: "white",
-    muted: "lightgrey",
-
-    // Backgrounds
-    primaryBackground: "black",
-    hoverBackground: "white"
-  }
-};
+import useMediaQuery from "../../lib/hooks/useMediaQuery";
+import constants from "../../lib/constants";
 
 const Main = ({ children, router: _router }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
 
+  const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
   return (
     <>
       <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
@@ -43,7 +22,9 @@ const Main = ({ children, router: _router }) => {
           <meta name="theme-color" content="black" />
           <title>Giacomo Pasin</title>
         </Head>
-        <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} />
+        {isDesktop && (
+          <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} />
+        )}
         {children}
         <Footer />
       </ThemeProvider>
