@@ -6,6 +6,6 @@ export const SubHeading = styled.h2`
 
 export const Title = styled.h1`
   padding-top: 20vh;
-  font-size: ${props => props.theme.typography.sizes.title};
+  font-size: ${(props) => props.theme.typography.sizes.title};
   font-weight: bold;
 `;

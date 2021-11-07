@@ -7,8 +7,8 @@ import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 const iconStyle = { width: "2rem", height: "2rem" };
 
 const Bar = styled.div`
-  background-color: ${props => props.theme.colors.primaryBackground};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primaryBackground};
+  color: ${(props) => props.theme.colors.primary};
   padding: 1vh 0;
   width: 100%;
   position: sticky;

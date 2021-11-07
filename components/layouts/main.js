@@ -11,7 +11,7 @@ import useTheme from "../../lib/hooks/useTheme";
 const Main = ({ children, router: _router }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
 
-  const theme = useTheme()
+  const theme = useTheme();
 
   const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
 

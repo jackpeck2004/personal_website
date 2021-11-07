@@ -7,9 +7,9 @@ import styled from "@emotion/styled";
 import { Container } from "react-bootstrap";
 
 const Body = styled.div`
-  background: ${props => props.theme.colors.primaryBackground};
+  background: ${(props) => props.theme.colors.primaryBackground};
   min-height: 94vh;
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   padding: 2vh 0;
 `;
 
@@ -21,7 +21,7 @@ const Characteristics = styled.div`
 `;
 
 const Characteristic = styled.div`
-  border-top: 3px solid ${props => props.theme.colors.muted};
+  border-top: 3px solid ${(props) => props.theme.colors.muted};
 `;
 
 const CharTitle = styled.h3`
@@ -29,7 +29,7 @@ const CharTitle = styled.h3`
 `;
 
 const Anchor = styled.a`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 const Page = ({ projects }) => {
@@ -79,7 +79,7 @@ export async function getStaticProps() {
   const files = fs.readdirSync(filePath);
 
   const projects = files
-    .map(file => {
+    .map((file) => {
       const data = fs.readFileSync(`${filePath}/${file}`).toString();
 
       const d = matter(data).data;

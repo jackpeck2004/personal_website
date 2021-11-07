@@ -33,33 +33,19 @@ const StandardLayout = styled.div`
 `;
 
 const Projects = ({ children }) => {
-
   const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
   const isMedium = useMediaQuery(constants.mediaQueries.IS_MEDIUM);
 
   if (isDesktop) {
-    return (
-          <DesktopProjectsLayout>
-            {children}
-          </DesktopProjectsLayout>
-    )
+    return <DesktopProjectsLayout>{children}</DesktopProjectsLayout>;
   }
 
   if (isMedium) {
-    return (
-      <DoubleLayout>
-        {children}
-      </DoubleLayout>
-    )
+    return <DoubleLayout>{children}</DoubleLayout>;
   }
 
-  return (
-    <StandardLayout>
-      {children}
-    </StandardLayout>
-  )
-}
-
+  return <StandardLayout>{children}</StandardLayout>;
+};
 
 const Project = ({
   title,
@@ -70,7 +56,7 @@ const Project = ({
   liveUrl
 }) => {
   return (
-    <Card style={{ background: "transparent", border: "1px solid lightgrey", }}>
+    <Card style={{ background: "transparent", border: "1px solid lightgrey" }}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
