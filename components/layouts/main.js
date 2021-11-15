@@ -7,6 +7,7 @@ import { ThemeProvider } from "@emotion/react";
 import useMediaQuery from "../../lib/hooks/useMediaQuery";
 import constants from "../../lib/constants";
 import useTheme from "../../lib/hooks/useTheme";
+import HamburgerNavbar from "../navigation/hamburger";
 
 const Main = ({ children, router: _router }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
@@ -26,9 +27,12 @@ const Main = ({ children, router: _router }) => {
           <meta name="theme-color" content="black" />
           <title>Giacomo Pasin</title>
         </Head>
-        {isDesktop && (
+        {isDesktop ? (
           <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} />
+        ) : (
+          <HamburgerNavbar />
         )}
+
         {children}
         <Footer />
       </ThemeProvider>
