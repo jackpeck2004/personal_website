@@ -30,8 +30,8 @@ const Menu = styled.div`
 
 const Anchor = styled.a`
   margin: 0 15px;
-  cursor: pointer;
-  color: inherit;
+  cursor: ${(props) => props.theme.colors.primary};
+  color: black;
   text-decoration: none;
 `;
 
