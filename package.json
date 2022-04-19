@@ -1,11 +1,11 @@
 {
-  "name": "Giacomo Pasin Portfolio Website",
+  "name": "giacomopasin.com",
   "version": "1.0.0",
   "description": "Giacomo Pasin personal website made to showcase projects and get to know him",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev -H 0.0.0.0",
-    "build": "next build",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev -H 0.0.0.0",
+    "build": "NODE_OPTIONS=-openssl-legacy-provider next build",
     "prettier": "prettier --write .",
     "lint": "next lint"
   },
