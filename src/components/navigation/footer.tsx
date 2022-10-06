@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-
+/*
 const Footer = styled.footer`
   padding: 10vh 0;
   background: ${(props) => props.theme.colors.primaryBackground};
@@ -11,13 +10,14 @@ const Footer = styled.footer`
 const Copyright = styled.p`
   color: ${(props) => props.theme.colors.muted};
 `;
+*/
 
-const FooterComponent = () => {
+const Footer = () => {
   return (
-    <Footer>
-      <Copyright>©{new Date().getFullYear()} Giacomo Pasin</Copyright>
-    </Footer>
+    <footer className={`py-[10vh] bg-black flex justify-center items-center`}>
+      <p className="text-gray-300">©{new Date().getFullYear()} Giacomo Pasin</p>
+    </footer>
   );
 };
 
-export default FooterComponent;
+export default Footer;

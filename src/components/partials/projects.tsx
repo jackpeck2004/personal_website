@@ -1,9 +1,8 @@
-import styled from "@emotion/styled";
 import { SubHeading } from "../common/headings";
-import { Card } from "react-bootstrap";
 import constants from "../../lib/constants";
 import useMediaQuery from "../../lib/hooks/useMediaQuery";
 
+/*
 const ProjectSection = styled.section`
   margin-top: 10vh;
 `;
@@ -31,20 +30,27 @@ const StandardLayout = styled.div`
   grid-column-gap: 40px;
   grid-row-gap: 40px;
 `;
+*/
+
+const Anchor = ({children, href, target}) => {
+  return (
+    <a className="text-blue-500 pr-4 cursor-pointer" href={href} target={target}>{children}</a>
+  );
+}
 
 const Projects = ({ children }) => {
   const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
   const isMedium = useMediaQuery(constants.mediaQueries.IS_MEDIUM);
 
   if (isDesktop) {
-    return <DesktopProjectsLayout>{children}</DesktopProjectsLayout>;
+    return <div className="mt-[2vh] grid grid-cols-3 gap-x-[40px] grid-y-[40px]">{children}</div>;
   }
 
   if (isMedium) {
-    return <DoubleLayout>{children}</DoubleLayout>;
+    return <div className="mt-[2vh] grid grid-cols-2 gap-x-[40px] grid-y-[40px]">{children}</div>;
   }
 
-  return <StandardLayout>{children}</StandardLayout>;
+  return <div className="mt-[2vh] grid grid-cols-1 gap-x-[40px] grid-y-[40px]">{children}</div>;
 };
 
 const Project = ({
@@ -56,34 +62,39 @@ const Project = ({
   liveUrl
 }) => {
   return (
-    <Card style={{ background: "transparent", border: "1px solid lightgrey" }}>
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">
+    <>
+    {/* card */}
+    <div className="border border-gray-200 rounded p-4">
+      <div>
+        <h4 className="font-semibold text-xl">{title}</h4>
+        <h6 className="mb-2 text-gray-600">
           Langs: {langs && langs.join(", ")}
           <br />
           {frameworks.length ? "Frameworks: " + frameworks.join(", ") : ""}
-        </Card.Subtitle>
+        </h6>
 
-        <Card.Text>{description}</Card.Text>
-        {gitHubUrl && (
-          <Card.Link href={gitHubUrl} target="_blank">
-            GitHub
-          </Card.Link>
-        )}
-        {liveUrl && (
-          <Card.Link href={liveUrl} target="_blank">
-            Live
-          </Card.Link>
-        )}
-      </Card.Body>
-    </Card>
+        <p>{description}</p>
+        <div className="pt-2">
+          {gitHubUrl && (
+            <Anchor href={gitHubUrl} target="_blank">
+              GitHub
+            </Anchor>
+          )}
+          {liveUrl && (
+            <Anchor href={liveUrl} target="_blank">
+              Live
+            </Anchor>
+          )}
+        </div>
+      </div>
+    </div>
+  </>
   );
 };
 
 const Section = ({ projects }) => {
   return (
-    <ProjectSection id="projects">
+    <section className="mt-[10vh]" id="projects">
       <SubHeading>Projects</SubHeading>
       <Projects>
         {projects &&
@@ -101,7 +112,7 @@ const Section = ({ projects }) => {
             );
           })}
       </Projects>
-    </ProjectSection>
+    </section>
   );
 };
 

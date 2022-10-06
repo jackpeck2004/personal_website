@@ -1,11 +1,11 @@
-import Button from "../common/button";
+import Button from "@/components/common/button";
 import { animateScroll as scroll, Link } from "react-scroll";
-import styled from "@emotion/styled";
-import { Container } from "react-bootstrap";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
+import { Anchor } from "./hamburger";
 
 const iconStyle = { width: "2rem", height: "2rem" };
 
+/*
 const Bar = styled.div`
   background-color: ${(props) => props.theme.colors.primaryBackground};
   color: ${(props) => props.theme.colors.primary};
@@ -34,19 +34,20 @@ const Anchor = styled.a`
   color: black;
   text-decoration: none;
 `;
+*/
 
 const Navbar = ({ currentTheme, changeThemeFn }) => {
   return (
-    <Bar>
-      <Container>
-        <Sub>
+    <div className="bg-white text-black py-[1vh] w-full sticky top-0 z-10">
+      <div className="px-52">
+        <div className="flex justify-between items-center">
           <h1
             style={{ cursor: "pointer" }}
             onClick={() => scroll.scrollToTop()}
           >
             Giacomo Pasin
           </h1>
-          <Menu>
+          <div className="flex items-center justify-between">
             <Link to="home" smooth spy>
               <Anchor>Home</Anchor>
             </Link>
@@ -64,10 +65,10 @@ const Navbar = ({ currentTheme, changeThemeFn }) => {
                 <MoonIcon style={{ ...iconStyle, color: "white" }} />
               )}
             </Button>
-          </Menu>
-        </Sub>
-      </Container>
-    </Bar>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
