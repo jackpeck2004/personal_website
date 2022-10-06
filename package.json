@@ -4,8 +4,10 @@
   "description": "Giacomo Pasin personal website made to showcase projects and get to know him",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev -H 0.0.0.0",
-    "build": "NODE_OPTIONS=-openssl-legacy-provider next build",
+    "dev": "next dev",
+    "opt": "next opt",
+    "dev:opt": "NODE_OPTIONS=--openssl-legacy-provider next dev -H 0.0.0.0",
+    "build:opt": "NODE_OPTIONS=-openssl-legacy-provider next build",
     "prettier": "prettier --write .",
     "lint": "next lint"
   },
