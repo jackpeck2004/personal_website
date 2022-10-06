@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "dev:opt": "NODE_OPTIONS=--openssl-legacy-provider next dev -H 0.0.0.0",
     "build:opt": "NODE_OPTIONS=-openssl-legacy-provider next build",
     "prettier": "prettier --write .",
