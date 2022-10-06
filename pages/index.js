@@ -33,7 +33,6 @@ const Anchor = styled.a`
 `;
 
 const Page = ({ projects }) => {
-  console.log(projects);
 
   return (
     <Body id="home">
