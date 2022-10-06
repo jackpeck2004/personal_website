@@ -41,7 +41,7 @@ const CharacteristicDiv = ({ children }) => {
 
 const CharTitle = ({ children }) => {
   return (
-    <h3 className="text-3xl font-semibold mt-[10px]">{children}</h3>
+    <h3 className="lg:text-3xl font-semibold mt-[10px]">{children}</h3>
   );
 }
 
@@ -50,7 +50,7 @@ const Page = ({ projects }) => {
 
   return (
     <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
-      <div className="px-52">
+      <div className="px-4 lg:px-52">
         <Title>
           I&apos;m Giacomo Pasin. <br /> IB Student and <br /> Software
           Developer
