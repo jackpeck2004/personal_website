@@ -4,13 +4,13 @@ import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/navigation/footer";
 import useMediaQuery from "@/lib/hooks/useMediaQuery";
 import constants from "@/lib/constants";
-import useTheme from "@/lib/hooks/useTheme";
+//import useTheme from "@/lib/hooks/useTheme";
 import HamburgerNavbar from "@/components/navigation/hamburger";
 
 const Main = ({ children, router: _router }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
 
-  const theme = useTheme();
+  //const theme = useTheme();
 
   const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
 
