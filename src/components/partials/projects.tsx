@@ -64,7 +64,7 @@ const Project = ({
   return (
     <>
     {/* card */}
-    <div className="border border-gray-200 rounded p-4">
+    <div className="border border-gray-200 rounded p-4 mb-8">
       <div>
         <h4 className="font-semibold text-xl">{title}</h4>
         <h6 className="mb-2 text-gray-600">
