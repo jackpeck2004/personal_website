@@ -1,36 +1,6 @@
-import { SubHeading } from "../common/headings";
-import constants from "../../lib/constants";
-import useMediaQuery from "../../lib/hooks/useMediaQuery";
-
-/*
-const ProjectSection = styled.section`
-  margin-top: 10vh;
-`;
-
-const DesktopProjectsLayout = styled.div`
-  margin-top: 2vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-`;
-
-const DoubleLayout = styled.div`
-  margin-top: 2vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-`;
-
-const StandardLayout = styled.div`
-  margin-top: 2vh;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-`;
-*/
+import { SubHeading } from "@/components/common/headings";
+import constants from "@/lib/constants";
+import { useMediaQuery } from "@/lib/hooks";
 
 const Anchor = ({children, href, target}) => {
   return (
