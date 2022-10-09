@@ -1,4 +1,3 @@
-import { SubHeading } from "@/components/common/headings";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
 
