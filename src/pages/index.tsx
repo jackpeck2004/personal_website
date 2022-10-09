@@ -41,7 +41,7 @@ const Page = ({ projects }) => {
               technologies into the workflow of the company to enhance productivity of employees.
             </p>
           </Experience>
-          <Experience startDate="4 Sept 2019" endDate="8 Aug 2022" city="Treviso, Italy" role="Junior Technology and Web Designer" company="T.W.I.N srl">
+          <Experience startDate="4 Sept 2019" endDate="8 Aug 2021" city="Treviso, Italy" role="Junior Technology and Web Designer" company="T.W.I.N srl">
             <p>
               Organize new network infrastructures and secure file sharing options, setting up Google Workspace for the
               whole company, configure new domains and website addresses, create software platforms, website designs
