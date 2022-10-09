@@ -54,7 +54,7 @@ const Navbar = ({ currentTheme, changeThemeFn }) => {
             <Link to="projects" smooth spy>
               <Anchor>Projects</Anchor>
             </Link>
-            <Button
+            {/*<Button
               circular
               border
               onClick={() => changeThemeFn(!currentTheme)}
@@ -64,7 +64,7 @@ const Navbar = ({ currentTheme, changeThemeFn }) => {
               ) : (
                 <MoonIcon style={{ ...iconStyle, color: "white" }} />
               )}
-            </Button>
+            </Button>*/}
           </div>
         </div>
       </div>

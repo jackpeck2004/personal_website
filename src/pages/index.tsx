@@ -2,49 +2,25 @@ import Link from "next/link";
 import matter from "gray-matter";
 import fs from "fs";
 import Projects from "@/components/partials/projects";
+import Characteristics from "@/components/partials/characteristics";
 import { Title } from "@/components/common/headings";
+import { ICharacteristic } from "@/lib/types";
+import { FC } from "react";
 
-/*
-const Body = styled.div`
-  background: ${(props) => props.theme.colors.primaryBackground};
-  min-height: 94vh;
-  color: ${(props) => props.theme.colors.primary};
-  padding: 2vh 0;
-`;
-
-const Characteristics = styled.div`
-  margin-top: 5vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 40px;
-`;
-
-const Characteristic = styled.div`
-  border-top: 3px solid ${(props) => props.theme.colors.muted};
-`;
-
-const CharTitle = styled.h3`
-  margin-top: 10px;
-`;
-
-const Anchor = styled.a`
-  color: ${(props) => props.theme.colors.primary};
-`;
-*/
-
-
-const CharacteristicDiv = ({ children }) => {
-  return (
-    <div className="border-t-4 border-gray-200">{children}</div>
-  );
-}
-
-const CharTitle = ({ children }) => {
-  return (
-    <h3 className="lg:text-3xl font-semibold mt-[10px]">{children}</h3>
-  );
-}
-
+const CHARACTERISTICS: Array<ICharacteristic> = [
+  {
+    title: "my passions",
+    description: "software development, engineering, technology, basketball and food"
+  },
+  {
+    title: "my academics",
+    description: "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci"
+  },
+  {
+    title: "my work experience",
+    description: "I'm currently the cheif technology officer at T.W.I.N srl"
+  }
+];
 
 const Page = ({ projects }) => {
 
@@ -52,34 +28,10 @@ const Page = ({ projects }) => {
     <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
       <div className="px-4 lg:px-52">
         <Title>
-          I&apos;m Giacomo Pasin. <br /> IB Student and <br /> Software
+          I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software
           Developer
         </Title>
-        <div className="mt-[5vh] grid grid-cols-3 gap-x-[40px]">
-          <CharacteristicDiv>
-            <CharTitle>my passions</CharTitle>
-            <span>
-              software development, electrical engineering, technology,
-              basketball and food
-            </span>
-          </CharacteristicDiv>
-          <CharacteristicDiv>
-            <CharTitle>my academics</CharTitle>
-            <span>
-              currently in ib diploma program studying physics hl, compsci hl
-              and maths hl
-            </span>
-          </CharacteristicDiv>
-          <CharacteristicDiv>
-            <CharTitle>my work experience</CharTitle>
-            <span>
-              i&apos;m currently the chief technology officer at{" "}
-              <Link href="https://twin.services" passHref={true}>
-                <a target="_blank">T.W.I.N srl</a>
-              </Link>
-            </span>
-          </CharacteristicDiv>
-        </div>
+        <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
       </div>
     </div>

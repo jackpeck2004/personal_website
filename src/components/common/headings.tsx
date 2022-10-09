@@ -1,4 +1,4 @@
-import useMediaQuery from '@/lib/hooks/useMediaQuery';
+import { useMediaQuery } from "@/lib/hooks";
 import constants from '@/lib/constants';
 import { FC, PropsWithChildren } from 'react';
 
