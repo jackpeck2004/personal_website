@@ -18,11 +18,13 @@ const LineDivider = () => (
 );
 
 export const Experience: FC<PropsWithChildren<IExperienceProps>> = ({ startDate, endDate, city, role, company, children }) => {
-    <div className="pt-4">
-        <span className="block text-gray-400 uppercase">{startDate} – {endDate}</span>
-        <span className="block text-gray-400">{city}</span>
-        <span className="text-2xl"><h4 className="font-bold inline">{role} – </h4><Anchor>{company}</Anchor></span>
-        <LineDivider />
-        {children}
-    </div>
+    return (
+        <div className="pt-4">
+            <span className="block text-gray-400 uppercase">{startDate} – {endDate}</span>
+            <span className="block text-gray-400">{city}</span>
+            <span className="text-2xl"><h4 className="font-bold inline">{role} – </h4><Anchor>{company}</Anchor></span>
+            <LineDivider />
+            {children}
+        </div>
+    );
 }
