@@ -7,7 +7,7 @@ export const Characteristic: FC<ICharacteristic> = ({ title, description, sectio
   return (
     <div className="border-t-4 border-gray-200">
       <h3 className="lg:text-3xl font-semibold mt-[10px]">{title}</h3>
-      <span>{description}</span>
+      <p>{description}</p>
       {sectionLinkId && (
         <Link to={sectionLinkId} smooth spy><Anchor>Read more</Anchor></Link>
       )}
