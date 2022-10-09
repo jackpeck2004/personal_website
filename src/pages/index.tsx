@@ -17,7 +17,7 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
   },
   {
     title: "my work experience",
-    description: "I'm currently the cheif technology officer at T.W.I.N srl"
+    description: "I'm currently the CTO at T.W.I.N srl"
   }
 ];
 
