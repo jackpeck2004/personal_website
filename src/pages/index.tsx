@@ -1,11 +1,10 @@
-import Link from "next/link";
+// import Link from "next/link";
 import matter from "gray-matter";
 import fs from "fs";
 import Projects from "@/components/partials/projects";
 import Characteristics from "@/components/partials/characteristics";
 import { Title } from "@/components/common/headings";
 import { ICharacteristic } from "@/lib/types";
-import { FC } from "react";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
