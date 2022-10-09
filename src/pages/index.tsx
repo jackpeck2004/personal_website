@@ -3,7 +3,6 @@ import matter from "gray-matter";
 import fs from "fs";
 import Projects from "@/components/partials/projects";
 import Characteristics from "@/components/partials/characteristics";
-import { Title } from "@/components/common/headings";
 import { ICharacteristic } from "@/lib/types";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
@@ -26,10 +25,10 @@ const Page = ({ projects }) => {
   return (
     <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
       <div className="px-4 lg:px-52">
-        <Title>
+        <h1 className="2xl:text-9xl xl:text-6xl text-5xl">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software
           Developer
-        </Title>
+        </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
       </div>

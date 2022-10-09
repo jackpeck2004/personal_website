@@ -65,7 +65,7 @@ const Project = ({
 const Section = ({ projects }) => {
   return (
     <section className="mt-[10vh]" id="projects">
-      <SubHeading>Projects</SubHeading>
+      <h2 className="text-5xl">Projects</h2>
       <Projects>
         {projects &&
           projects.map((project, idx) => {
