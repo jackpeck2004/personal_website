@@ -1,4 +1,4 @@
-import { Anchor } from "@/components/common";
+import { Anchor, Section } from "@/components/common";
 
 const Project = ({
   title,
@@ -40,8 +40,7 @@ const Project = ({
 
 export const Projects = ({ projects }) => {
   return (
-    <section className="mt-[10vh]" id="projects">
-      <h2 className="text-5xl">Projects</h2>
+    <Section title="Projects" sectionId="projects">
       <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
         {projects &&
           projects.map((project, idx) => {
@@ -58,7 +57,7 @@ export const Projects = ({ projects }) => {
             );
           })}
       </div>
-    </section>
+    </Section>
   );
 };
 
