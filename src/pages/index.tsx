@@ -37,7 +37,7 @@ const Page = ({ projects }) => {
           <div className="pt-4">
             <span className="block text-gray-400">8 AUG 2022 – CURRENT</span>
             <span className="block text-gray-400">Treviso, Italy</span>
-            <span><h4 className="text-2xl font-bold inline">CTO – </h4><Anchor>T.W.I.N SRL</Anchor></span>
+            <span className="text-2xl"><h4 className="font-bold inline">CTO – </h4><Anchor>T.W.I.N SRL</Anchor></span>
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-b border-gray-300"></div>
