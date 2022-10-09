@@ -62,7 +62,7 @@ const Project = ({
   );
 };
 
-const Section = ({ projects }) => {
+export const Projects = ({ projects }) => {
   return (
     <section className="mt-[10vh]" id="projects">
       <h2 className="text-5xl">Projects</h2>
@@ -86,4 +86,4 @@ const Section = ({ projects }) => {
   );
 };
 
-export default Section;
+export default Projects;

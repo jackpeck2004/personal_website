@@ -1,8 +1,7 @@
 // import Link from "next/link";
 import matter from "gray-matter";
 import fs from "fs";
-import Projects from "@/components/partials/projects";
-import Characteristics from "@/components/partials/characteristics";
+import { Characteristics, Projects} from "@/components/partials";
 import { ICharacteristic } from "@/lib/types";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [

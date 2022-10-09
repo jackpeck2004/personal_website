@@ -10,7 +10,7 @@ export const Characteristic: FC<ICharacteristic> = ({ title, description }) => {
   );
 }
 
-const Section: FC<{characteristics: Array<ICharacteristic>}> = ({characteristics}) => {
+export const Characteristics: FC<{characteristics: Array<ICharacteristic>}> = ({characteristics}) => {
   return (
     <div className="mt-[5vh] grid grid-cols-3 gap-x-[40px]">
       {characteristics.map(({title, description}) => (
@@ -24,4 +24,3 @@ const Section: FC<{characteristics: Array<ICharacteristic>}> = ({characteristics
   );
 }
 
-export default Section;
