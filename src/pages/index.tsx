@@ -1,7 +1,8 @@
 // import Link from "next/link";
 import matter from "gray-matter";
 import fs from "fs";
-import { Characteristics, Projects} from "@/components/partials";
+import { Characteristics, Projects } from "@/components/partials";
+import { Anchor } from "@/components/common";
 import { ICharacteristic } from "@/lib/types";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
@@ -26,15 +27,29 @@ const Page = ({ projects }) => {
   return (
     <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
       <div className="px-4 lg:px-52">
-        <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
+        <h1 className="2xl:text-9xl lg:text-6xl gr-5xl font-bold pt-[20vh]">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software
           Developer
         </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
-        <section id="experience" className="pt-[20vh]">
-          <h2>Experience</h2>
-        </section>
+        <Section title="Work Experience" sectionId="experience">
+          <div>
+            <span className="block text-gray-400">8 AUG 2022 – CURRENT</span>
+            <span className="block text-gray-400">Treviso, Italy</span>
+            <h4 className="text-3xl font-bold">CTO – <Anchor>T.W.I.N SRL</Anchor></h4>
+            <div class="relative py-4">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-b border-gray-300"></div>
+              </div>
+            </div>
+            <p>Upgrade existing technology infrastructures, organize digital permissions and update programs to adhere to
+              GDPR and privacy standards, handle setup and maintenance of software platforms and integrate new
+              technologies into the workflow of the company to enhance productivity of employees.
+            </p>
+          </div>
+        </Section>
+
         <section id="education" className="pt-[20vh]">
           <h2>Education</h2>
         </section>
