@@ -2,7 +2,7 @@
 import matter from "gray-matter";
 import fs from "fs";
 import { Characteristics, Projects } from "@/components/partials";
-import { Anchor } from "@/components/common";
+import { Anchor, Section } from "@/components/common";
 import { ICharacteristic } from "@/lib/types";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
@@ -38,9 +38,9 @@ const Page = ({ projects }) => {
             <span className="block text-gray-400">8 AUG 2022 – CURRENT</span>
             <span className="block text-gray-400">Treviso, Italy</span>
             <h4 className="text-3xl font-bold">CTO – <Anchor>T.W.I.N SRL</Anchor></h4>
-            <div class="relative py-4">
-              <div class="absolute inset-0 flex items-center">
-                <div class="w-full border-b border-gray-300"></div>
+            <div className="relative py-4">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-b border-gray-300"></div>
               </div>
             </div>
             <p>Upgrade existing technology infrastructures, organize digital permissions and update programs to adhere to
