@@ -1,5 +1,5 @@
-import constants from "@/lib/constants";
-import { useMediaQuery } from "@/lib/hooks";
+// import constants from "@/lib/constants";
+// import { useMediaQuery } from "@/lib/hooks";
 
 const Anchor = ({ children, href, target }) => {
   return (
