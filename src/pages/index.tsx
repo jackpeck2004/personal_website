@@ -4,6 +4,7 @@ import fs from "fs";
 import { Characteristics, Projects } from "@/components/partials";
 import { Anchor, Section } from "@/components/common";
 import { ICharacteristic } from "@/lib/types";
+import { Experience } from "@/components/partials/experience";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -34,20 +35,12 @@ const Page = ({ projects }) => {
         <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
         <Section title="Work Experience" sectionId="experience">
-          <div className="pt-4">
-            <span className="block text-gray-400">8 AUG 2022 – CURRENT</span>
-            <span className="block text-gray-400">Treviso, Italy</span>
-            <span className="text-2xl"><h4 className="font-bold inline">CTO – </h4><Anchor>T.W.I.N SRL</Anchor></span>
-            <div className="relative py-4">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-b border-gray-300"></div>
-              </div>
-            </div>
-            <p>Upgrade existing technology infrastructures, organize digital permissions and update programs to adhere to
+          <Experience startDate="8 Aug 2022" endDate="current" city="Treviso, Italy" role="CTO" company="T.W.I.N srl">
+          <p>Upgrade existing technology infrastructures, organize digital permissions and update programs to adhere to
               GDPR and privacy standards, handle setup and maintenance of software platforms and integrate new
               technologies into the workflow of the company to enhance productivity of employees.
             </p>
-          </div>
+          </Experience>
         </Section>
 
         <section id="education" className="pt-[20vh]">
