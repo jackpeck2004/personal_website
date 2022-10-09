@@ -1,10 +1,10 @@
 // import Link from "next/link";
 import matter from "gray-matter";
 import fs from "fs";
-import Projects from "@/components/partials/projects";
-import Characteristics from "@/components/partials/characteristics";
-import { Title } from "@/components/common/headings";
+import { Characteristics, Projects } from "@/components/partials";
+import { Section } from "@/components/common";
 import { ICharacteristic } from "@/lib/types";
+import { Experience } from "@/components/partials/experience";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -12,12 +12,14 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
     description: "software development, engineering, technology, basketball and food"
   },
   {
-    title: "my academics",
-    description: "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci"
+    title: "my education",
+    description: "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci",
+    sectionLinkId: "education"
   },
   {
     title: "my work experience",
-    description: "I'm currently the CTO at T.W.I.N srl"
+    description: "I'm currently the CTO at T.W.I.N srl",
+    sectionLinkId: "experience"
   }
 ];
 
@@ -26,12 +28,31 @@ const Page = ({ projects }) => {
   return (
     <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
       <div className="px-4 lg:px-52">
-        <Title>
+        <h1 className="2xl:text-9xl lg:text-6xl gr-5xl font-bold pt-[20vh]">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software
           Developer
-        </Title>
+        </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
+        <Section title="Work Experience" sectionId="experience">
+          <Experience startDate="8 Aug 2021" endDate="current" city="Treviso, Italy" role="CTO" company="T.W.I.N srl">
+            <p>Upgrade existing technology infrastructures, organize digital permissions and update programs to adhere to
+              GDPR and privacy standards, handle setup and maintenance of software platforms and integrate new
+              technologies into the workflow of the company to enhance productivity of employees.
+            </p>
+          </Experience>
+          <Experience startDate="4 Sept 2019" endDate="8 Aug 2021" city="Treviso, Italy" role="Junior Technology and Web Designer" company="T.W.I.N srl">
+            <p>
+              Organize new network infrastructures and secure file sharing options, setting up Google Workspace for the
+              whole company, configure new domains and website addresses, create software platforms, website designs
+              and design algorithms to simplify the workflows of other employees.
+            </p>
+          </Experience>
+        </Section>
+
+        <section id="education" className="pt-[20vh]">
+          <h2>Education</h2>
+        </section>
       </div>
     </div>
   );

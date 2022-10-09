@@ -23,12 +23,10 @@ const Button = styled.button`
 `;
 */
 
-const Button: FC<PropsWithChildren<IButtonProps>> = (props) => {
+export const Button: FC<PropsWithChildren<IButtonProps>> = (props) => {
   return (
     <button className={`bg-none p-[10px] border border-transparent ${props.circular ? "rounded-full" : ""} transition ${props.border ? "hover:border-black" : ""}`} onClick={props.onClick}>
       {props.children}
     </button>
   );
 }
-
-export default Button;
