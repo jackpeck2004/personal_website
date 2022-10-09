@@ -1,6 +1,6 @@
 import { NavAnchor as Anchor, Button } from "@/components/common";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { useState, useEffect, FC, PropsWithChildren } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
 const iconStyle = { width: "2rem", height: "2rem" };
