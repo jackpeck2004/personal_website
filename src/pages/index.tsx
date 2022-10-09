@@ -2,7 +2,7 @@
 import matter from "gray-matter";
 import fs from "fs";
 import { Characteristics, Projects } from "@/components/partials";
-import { Anchor, Section } from "@/components/common";
+import { Section } from "@/components/common";
 import { ICharacteristic } from "@/lib/types";
 import { Experience } from "@/components/partials/experience";
 
