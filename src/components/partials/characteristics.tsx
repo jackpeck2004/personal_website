@@ -1,11 +1,16 @@
 import { FC } from "react";
 import { ICharacteristic } from "@/lib/types";
+import { Link } from "react-scroll";
+import { Anchor } from "@/components/common";
 
-export const Characteristic: FC<ICharacteristic> = ({ title, description }) => {
+export const Characteristic: FC<ICharacteristic> = ({ title, description, sectionLinkId }) => {
   return (
     <div className="border-t-4 border-gray-200">
       <h3 className="lg:text-3xl font-semibold mt-[10px]">{title}</h3>
       <span>{description}</span>
+      {sectionLinkId && (
+        <Link to={sectionLinkId} smooth spy><Anchor>Read more</Anchor></Link>
+      )}
     </div>
   );
 }
@@ -13,11 +18,12 @@ export const Characteristic: FC<ICharacteristic> = ({ title, description }) => {
 export const Characteristics: FC<{characteristics: Array<ICharacteristic>}> = ({characteristics}) => {
   return (
     <div className="mt-[5vh] grid grid-cols-3 gap-x-[40px]">
-      {characteristics.map(({title, description}) => (
+      {characteristics.map(({title, description, sectionLinkId}) => (
         <Characteristic
         key={title}
         title={title}
         description={description}
+        sectionLinkId={sectionLinkId}
         />
       ))}
     </div>

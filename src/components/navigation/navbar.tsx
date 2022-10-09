@@ -1,7 +1,7 @@
 // import Button from "@/components/common/button";
 import { animateScroll as scroll, Link } from "react-scroll";
 // import { MoonIcon, SunIcon } from "@heroicons/react/outline";
-import { Anchor } from "./hamburger";
+import { NavAnchor as Anchor } from "@/components/common";
 
 // const iconStyle = { width: "2rem", height: "2rem" };
 

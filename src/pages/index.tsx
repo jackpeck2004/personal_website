@@ -10,12 +10,14 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
     description: "software development, engineering, technology, basketball and food"
   },
   {
-    title: "my academics",
-    description: "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci"
+    title: "my education",
+    description: "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci",
+    sectionLinkId: "education"
   },
   {
     title: "my work experience",
-    description: "I'm currently the CTO at T.W.I.N srl"
+    description: "I'm currently the CTO at T.W.I.N srl",
+    sectionLinkId: "experience"
   }
 ];
 
@@ -30,6 +32,12 @@ const Page = ({ projects }) => {
         </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
+        <section id="experience" className="pt-[20vh]">
+          <h2>Experience</h2>
+        </section>
+        <section id="education" className="pt-[20vh]">
+          <h2>Education</h2>
+        </section>
       </div>
     </div>
   );

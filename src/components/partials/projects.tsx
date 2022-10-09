@@ -1,26 +1,4 @@
-// import constants from "@/lib/constants";
-// import { useMediaQuery } from "@/lib/hooks";
-
-const Anchor = ({ children, href, target }) => {
-  return (
-    <a className="text-blue-500 pr-4 cursor-pointer" href={href} target={target}>{children}</a>
-  );
-}
-
-// const ProjectsGrid = ({ children }) => {
-//   const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
-//   const isMedium = useMediaQuery(constants.mediaQueries.IS_MEDIUM);
-
-//   if (isDesktop) {
-//     return <div className="mt-[2vh] grid grid-cols-3 gap-x-[40px] grid-y-[40px]">{children}</div>;
-//   }
-
-//   if (isMedium) {
-//     return <div className="mt-[2vh] grid grid-cols-2 gap-x-[40px] grid-y-[40px]">{children}</div>;
-//   }
-
-//   return <div className="mt-[2vh] grid grid-cols-1 gap-x-[40px] grid-y-[40px]">{children}</div>;
-// };
+import { Anchor } from "@/components/common";
 
 const Project = ({
   title,
@@ -32,7 +10,6 @@ const Project = ({
 }) => {
   return (
     <>
-      {/* card */}
       <div className="border border-gray-200 rounded p-4 mb-8">
         <div>
           <h4 className="font-semibold text-xl">{title}</h4>
