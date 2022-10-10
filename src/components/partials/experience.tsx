@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
-import { Anchor } from "@/components/common"
+import { Anchor } from "@/components/common";
 
 interface IExperienceProps {
     startDate: string;
@@ -7,6 +8,7 @@ interface IExperienceProps {
     city: string;
     role: string;
     company: string;
+    companyUrl: string;
 }
 
 const LineDivider = () => (
@@ -17,12 +19,12 @@ const LineDivider = () => (
     </div>
 );
 
-export const Experience: FC<PropsWithChildren<IExperienceProps>> = ({ startDate, endDate, city, role, company, children }) => {
+export const Experience: FC<PropsWithChildren<IExperienceProps>> = ({ startDate, endDate, city, role, company, companyUrl, children }) => {
     return (
-        <div className="pt-4">
+        <div className="py-4">
             <span className="block text-gray-400 uppercase">{startDate} – {endDate}</span>
             <span className="block text-gray-400">{city}</span>
-            <span className="text-2xl"><h4 className="font-bold inline">{role} – </h4><Anchor>{company}</Anchor></span>
+            <span className="text-2xl"><h4 className="font-bold inline">{role} – </h4><Link href={companyUrl} passHref><Anchor target="_blank">{company}</Anchor></Link></span>
             <LineDivider />
             {children}
         </div>

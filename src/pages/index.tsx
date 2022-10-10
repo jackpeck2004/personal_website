@@ -5,6 +5,7 @@ import { Characteristics, Projects } from "@/components/partials";
 import { Section } from "@/components/common";
 import { ICharacteristic } from "@/lib/types";
 import { Experience } from "@/components/partials/experience";
+import { Education } from "@/components/partials/education";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -28,20 +29,20 @@ const Page = ({ projects }) => {
   return (
     <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
       <div className="px-4 lg:px-52">
-        <h1 className="2xl:text-9xl lg:text-6xl gr-5xl font-bold pt-[20vh]">
+        <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software
           Developer
         </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
         <Projects projects={projects} />
         <Section title="Work Experience" sectionId="experience">
-          <Experience startDate="8 Aug 2021" endDate="current" city="Treviso, Italy" role="CTO" company="T.W.I.N srl">
+          <Experience startDate="8 Aug 2021" endDate="current" city="Treviso, Italy" role="CTO" company="T.W.I.N srl" companyUrl="https://twin.services">
             <p>Upgrade existing technology infrastructures, organize digital permissions and update programs to adhere to
               GDPR and privacy standards, handle setup and maintenance of software platforms and integrate new
               technologies into the workflow of the company to enhance productivity of employees.
             </p>
           </Experience>
-          <Experience startDate="4 Sept 2019" endDate="8 Aug 2021" city="Treviso, Italy" role="Junior Technology and Web Designer" company="T.W.I.N srl">
+          <Experience startDate="4 Sept 2019" endDate="8 Aug 2021" city="Treviso, Italy" role="Junior Technology and Web Designer" company="T.W.I.N srl" companyUrl="https://twin.services">
             <p>
               Organize new network infrastructures and secure file sharing options, setting up Google Workspace for the
               whole company, configure new domains and website addresses, create software platforms, website designs
@@ -49,10 +50,38 @@ const Page = ({ projects }) => {
             </p>
           </Experience>
         </Section>
-
-        <section id="education" className="pt-[20vh]">
-          <h2>Education</h2>
-        </section>
+        <Section title="Education and Training" sectionId="education">
+          <Education startDate="1 Sep 2020" endDate="21 May 2022" city="Roncade, Italy" title="International Baccalaureate Diploma" school="International School of Talents - Multicampus" schoolUrl="https://internationalschooloftalentsmulticampus.com/universities/">
+          <p>
+            Subjects Taken:
+            <ul>
+              <li>Higher Level Mathematics Analysis and Approaches</li>
+              <li>Higher Level Physics</li>
+              <li>Higher Level Computer Science</li>
+              <li>Economics</li>
+              <li>Spanish B</li>
+              <li>English A Language and Literature</li>
+            </ul>
+            </p>
+          </Education>
+          <Education
+            startDate="4 Sep 2018"
+            endDate="30 Jun 2020"
+            city="Roncade, Italy"
+            title="IB Middle Years Program (High School grades 9 and 10)"
+            school="H-Farm International School - Treviso"
+            schoolUrl="https://www.h-farm.com/en/h-farm-school/treviso/middle-school"
+          >
+          </Education>
+          <Education
+            startDate="4 Sep 2021"
+            endDate="Current"
+            title="Leader of the Future"
+            school="The European House - Ambrosetti"
+            schoolUrl="https://leaderdelfuturo.eu"
+          >
+          </Education>
+        </Section>
       </div>
     </div>
   );

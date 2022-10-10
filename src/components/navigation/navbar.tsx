@@ -23,6 +23,12 @@ const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) 
             <Link to="projects" smooth spy>
               <Anchor>Projects</Anchor>
             </Link>
+            <Link to="experience" smooth spy>
+              <Anchor>Work Experience</Anchor>
+            </Link>
+            <Link to="education" smooth spy>
+              <Anchor>Education</Anchor>
+            </Link>
             {/*<Button
               circular
               border
