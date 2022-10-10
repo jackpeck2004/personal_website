@@ -2,6 +2,7 @@ import { NavAnchor as Anchor, Button } from "@/components/common";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { NAV_ITEMS } from "@/components/navigation/navbar";
 
 const iconStyle = { width: "2rem", height: "2rem" };
 
@@ -24,12 +25,11 @@ const MenuView = ({ setNavbarOpen }) => {
         />
       </Button>
       <ul className={`flex flex-col justify-evenly items-center h-[50vw] text-3xl`}>
-        <Link to="home" smooth spy onClick={() => setNavbarOpen(false)}>
-          <Anchor>Home</Anchor>
+        {NAV_ITEMS.map(({label, anchorId}) => (
+        <Link to={anchorId} smooth spy onClick={() => setNavbarOpen(false)} key={anchorId}>
+          <Anchor>{label}</Anchor>
         </Link>
-        <Link to="projects" smooth spy onClick={() => setNavbarOpen(false)}>
-          <Anchor>Projects</Anchor>
-        </Link>
+        ))}
       </ul>
     </div>
   );

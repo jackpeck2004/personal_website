@@ -27,7 +27,7 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
 const Page = ({ projects }) => {
 
   return (
-    <div className="min-h-[94vh] bg-white text-black py-[2vh]" id="home">
+    <div className="min-h-[94vh] bg-white text-black py-[2vh] w-screen overflow-hidden" id="home">
       <div className="px-4 lg:px-52">
         <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software

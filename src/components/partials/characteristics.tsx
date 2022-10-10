@@ -17,7 +17,7 @@ export const Characteristic: FC<ICharacteristic> = ({ title, description, sectio
 
 export const Characteristics: FC<{characteristics: Array<ICharacteristic>}> = ({characteristics}) => {
   return (
-    <div className="mt-[5vh] grid grid-cols-3 gap-x-[40px]">
+    <div className="mt-[5vh] grid md:grid-cols-3 gap-x-[40px]">
       {characteristics.map(({title, description, sectionLinkId}) => (
         <Characteristic
         key={title}
