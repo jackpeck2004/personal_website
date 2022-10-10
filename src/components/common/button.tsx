@@ -1,9 +1,9 @@
-import { PropsWithChildren, FC } from 'react';
+import { MouseEventHandler, PropsWithChildren, FC } from 'react';
 
 interface IButtonProps {
   circular?: boolean;
   border?: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 /*

@@ -3,3 +3,8 @@ export interface ICharacteristic {
   description: string;
   sectionLinkId?: string;
 }
+
+export type NavItem = {
+  label: string,
+  anchorId: string
+};

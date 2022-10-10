@@ -2,8 +2,28 @@
 import { animateScroll as scroll, Link } from "react-scroll";
 // import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { NavAnchor as Anchor } from "@/components/common";
+import { NavItem } from "@/lib/types";
 
 // const iconStyle = { width: "2rem", height: "2rem" };
+
+export const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: "Home",
+    anchorId: "home",
+  },
+  {
+    label: "Projects",
+    anchorId: "projects",
+  },
+  {
+    label: "Work Experience",
+    anchorId: "experience",
+  },
+  {
+    label: "Education",
+    anchorId: "education",
+  },
+];
 
 const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) => {
   return (
@@ -17,18 +37,11 @@ const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) 
             Giacomo Pasin
           </h1>
           <div className="flex items-center justify-between">
-            <Link to="home" smooth spy>
-              <Anchor>Home</Anchor>
-            </Link>
-            <Link to="projects" smooth spy>
-              <Anchor>Projects</Anchor>
-            </Link>
-            <Link to="experience" smooth spy>
-              <Anchor>Work Experience</Anchor>
-            </Link>
-            <Link to="education" smooth spy>
-              <Anchor>Education</Anchor>
-            </Link>
+            {NAV_ITEMS.map(({label, anchorId}) => (
+              <Link to={anchorId} smooth spy key={anchorId}>
+                <Anchor>{label}</Anchor>
+              </Link>
+            ))}
             {/*<Button
               circular
               border
@@ -47,4 +60,4 @@ const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) 
   );
 };
 
-export default Navbar;
+export default Navbar
