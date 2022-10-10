@@ -5,7 +5,7 @@ import { Anchor } from "@/components/common";
 interface IEducationProps {
     startDate: string;
     endDate: string;
-    city: string;
+    city?: string;
     title: string;
     school: string;
     schoolUrl: string;
@@ -23,7 +23,7 @@ export const Education: FC<PropsWithChildren<IEducationProps>> = ({ startDate, e
     return (
         <div className="py-4">
             <span className="block text-gray-400 uppercase">{startDate} – {endDate}</span>
-            <span className="block text-gray-400">{city}</span>
+            {city && <span className="block text-gray-400">{city}</span>}
             <span className="text-2xl"><h4 className="font-bold inline">{title} – </h4><Link href={schoolUrl} passHref><Anchor target="_blank">{school}</Anchor></Link></span>
             <LineDivider />
             {children}

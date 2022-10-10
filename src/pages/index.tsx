@@ -51,19 +51,36 @@ const Page = ({ projects }) => {
           </Experience>
         </Section>
         <Section title="Education and Training" sectionId="education">
-        <Education startDate="1 Sep 2020" endDate="21 May 2022" city="Roncade, Italy" title="International Baccalaureate Diploma" school="International School of Talents - Multicampus" schoolUrl="https://internationalschooloftalentsmulticampus.com/universities/">
-        <p>
-          Subjects Taken:
-          <ul>
-            <li>Higher Level Mathematics Analysis and Approaches</li>
-            <li>Higher Level Physics</li>
-            <li>Higher Level Computer Science</li>
-            <li>Economics</li>
-            <li>Spanish B</li>
-            <li>English A Language and Literature</li>
-          </ul>
-          </p>
-        </Education>
+          <Education startDate="1 Sep 2020" endDate="21 May 2022" city="Roncade, Italy" title="International Baccalaureate Diploma" school="International School of Talents - Multicampus" schoolUrl="https://internationalschooloftalentsmulticampus.com/universities/">
+          <p>
+            Subjects Taken:
+            <ul>
+              <li>Higher Level Mathematics Analysis and Approaches</li>
+              <li>Higher Level Physics</li>
+              <li>Higher Level Computer Science</li>
+              <li>Economics</li>
+              <li>Spanish B</li>
+              <li>English A Language and Literature</li>
+            </ul>
+            </p>
+          </Education>
+          <Education
+            startDate="4 Sep 2018"
+            endDate="30 Jun 2020"
+            city="Roncade, Italy"
+            title="IB Middle Years Program (High School grades 9 and 10)"
+            school="H-Farm International School - Treviso"
+            schoolUrl="https://www.h-farm.com/en/h-farm-school/treviso/middle-school"
+          >
+          </Education>
+          <Education
+            startDate="4 Sep 2021"
+            endDate="Current"
+            title="Leader of the Future"
+            school="The European House - Ambrosetti"
+            schoolUrl="https://leaderdelfuturo.eu"
+          >
+          </Education>
         </Section>
       </div>
     </div>
