@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Anchor, Section } from "@/components/common";
 
 const Project = ({
@@ -22,14 +23,18 @@ const Project = ({
           <p>{description}</p>
           <div className="pt-2">
             {gitHubUrl && (
-              <Anchor href={gitHubUrl} target="_blank">
-                GitHub
-              </Anchor>
+              <Link href={gitHubUrl} passHref>
+                <Anchor target="_blank">
+                  GitHub
+                </Anchor>
+              </Link>
             )}
             {liveUrl && (
-              <Anchor href={liveUrl} target="_blank">
-                Live
-              </Anchor>
+              <Link href={liveUrl} passHref>
+                <Anchor target="_blank">
+                  Live
+                </Anchor>
+              </Link>
             )}
           </div>
         </div>

@@ -2,13 +2,13 @@ import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
 import { Anchor } from "@/components/common";
 
-interface IExperienceProps {
+interface IEducationProps {
     startDate: string;
     endDate: string;
     city: string;
-    role: string;
-    company: string;
-    companyUrl: string;
+    title: string;
+    school: string;
+    schoolUrl: string;
 }
 
 const LineDivider = () => (
@@ -19,14 +19,15 @@ const LineDivider = () => (
     </div>
 );
 
-export const Experience: FC<PropsWithChildren<IExperienceProps>> = ({ startDate, endDate, city, role, company, companyUrl, children }) => {
+export const Education: FC<PropsWithChildren<IEducationProps>> = ({ startDate, endDate, city, title, school, schoolUrl, children }) => {
     return (
         <div className="py-4">
             <span className="block text-gray-400 uppercase">{startDate} – {endDate}</span>
             <span className="block text-gray-400">{city}</span>
-            <span className="text-2xl"><h4 className="font-bold inline">{role} – </h4><Link href={companyUrl} passHref><Anchor target="_blank">{company}</Anchor></Link></span>
+            <span className="text-2xl"><h4 className="font-bold inline">{title} – </h4><Link href={schoolUrl} passHref><Anchor target="_blank">{school}</Anchor></Link></span>
             <LineDivider />
             {children}
+            <p className="pt-4"><span className="font-bold">Website </span><Link href={schoolUrl} passHref><Anchor target="_blank">{schoolUrl}</Anchor></Link></p>
         </div>
     );
 }
