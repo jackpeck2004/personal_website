@@ -9,7 +9,7 @@ export const Characteristic: FC<ICharacteristic> = ({ title, description, sectio
       <h3 className="lg:text-3xl font-semibold mt-[10px]">{title}</h3>
       <p>{description}</p>
       {sectionLinkId && (
-        <Link to={sectionLinkId} smooth spy><Anchor>Read more</Anchor></Link>
+        <Link to={sectionLinkId} smooth spy offset={-70}><Anchor>Read more</Anchor></Link>
       )}
     </div>
   );
@@ -20,10 +20,10 @@ export const Characteristics: FC<{characteristics: Array<ICharacteristic>}> = ({
     <div className="mt-[5vh] grid md:grid-cols-3 gap-x-[40px]">
       {characteristics.map(({title, description, sectionLinkId}) => (
         <Characteristic
-        key={title}
-        title={title}
-        description={description}
-        sectionLinkId={sectionLinkId}
+          key={title}
+          title={title}
+          description={description}
+          sectionLinkId={sectionLinkId}
         />
       ))}
     </div>

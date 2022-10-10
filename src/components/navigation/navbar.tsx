@@ -38,7 +38,7 @@ const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) 
           </h1>
           <div className="flex items-center justify-between">
             {NAV_ITEMS.map(({label, anchorId}) => (
-              <Link to={anchorId} smooth spy key={anchorId}>
+              <Link to={anchorId} smooth spy key={anchorId} offset={-70}>
                 <Anchor>{label}</Anchor>
               </Link>
             ))}
