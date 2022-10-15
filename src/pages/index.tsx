@@ -1,11 +1,11 @@
 // import Link from "next/link";
-import matter from "gray-matter";
-import fs from "fs";
-import { Characteristics, Projects } from "@/components/partials";
 import { Section } from "@/components/common";
-import { ICharacteristic } from "@/lib/types";
-import { Experience } from "@/components/partials/experience";
+import { Characteristics, Projects } from "@/components/partials";
 import { Education } from "@/components/partials/education";
+import { Experience } from "@/components/partials/experience";
+import { ICharacteristic, IProject } from "@/lib/types";
+import fs from "fs";
+import matter from "gray-matter";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -91,33 +91,33 @@ export async function getStaticProps() {
   const filePath = "_content/projects";
   const files = fs.readdirSync(filePath);
 
-  const projects = files
-    .map((file) => {
+  const projects: Array<IProject> = files
+    .map((file): IProject => {
       const data = fs.readFileSync(`${filePath}/${file}`).toString();
 
       const d = matter(data).data;
 
-      let frameworks = [];
+      let frameworks: Array<string> = [];
       if (d.frameworks) frameworks = d.frameworks.split(", ");
 
-      let languages = [];
+      let languages: Array<string> = [];
       if (d.languages) languages = d.languages.split(", ");
 
       if (frameworks.length) delete d["frameworks"];
       if (languages.length) delete d["languages"];
 
       const f = {
+        ...d,
         frameworks,
         languages,
-        ...d
       };
 
       return {
         ...f,
         slug: file.split(".")[0]
-      };
+      } as IProject;
     })
-    .sort((a, b) => b.title < a.title);
+    .sort((a, b) => b.title < a.title ? 1 : -1);
 
   return {
     props: {
