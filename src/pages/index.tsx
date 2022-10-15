@@ -6,6 +6,7 @@ import { Experience } from "@/components/partials/experience";
 import { ICharacteristic, IProject } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -21,10 +22,9 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
     title: "my work experience",
     description: "I'm currently the CTO at T.W.I.N srl",
     sectionLinkId: "experience"
-  }
-];
+  } ];
 
-const Page = ({ projects }) => {
+const Page: NextPage = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <div className="min-h-[94vh] bg-white text-black py-[2vh] w-screen overflow-hidden" id="home">
@@ -87,7 +87,7 @@ const Page = ({ projects }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const filePath = "_content/projects";
   const files = fs.readdirSync(filePath);
 
