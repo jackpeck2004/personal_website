@@ -13,19 +13,19 @@ const Main = ({ children, router: _router }) => {
 
   return (
     <>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="black" />
-          <title>Giacomo Pasin</title>
-        </Head>
-        {isDesktop ? (
-          <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} />
-        ) : (
-          <HamburgerNavbar />
-        )}
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="black" />
+        <title>Giacomo Pasin</title>
+      </Head>
+      {isDesktop ? (
+        <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} />
+      ) : (
+        <HamburgerNavbar />
+      )}
 
-        {children}
-        <Footer />
+      {children}
+      <Footer />
     </>
   );
 };

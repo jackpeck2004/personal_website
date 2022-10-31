@@ -12,10 +12,9 @@ export interface IProject {
   github?: string;
   live?: string;
   slug: string;
-};
-
+}
 
 export type NavItem = {
-  label: string,
-  anchorId: string
+  label: string;
+  anchorId: string;
 };

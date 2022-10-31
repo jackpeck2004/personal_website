@@ -24,11 +24,20 @@ const MenuView = ({ setNavbarOpen }) => {
           }}
         />
       </Button>
-      <ul className={`flex flex-col justify-evenly items-center h-[50vw] text-3xl`}>
-        {NAV_ITEMS.map(({label, anchorId}) => (
-        <Link to={anchorId} smooth spy onClick={() => setNavbarOpen(false)} key={anchorId} offset={-70}>
-          <Anchor>{label}</Anchor>
-        </Link>
+      <ul
+        className={`flex flex-col justify-evenly items-center h-[50vw] text-3xl`}
+      >
+        {NAV_ITEMS.map(({ label, anchorId }) => (
+          <Link
+            to={anchorId}
+            smooth
+            spy
+            onClick={() => setNavbarOpen(false)}
+            key={anchorId}
+            offset={-70}
+          >
+            <Anchor>{label}</Anchor>
+          </Link>
         ))}
       </ul>
     </div>

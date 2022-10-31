@@ -9,23 +9,26 @@ import { NavItem } from "@/lib/types";
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",
-    anchorId: "home",
+    anchorId: "home"
   },
   {
     label: "Projects",
-    anchorId: "projects",
+    anchorId: "projects"
   },
   {
     label: "Work Experience",
-    anchorId: "experience",
+    anchorId: "experience"
   },
   {
     label: "Education",
-    anchorId: "education",
-  },
+    anchorId: "education"
+  }
 ];
 
-const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) => {
+const Navbar = ({
+  currentTheme: _currentTheme,
+  changeThemeFn: _changeThemeFn
+}) => {
   return (
     <div className="bg-white text-black py-[1vh] w-full sticky top-0 z-10">
       <div className="px-52">
@@ -37,7 +40,7 @@ const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) 
             Giacomo Pasin
           </h1>
           <div className="flex items-center justify-between">
-            {NAV_ITEMS.map(({label, anchorId}) => (
+            {NAV_ITEMS.map(({ label, anchorId }) => (
               <Link to={anchorId} smooth spy key={anchorId} offset={-70}>
                 <Anchor>{label}</Anchor>
               </Link>
@@ -60,4 +63,4 @@ const Navbar = ({ currentTheme: _currentTheme, changeThemeFn: _changeThemeFn }) 
   );
 };
 
-export default Navbar
+export default Navbar;

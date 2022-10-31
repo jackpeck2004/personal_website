@@ -1,4 +1,4 @@
-import { MouseEventHandler, PropsWithChildren, FC } from 'react';
+import { MouseEventHandler, PropsWithChildren, FC } from "react";
 
 interface IButtonProps {
   circular?: boolean;
@@ -25,8 +25,13 @@ const Button = styled.button`
 
 export const Button: FC<PropsWithChildren<IButtonProps>> = (props) => {
   return (
-    <button className={`bg-none p-[10px] border border-transparent ${props.circular ? "rounded-full" : ""} transition ${props.border ? "hover:border-black" : ""}`} onClick={props.onClick}>
+    <button
+      className={`bg-none p-[10px] border border-transparent ${
+        props.circular ? "rounded-full" : ""
+      } transition ${props.border ? "hover:border-black" : ""}`}
+      onClick={props.onClick}
+    >
       {props.children}
     </button>
   );
-}
+};
