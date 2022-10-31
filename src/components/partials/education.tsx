@@ -37,7 +37,9 @@ export const Education: FC<PropsWithChildren<IEducationProps>> = ({
       <span className="text-2xl">
         <h4 className="font-bold inline">{title} – </h4>
         <Link href={schoolUrl} passHref>
-          <Anchor target="_blank">{school}</Anchor>
+          <a className="text-blue-500 pr-4 cursor-pointer" target={"_blank"}>
+            {school}
+          </a>
         </Link>
       </span>
       <LineDivider />
@@ -45,7 +47,9 @@ export const Education: FC<PropsWithChildren<IEducationProps>> = ({
       <p className="pt-4 truncate">
         <span className="font-bold">Website </span>
         <Link href={schoolUrl} passHref>
-          <Anchor target="_blank">{schoolUrl}</Anchor>
+          <a className="text-blue-500 pr-4 cursor-pointer" target={"_blank"}>
+            {schoolUrl}
+          </a>
         </Link>
       </p>
     </div>

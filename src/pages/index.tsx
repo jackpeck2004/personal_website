@@ -7,6 +7,7 @@ import { ICharacteristic, IProject } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import Link from "next/link";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -83,7 +84,7 @@ const Page: NextPage = ({
             city="Roncade, Italy"
             title="International Baccalaureate Diploma"
             school="International School of Talents - Multicampus"
-            schoolUrl="https://internationalschooloftalentsmulticampus.com/universities/"
+            schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
           >
             <p>
               Subjects Taken:
