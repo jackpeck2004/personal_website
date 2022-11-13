@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
-import { Anchor } from "@/components/common";
 
 interface IExperienceProps {
   startDate: string;

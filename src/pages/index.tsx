@@ -7,7 +7,6 @@ import { ICharacteristic, IProject } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import Link from "next/link";
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
