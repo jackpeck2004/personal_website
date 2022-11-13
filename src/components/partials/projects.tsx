@@ -24,16 +24,12 @@ const Project = ({
           <div className="pt-2">
             {gitHubUrl && (
               <Link href={gitHubUrl} passHref>
-                <Anchor target="_blank">
-                  GitHub
-                </Anchor>
+                <Anchor target="_blank">GitHub</Anchor>
               </Link>
             )}
             {liveUrl && (
               <Link href={liveUrl} passHref>
-                <Anchor target="_blank">
-                  Live
-                </Anchor>
+                <Anchor target="_blank">Live</Anchor>
               </Link>
             )}
           </div>

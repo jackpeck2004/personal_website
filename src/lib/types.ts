@@ -4,7 +4,17 @@ export interface ICharacteristic {
   sectionLinkId?: string;
 }
 
+export interface IProject {
+  title: string;
+  description: string;
+  languages: Array<string>;
+  frameworks?: Array<string>;
+  github?: string;
+  live?: string;
+  slug: string;
+}
+
 export type NavItem = {
-  label: string,
-  anchorId: string
+  label: string;
+  anchorId: string;
 };
