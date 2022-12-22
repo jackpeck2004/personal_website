@@ -13,7 +13,7 @@ export const Anchor: FC<PropsWithChildren<{ target?: string }>> = ({
   target
 }) => {
   return (
-    <a className="text-blue-500 pr-4 cursor-pointer" target={target}>
+    <a className="link" target={target}>
       {children}
     </a>
   );

@@ -36,7 +36,7 @@ export const Experience: FC<PropsWithChildren<IExperienceProps>> = ({
       <span className="text-2xl">
         <h4 className="font-bold inline">{role} – </h4>
         <Link href={companyUrl} passHref>
-          <a className="text-blue-500 pr-4 cursor-pointer" target={"_blank"}>
+          <a className="link" target={"_blank"}>
             {company}
           </a>
         </Link>

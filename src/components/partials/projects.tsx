@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { Anchor, Section } from "@/components/common";
+import { FC } from "react";
+import { Section } from "@/components/common";
+import { IProject } from "@/lib/types";
 
-const Project = ({
+const Project: FC<Omit<IProject, "slug">> = ({
   title,
-  langs,
+  languages: langs,
   frameworks,
   description,
-  gitHubUrl,
-  liveUrl
+  github: gitHubUrl,
+  live: liveUrl
 }) => {
   return (
     <>
@@ -23,13 +25,17 @@ const Project = ({
           <p>{description}</p>
           <div className="pt-2">
             {gitHubUrl && (
-              <Link href={gitHubUrl} passHref>
-                <Anchor target="_blank">GitHub</Anchor>
+              <Link href={gitHubUrl}>
+                <a className="link" target="_blank">
+                  GitHub
+                </a>
               </Link>
             )}
             {liveUrl && (
-              <Link href={liveUrl} passHref>
-                <Anchor target="_blank">Live</Anchor>
+              <Link href={liveUrl}>
+                <a className="link" target="_blank">
+                  Live
+                </a>
               </Link>
             )}
           </div>
@@ -39,7 +45,7 @@ const Project = ({
   );
 };
 
-export const Projects = ({ projects }) => {
+export const Projects: FC<{ projects: Array<IProject> }> = ({ projects }) => {
   return (
     <Section title="Projects" sectionId="projects">
       <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
@@ -49,11 +55,11 @@ export const Projects = ({ projects }) => {
               <Project
                 key={idx}
                 title={project.title}
-                langs={project.languages}
+                languages={project.languages}
                 frameworks={project.frameworks}
                 description={project.description}
-                liveUrl={project.live && project.live}
-                gitHubUrl={project.github && project.github}
+                live={project.live && project.live}
+                github={project.github && project.github}
               />
             );
           })}
