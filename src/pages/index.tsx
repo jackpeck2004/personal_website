@@ -1,8 +1,10 @@
 // import Link from "next/link";
-import { Section } from "@/components/common";
+import { DownloadCVButton, Section } from "@/components/common";
 import { Characteristics, Projects } from "@/components/partials";
 import { Education } from "@/components/partials/education";
 import { Experience } from "@/components/partials/experience";
+import constants from "@/lib/constants";
+import { useMediaQuery } from "@/lib/hooks";
 import { ICharacteristic, IProject } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
@@ -30,6 +32,8 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
 const Page: NextPage = ({
   projects
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
+
   return (
     <div
       className="min-h-[94vh] bg-white text-black py-[2vh] w-screen overflow-hidden"
@@ -41,6 +45,11 @@ const Page: NextPage = ({
           Developer
         </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
+        {!isDesktop ? (
+          <section className="my-4 flex justify-center">
+            <DownloadCVButton />
+          </section>
+        ) : null}
         <Projects projects={projects} />
         <Section title="Work Experience" sectionId="experience">
           <Experience

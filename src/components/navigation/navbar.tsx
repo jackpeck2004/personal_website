@@ -1,7 +1,7 @@
 // import Button from "@/components/common/button";
 import { animateScroll as scroll, Link } from "react-scroll";
 // import { MoonIcon, SunIcon } from "@heroicons/react/outline";
-import { NavAnchor as Anchor } from "@/components/common";
+import { DownloadCVButton, NavAnchor as Anchor } from "@/components/common";
 import { NavItem } from "@/lib/types";
 
 // const iconStyle = { width: "2rem", height: "2rem" };
@@ -45,6 +45,7 @@ const Navbar = ({
                 <Anchor>{label}</Anchor>
               </Link>
             ))}
+            <DownloadCVButton />
             {/*<Button
               circular
               border
