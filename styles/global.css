@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .link {
+        @apply text-blue-500 pr-4 cursor-pointer
+    }
+}
