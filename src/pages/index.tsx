@@ -32,7 +32,7 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
 const Page: NextPage = ({
   projects
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const isDesktop = useMediaQuery(constants.mediaQueries.IS_LARGE);
+  const isDesktop = useMediaQuery(constants.mediaQueries.IS_XLARGE);
 
   return (
     <div

@@ -3,6 +3,8 @@ import { animateScroll as scroll, Link } from "react-scroll";
 // import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { DownloadCVButton, NavAnchor as Anchor } from "@/components/common";
 import { NavItem } from "@/lib/types";
+import { useMediaQuery } from "@/lib/hooks";
+import constants from "@/lib/constants";
 
 // const iconStyle = { width: "2rem", height: "2rem" };
 
@@ -29,6 +31,8 @@ const Navbar = ({
   currentTheme: _currentTheme,
   changeThemeFn: _changeThemeFn
 }) => {
+  const isXlDisplay = useMediaQuery(constants.mediaQueries.IS_XLARGE);
+
   return (
     <div className="bg-white text-black py-[1vh] w-full sticky top-0 z-10">
       <div className="px-52">
@@ -45,7 +49,7 @@ const Navbar = ({
                 <Anchor>{label}</Anchor>
               </Link>
             ))}
-            <DownloadCVButton />
+            {isXlDisplay ? <DownloadCVButton /> : null}
             {/*<Button
               circular
               border
