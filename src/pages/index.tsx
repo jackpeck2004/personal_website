@@ -1,14 +1,35 @@
 // import Link from "next/link";
-import { DownloadCVButton, Section } from "@/components/common";
+import { DownloadCVButton, LineDivider, Section } from "@/components/common";
 import { Characteristics, Projects } from "@/components/partials";
 import { Education } from "@/components/partials/education";
 import { Experience } from "@/components/partials/experience";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
-import { ICharacteristic, IProject } from "@/lib/types";
+import { ICharacteristic, IProject, ILanguage } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+
+const LANGUAGES: Array<ILanguage> = [
+{
+language: "English",
+understading: "Native",
+speaking: "Native",
+writing: "Native",
+},
+{
+language: "Italian",
+understading: "Native",
+speaking: "Native",
+writing: "Native",
+},
+{
+language: "Spanish",
+understading: "B2",
+speaking: "B2",
+writing: "B2",
+},
+]
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -123,6 +144,31 @@ const Page: NextPage = ({
             school="The European House - Ambrosetti"
             schoolUrl="https://leaderdelfuturo.eu"
           ></Education>
+        </Section>
+        <Section title="Language skills">
+            <div className="flex justify-center">
+            <table className="w-[80%]">
+                <thead className="">
+                    <tr className="border-b border-gray-300">
+                        {Object.keys(LANGUAGES[0]).map((k) => (
+                        <th key={k} className="capitalize pt-4 pb-2 pr-4 text-left">{k}</th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody>
+                {LANGUAGES.map((language) => {
+                    return (
+                        <tr key={language.language}>
+                            <td className="text-blue-500 font-bold pt-2">{language.language}</td>
+                            <td>{language.understading}</td>
+                            <td>{language.speaking}</td>
+                            <td>{language.writing}</td>
+                        </tr>
+                    );
+                })}
+                </tbody>
+            </table>
+            </div>
         </Section>
       </div>
     </div>

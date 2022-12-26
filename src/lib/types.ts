@@ -14,6 +14,13 @@ export interface IProject {
   slug: string;
 }
 
+export interface ILanguage {
+    language: string;
+    understading: string;
+    speaking: string;
+    writing: string;
+}
+
 export type NavItem = {
   label: string;
   anchorId: string;

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
+import { LineDivider } from "@/components/common";
 
 interface IEducationProps {
   startDate: string;
@@ -9,14 +10,6 @@ interface IEducationProps {
   school: string;
   schoolUrl: string;
 }
-
-const LineDivider = () => (
-  <div className="relative py-4">
-    <div className="absolute inset-0 flex items-center">
-      <div className="w-full border-b border-gray-300"></div>
-    </div>
-  </div>
-);
 
 export const Education: FC<PropsWithChildren<IEducationProps>> = ({
   startDate,
