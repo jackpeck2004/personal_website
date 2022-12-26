@@ -1,6 +1,11 @@
 // import Link from "next/link";
 import { DownloadCVButton, Section } from "@/components/common";
-import { Characteristics, Projects, WorkExperience, Education } from "@/components/partials";
+import {
+  Characteristics,
+  Projects,
+  WorkExperience,
+  Education
+} from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
 import { ICharacteristic, IProject, ILanguage } from "@/lib/types";
@@ -9,25 +14,25 @@ import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
 const LANGUAGES: Array<ILanguage> = [
-{
-language: "English",
-understading: "Native",
-speaking: "Native",
-writing: "Native",
-},
-{
-language: "Italian",
-understading: "Native",
-speaking: "Native",
-writing: "Native",
-},
-{
-language: "Spanish",
-understading: "B2",
-speaking: "B2",
-writing: "B2",
-},
-]
+  {
+    language: "English",
+    understading: "Native",
+    speaking: "Native",
+    writing: "Native"
+  },
+  {
+    language: "Italian",
+    understading: "Native",
+    speaking: "Native",
+    writing: "Native"
+  },
+  {
+    language: "Spanish",
+    understading: "B2",
+    speaking: "B2",
+    writing: "B2"
+  }
+];
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
   {
@@ -70,70 +75,35 @@ const Page: NextPage = ({
         ) : null}
         <Projects projects={projects} />
         <WorkExperience />
-        <Section title="Education and Training" sectionId="education">
-          <Education
-            startDate="1 Sep 2020"
-            endDate="21 May 2022"
-            city="Roncade, Italy"
-            title="International Baccalaureate Diploma"
-            school="International School of Talents - Multicampus"
-            schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
-          >
-            <p>
-              Final Score: 40 Subjects Taken:
-              <ul>
-                <li>
-                  Higher Level Mathematics Analysis and Approaches (6 out of 7)
-                </li>
-                <li>Higher Level Physics (7 out of 7)</li>
-                <li>Higher Level Computer Science (7 out of 7)</li>
-                <li>Economics (6 out of 7)</li>
-                <li>Spanish B (7 out of 7)</li>
-                <li>English A Language and Literature (6 out of 7)</li>
-              </ul>
-              <em>+1 extra core point</em>
-            </p>
-          </Education>
-          <Education
-            startDate="4 Sep 2018"
-            endDate="30 Jun 2020"
-            city="Roncade, Italy"
-            title="IB Middle Years Program (High School grades 9 and 10)"
-            school="H-Farm International School - Treviso"
-            schoolUrl="https://www.h-farm.com/en/h-farm-school/treviso/middle-school"
-          ></Education>
-          <Education
-            startDate="4 Sep 2021"
-            endDate="Current"
-            title="Leader of the Future"
-            school="The European House - Ambrosetti"
-            schoolUrl="https://leaderdelfuturo.eu"
-          ></Education>
-        </Section>
+        <Education />
         <Section title="Language skills">
-            <div className="flex justify-center">
+          <div className="flex justify-center">
             <table className="w-[80%]">
-                <thead className="">
-                    <tr className="border-b border-gray-300">
-                        {Object.keys(LANGUAGES[0]).map((k) => (
-                        <th key={k} className="capitalize pt-4 pb-2 pr-4 text-left">{k}</th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
+              <thead className="">
+                <tr className="border-b border-gray-300">
+                  {Object.keys(LANGUAGES[0]).map((k) => (
+                    <th key={k} className="capitalize pt-4 pb-2 pr-4 text-left">
+                      {k}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
                 {LANGUAGES.map((language) => {
-                    return (
-                        <tr key={language.language}>
-                            <td className="text-blue-500 font-bold pt-2">{language.language}</td>
-                            <td>{language.understading}</td>
-                            <td>{language.speaking}</td>
-                            <td>{language.writing}</td>
-                        </tr>
-                    );
+                  return (
+                    <tr key={language.language}>
+                      <td className="text-blue-500 font-bold pt-2">
+                        {language.language}
+                      </td>
+                      <td>{language.understading}</td>
+                      <td>{language.speaking}</td>
+                      <td>{language.writing}</td>
+                    </tr>
+                  );
                 })}
-                </tbody>
+              </tbody>
             </table>
-            </div>
+          </div>
         </Section>
       </div>
     </div>

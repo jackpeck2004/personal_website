@@ -15,10 +15,10 @@ export interface IProject {
 }
 
 export interface ILanguage {
-    language: string;
-    understading: string;
-    speaking: string;
-    writing: string;
+  language: string;
+  understading: string;
+  speaking: string;
+  writing: string;
 }
 
 export type NavItem = {
