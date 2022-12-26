@@ -1,8 +1,6 @@
 // import Link from "next/link";
-import { DownloadCVButton, LineDivider, Section } from "@/components/common";
-import { Characteristics, Projects } from "@/components/partials";
-import { Education } from "@/components/partials/education";
-import { Experience } from "@/components/partials/experience";
+import { DownloadCVButton, Section } from "@/components/common";
+import { Characteristics, Projects, WorkExperience, Education } from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
 import { ICharacteristic, IProject, ILanguage } from "@/lib/types";
@@ -71,40 +69,7 @@ const Page: NextPage = ({
           </section>
         ) : null}
         <Projects projects={projects} />
-        <Section title="Work Experience" sectionId="experience">
-          <Experience
-            startDate="8 Aug 2021"
-            endDate="current"
-            city="Treviso, Italy"
-            role="CTO"
-            company="T.W.I.N srl"
-            companyUrl="https://twin.services"
-          >
-            <p>
-              Upgrade existing technology infrastructures, organize digital
-              permissions and update programs to adhere to GDPR and privacy
-              standards, handle setup and maintenance of software platforms and
-              integrate new technologies into the workflow of the company to
-              enhance productivity of employees.
-            </p>
-          </Experience>
-          <Experience
-            startDate="4 Sept 2019"
-            endDate="8 Aug 2021"
-            city="Treviso, Italy"
-            role="Junior Technology and Web Designer"
-            company="T.W.I.N srl"
-            companyUrl="https://twin.services"
-          >
-            <p>
-              Organize new network infrastructures and secure file sharing
-              options, setting up Google Workspace for the whole company,
-              configure new domains and website addresses, create software
-              platforms, website designs and design algorithms to simplify the
-              workflows of other employees.
-            </p>
-          </Experience>
-        </Section>
+        <WorkExperience />
         <Section title="Education and Training" sectionId="education">
           <Education
             startDate="1 Sep 2020"
