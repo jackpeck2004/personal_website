@@ -14,7 +14,7 @@ const CHARACTERISTICS: Array<ICharacteristic> = [
   {
     title: "my passions",
     description:
-      "software development, engineering, technology, basketball and food"
+      "computer vision, artificial intelligence, nuclear physics, optics, robotics, web technologies, basketball and culinary culture"
   },
   {
     title: "my education",
@@ -41,8 +41,7 @@ const Page: NextPage = ({
     >
       <div className="px-4 lg:px-52">
         <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
-          I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> Software
-          Developer
+          I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> STEM Enthusiast
         </h1>
         <Characteristics characteristics={CHARACTERISTICS} />
         {!isDesktop ? (
@@ -95,15 +94,18 @@ const Page: NextPage = ({
             schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
           >
             <p>
-              Subjects Taken:
+              Final Score: 40 Subjects Taken:
               <ul>
-                <li>Higher Level Mathematics Analysis and Approaches</li>
-                <li>Higher Level Physics</li>
-                <li>Higher Level Computer Science</li>
-                <li>Economics</li>
-                <li>Spanish B</li>
-                <li>English A Language and Literature</li>
+                <li>
+                  Higher Level Mathematics Analysis and Approaches (6 out of 7)
+                </li>
+                <li>Higher Level Physics (7 out of 7)</li>
+                <li>Higher Level Computer Science (7 out of 7)</li>
+                <li>Economics (6 out of 7)</li>
+                <li>Spanish B (7 out of 7)</li>
+                <li>English A Language and Literature (6 out of 7)</li>
               </ul>
+              <em>+1 extra core point</em>
             </p>
           </Education>
           <Education

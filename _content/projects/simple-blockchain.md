@@ -1,6 +1,6 @@
 ---
 title: Simple Blockchain
-description: This project is a blockchain implementation created using linked lists based on the information and lecture given to us in the IB CompSci HL course. It was created to check my understanding and in order to better percieve it's possible usages and structure.
+description: A basic blockchain implementation created using linked lists. The idea is derived from a lecture given during the IB CompSci HL course. It was created to apply my knowledge and to better percieve blockchain's potential.
 languages: Python
 github: https://github.com/jackpeck2004/Blockchain
 ---

@@ -17,7 +17,7 @@ const Project: FC<Omit<IProject, "slug">> = ({
         <div>
           <h4 className="font-semibold text-xl">{title}</h4>
           <h6 className="mb-2 text-gray-600">
-            Langs: {langs && langs.join(", ")}
+            Languages: {langs && langs.join(", ")}
             <br />
             {frameworks.length ? "Frameworks: " + frameworks.join(", ") : ""}
           </h6>
