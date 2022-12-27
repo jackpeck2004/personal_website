@@ -10,7 +10,7 @@ export const LanguageSkillsSection: FC<ILanguageSkillsSectionProps> = ({
   languages
 }) => {
   return (
-    <Section title="Language skills">
+    <Section title="Language skills" sectionId="skills">
       <div className="flex justify-center">
         <table className="w-full lg:w-[80%]">
           <thead className="">

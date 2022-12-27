@@ -57,7 +57,7 @@ const Conference: FC<PropsWithChildren<IConferenceProps>> = ({
 
 export const ConferencesSection = () => {
   return (
-    <Section title="Conferences and Seminars">
+    <Section title="Conferences and Seminars" sectionId="conferences">
       <Conference
         startDate="4 SEP 2021"
         endDate="5 SEP 2021"
