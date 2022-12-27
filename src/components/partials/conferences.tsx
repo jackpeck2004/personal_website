@@ -64,6 +64,10 @@ export const ConferencesSection = () => {
         location="Villa D'Este Via Regina, 40 - 22012 Cernobbio (CO), Italy"
         name="The scenario of today and tomorrow for competitive strategies"
         url="https://www.leaderdelfuturo.eu/incontri/view/9127"
+        organizer={{
+            name: "Leader of the Future (The European House - Ambrosetti)",
+            url: "https://www.leaderdelfuturo.eu/",
+        }}
       >
         <p>
           During this event reserved for young managers and entrepreneurs,
@@ -78,6 +82,10 @@ export const ConferencesSection = () => {
         location="Villa D'Este Via Regina, 40 - 22012 Cernobbio (CO), Italy"
         name="The scenario of the economy and finance"
         url="https://www.leaderdelfuturo.eu/incontri/view/9127"
+        organizer={{
+            name: "Leader of the Future (The European House - Ambrosetti)",
+            url: "https://www.leaderdelfuturo.eu/",
+        }}
       >
         <p>
           Throughout the day, young managers and entrepreneurs have the
@@ -92,6 +100,10 @@ export const ConferencesSection = () => {
         location="Geneva, Switzerland"
         name="Geneva: a look at the future between leadership and innovation"
         url="https://www.leaderdelfuturo.eu/incontri/view/9157"
+        organizer={{
+            name: "Leader of the Future (The European House - Ambrosetti)",
+            url: "https://www.leaderdelfuturo.eu/",
+        }}
       >
         <div>
           <p>
