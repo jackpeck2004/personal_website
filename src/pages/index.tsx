@@ -1,5 +1,5 @@
 // import Link from "next/link";
-import { DownloadCVButton, LineDivider, Section } from "@/components/common";
+import { DownloadCVButton } from "@/components/common";
 import {
   Characteristics,
   Projects,
@@ -8,6 +8,7 @@ import {
   LanguageSkills,
   SoftSkills
 } from "@/components/partials";
+import { DigitalSkillsSection } from "@/components/partials/digital-skills";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
 import {
@@ -125,15 +126,7 @@ const Page: NextPage = ({
         <Education />
         <LanguageSkills languages={LANGUAGES} />
         <SoftSkills skills={SOFT_SKILLS} />
-        <Section title="Digital Skills">
-          {DIGITAL_SKILLS.map((skill) => (
-            <div className="py-4">
-              <h4 className="font-bold inline text-2xl">{skill.title}</h4>
-              <LineDivider />
-              <p>{skill.contents.join(", ")}</p>
-            </div>
-          ))}
-        </Section>
+        <DigitalSkillsSection skills={DIGITAL_SKILLS} />
       </div>
     </div>
   );
