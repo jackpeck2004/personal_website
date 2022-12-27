@@ -35,7 +35,7 @@ const Experience: FC<PropsWithChildren<IExperienceProps>> = ({
         </Link>
       </span>
       <LineDivider />
-      {children}
+      <div className="prose text-black max-w-none">{children}</div>
     </div>
   );
 };
