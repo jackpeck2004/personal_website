@@ -23,7 +23,7 @@ export const LanguageSkillsSection: FC<ILanguageSkillsSectionProps> = ({
             </tr>
           </thead>
           <tbody>
-            {languages.map((language) => (
+            {languages.sort().map((language) => (
               <tr key={language.language}>
                 <td className="text-blue-500 font-bold pt-2">
                   {language.language}
