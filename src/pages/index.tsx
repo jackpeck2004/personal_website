@@ -1,11 +1,12 @@
 // import Link from "next/link";
-import { DownloadCVButton } from "@/components/common";
+import { DownloadCVButton, LineDivider, Section } from "@/components/common";
 import {
   Characteristics,
   Projects,
   WorkExperience,
   Education,
-  LanguageSkills
+  LanguageSkills,
+  SoftSkills
 } from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
@@ -33,6 +34,16 @@ const LANGUAGES: Array<ILanguage> = [
     speaking: "B2",
     writing: "B2"
   }
+];
+
+const SOFT_SKILLS: Array<string> = [
+  "Problem Solving",
+  "Analytical Mindset",
+  "Aptitude to Research",
+  "Team Leadership",
+  "Public Speaking",
+  "Motivated",
+  "Independent"
 ];
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
@@ -78,6 +89,7 @@ const Page: NextPage = ({
         <WorkExperience />
         <Education />
         <LanguageSkills languages={LANGUAGES} />
+        <SoftSkills skills={SOFT_SKILLS} />
       </div>
     </div>
   );
