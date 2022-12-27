@@ -43,7 +43,7 @@ const Conference: FC<PropsWithChildren<IConferenceProps>> = ({
         )}
       </span>
       <LineDivider />
-      {children}
+      <div className="prose text-black max-w-none">{children}</div>
       {url && (
         <Link href={url} passHref>
           <a className="link" target={"_blank"}>
