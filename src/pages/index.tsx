@@ -2,13 +2,14 @@
 import { DownloadCVButton } from "@/components/common";
 import {
   Characteristics,
+  Conferences,
   Projects,
   WorkExperience,
   Education,
   LanguageSkills,
-  SoftSkills
+  SoftSkills,
+  DigitalSkills
 } from "@/components/partials";
-import { DigitalSkillsSection } from "@/components/partials/digital-skills";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
 import {
@@ -125,7 +126,8 @@ const Page: NextPage = ({
         <Education />
         <LanguageSkills languages={LANGUAGES} />
         <SoftSkills skills={SOFT_SKILLS} />
-        <DigitalSkillsSection skills={DIGITAL_SKILLS} />
+        <DigitalSkills skills={DIGITAL_SKILLS} />
+        <Conferences />
       </div>
     </div>
   );
