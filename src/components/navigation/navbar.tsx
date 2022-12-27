@@ -24,6 +24,14 @@ export const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Education",
     anchorId: "education"
+  },
+  {
+    label: "Skills",
+    anchorId: "skills"
+  },
+  {
+    label: "Conferences",
+    anchorId: "conferences"
   }
 ];
 
