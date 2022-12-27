@@ -1,10 +1,11 @@
 // import Link from "next/link";
-import { DownloadCVButton, Section } from "@/components/common";
+import { DownloadCVButton } from "@/components/common";
 import {
   Characteristics,
   Projects,
   WorkExperience,
-  Education
+  Education,
+  LanguageSkills
 } from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
@@ -76,35 +77,7 @@ const Page: NextPage = ({
         <Projects projects={projects} />
         <WorkExperience />
         <Education />
-        <Section title="Language skills">
-          <div className="flex justify-center">
-            <table className="w-[80%]">
-              <thead className="">
-                <tr className="border-b border-gray-300">
-                  {Object.keys(LANGUAGES[0]).map((k) => (
-                    <th key={k} className="capitalize pt-4 pb-2 pr-4 text-left">
-                      {k}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {LANGUAGES.map((language) => {
-                  return (
-                    <tr key={language.language}>
-                      <td className="text-blue-500 font-bold pt-2">
-                        {language.language}
-                      </td>
-                      <td>{language.understading}</td>
-                      <td>{language.speaking}</td>
-                      <td>{language.writing}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </Section>
+        <LanguageSkills languages={LANGUAGES} />
       </div>
     </div>
   );
