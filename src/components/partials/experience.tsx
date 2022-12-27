@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
-import { Section } from "@/components/common";
+import { Section, LineDivider } from "@/components/common";
 
 interface IExperienceProps {
   startDate: string;
@@ -10,14 +10,6 @@ interface IExperienceProps {
   company: string;
   companyUrl: string;
 }
-
-const LineDivider = () => (
-  <div className="relative py-4">
-    <div className="absolute inset-0 flex items-center">
-      <div className="w-full border-b border-gray-300"></div>
-    </div>
-  </div>
-);
 
 const Experience: FC<PropsWithChildren<IExperienceProps>> = ({
   startDate,
