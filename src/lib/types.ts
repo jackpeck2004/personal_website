@@ -21,6 +21,11 @@ export interface ILanguage {
   writing: string;
 }
 
+export interface IDigitalSkill {
+  title: string;
+  contents: Array<string>;
+}
+
 export type NavItem = {
   label: string;
   anchorId: string;

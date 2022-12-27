@@ -10,7 +10,12 @@ import {
 } from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
-import { ICharacteristic, IProject, ILanguage } from "@/lib/types";
+import {
+  ICharacteristic,
+  IProject,
+  ILanguage,
+  IDigitalSkill
+} from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -44,6 +49,36 @@ const SOFT_SKILLS: Array<string> = [
   "Public Speaking",
   "Motivated",
   "Independent"
+];
+
+const DIGITAL_SKILLS: Array<IDigitalSkill> = [
+  {
+    title: "Programming Languages and Technologies",
+    contents: [
+      "TypeScript",
+      "CSS",
+      "JavaScript",
+      "JSON",
+      "Jupyter",
+      "Notebooks",
+      "Python",
+      "Git",
+      "Docker",
+      "Linux",
+      "HTML",
+      "Postman",
+      "GitHub Redis",
+      "MongoDB",
+      "WordPress",
+      "Blade",
+      "php",
+      "Squarespace CMS"
+    ]
+  },
+  {
+    title: "Office Tools",
+    contents: ["Google", "Workspace", "Microsoft", "Office", "Windows", "MacOS"]
+  }
 ];
 
 const CHARACTERISTICS: Array<ICharacteristic> = [
@@ -90,6 +125,15 @@ const Page: NextPage = ({
         <Education />
         <LanguageSkills languages={LANGUAGES} />
         <SoftSkills skills={SOFT_SKILLS} />
+        <Section title="Digital Skills">
+          {DIGITAL_SKILLS.map((skill) => (
+            <div className="py-4">
+              <h4 className="font-bold inline text-2xl">{skill.title}</h4>
+              <LineDivider />
+              <p>{skill.contents.join(", ")}</p>
+            </div>
+          ))}
+        </Section>
       </div>
     </div>
   );
