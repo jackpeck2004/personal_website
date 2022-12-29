@@ -4,7 +4,7 @@ export interface ICharacteristic {
   sectionLinkId?: string;
 }
 
-export interface IProject {
+export interface ISoftwareProject {
   title: string;
   description: string;
   languages: Array<string>;
@@ -12,6 +12,15 @@ export interface IProject {
   github?: string;
   live?: string;
   slug: string;
+}
+
+export interface IResearchPaper {
+  title: string;
+  scope: string;
+  date: string;
+  url: string;
+  subject: string;
+  type: string;
 }
 
 export interface ILanguage {

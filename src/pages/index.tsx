@@ -1,9 +1,9 @@
 // import Link from "next/link";
-import { DownloadCVButton } from "@/components/common";
+import { DownloadCVButton, Section } from "@/components/common";
 import {
   Characteristics,
   Conferences,
-  Projects,
+  SoftwareProjects,
   WorkExperience,
   Education,
   LanguageSkills,
@@ -12,97 +12,21 @@ import {
 } from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
-import {
-  ICharacteristic,
-  IProject,
-  ILanguage,
-  IDigitalSkill
-} from "@/lib/types";
+import { ISoftwareProject, IResearchPaper } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-
-const LANGUAGES: Array<ILanguage> = [
-  {
-    language: "English",
-    understading: "Native",
-    speaking: "Native",
-    writing: "Native"
-  },
-  {
-    language: "Italian",
-    understading: "Native",
-    speaking: "Native",
-    writing: "Native"
-  },
-  {
-    language: "Spanish",
-    understading: "B2",
-    speaking: "B2",
-    writing: "B2"
-  }
-];
-
-const SOFT_SKILLS: Array<string> = [
-  "Problem Solving",
-  "Analytical Mindset",
-  "Aptitude to Research",
-  "Team Leadership",
-  "Public Speaking",
-  "Motivated",
-  "Independent"
-];
-
-const DIGITAL_SKILLS: Array<IDigitalSkill> = [
-  {
-    title: "Programming Languages and Technologies",
-    contents: [
-      "TypeScript",
-      "CSS",
-      "JavaScript",
-      "JSON",
-      "Jupyter Notebooks",
-      "Python",
-      "Git",
-      "Docker",
-      "Linux",
-      "HTML",
-      "Postman",
-      "GitHub Redis",
-      "MongoDB",
-      "WordPress",
-      "Blade",
-      "php",
-      "Squarespace CMS"
-    ]
-  },
-  {
-    title: "Office Tools",
-    contents: ["Google", "Workspace", "Microsoft", "Office", "Windows", "MacOS"]
-  }
-];
-
-const CHARACTERISTICS: Array<ICharacteristic> = [
-  {
-    title: "my passions",
-    description:
-      "computer vision, artificial intelligence, nuclear physics, optics, robotics, web technologies, basketball and culinary culture"
-  },
-  {
-    title: "my education",
-    description:
-      "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci",
-    sectionLinkId: "education"
-  },
-  {
-    title: "my work experience",
-    description: "I'm currently the CTO at T.W.I.N srl",
-    sectionLinkId: "experience"
-  }
-];
+import {
+  LANGUAGES,
+  SOFT_SKILLS,
+  DIGITAL_SKILLS,
+  CHARACTERISTICS
+} from "@/lib/contents";
+import Link from "next/link";
 
 const Page: NextPage = ({
-  projects
+  softwareProjects,
+  researchPapers
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const isDesktop = useMediaQuery(constants.mediaQueries.IS_XLARGE);
 
@@ -121,7 +45,42 @@ const Page: NextPage = ({
             <DownloadCVButton />
           </section>
         ) : null}
-        <Projects projects={projects} />
+        <Section title="Projects" sectionId="projects">
+          <SoftwareProjects projects={softwareProjects} />
+        </Section>
+        <Section title="Research and Papers" sectionId="research">
+          <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
+            {researchPapers.sort().map((p: IResearchPaper) => (
+              <div
+                className="border border-gray-200 rounded p-4 mb-8"
+                key={p.title.split(" ").join("-").toLowerCase()}
+              >
+                <div>
+                  <h4 className="font-semibold text-xl">
+                    <span className="text-blue-500">
+                      {p.subject}:<br />
+                    </span>{" "}
+                    {p.title}
+                  </h4>
+                  <h6 className="mb-2 text-gray-600">
+                    {p.date}
+                    <br />
+                    {p.scope} - {p.type}
+                  </h6>
+                  <div className="pt-2">
+                    {p.url && (
+                      <Link href={p.url}>
+                        <a className="link" target="_blank">
+                          Read the {p.type.toLowerCase()}
+                        </a>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
         <WorkExperience />
         <Education />
         <LanguageSkills languages={LANGUAGES} />
@@ -134,11 +93,11 @@ const Page: NextPage = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = "_content/projects";
-  const files = fs.readdirSync(filePath);
+  let filePath = "_content/software-projects";
+  let files = fs.readdirSync(filePath);
 
-  const projects: Array<IProject> = files
-    .map((file): IProject => {
+  const softwareProjects: Array<ISoftwareProject> = files
+    .map((file): ISoftwareProject => {
       const data = fs.readFileSync(`${filePath}/${file}`).toString();
 
       const d = matter(data).data;
@@ -161,13 +120,26 @@ export const getStaticProps: GetStaticProps = async () => {
       return {
         ...f,
         slug: file.split(".")[0]
-      } as IProject;
+      } as ISoftwareProject;
     })
     .sort((a, b) => (b.title < a.title ? 1 : -1));
 
+  filePath = "_content/research-and-papers";
+  files = fs.readdirSync(filePath);
+
+  const researchAndPapers: Array<IResearchPaper> = files.map(
+    (file): IResearchPaper => {
+      const data = fs.readFileSync(`${filePath}/${file}`).toString();
+      const d = matter(data).data;
+
+      return d;
+    }
+  );
+
   return {
     props: {
-      projects
+      softwareProjects,
+      researchPapers: researchAndPapers
     }
   };
 };
