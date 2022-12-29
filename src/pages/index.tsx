@@ -1,5 +1,5 @@
 // import Link from "next/link";
-import { DownloadCVButton } from "@/components/common";
+import { DownloadCVButton, Section } from "@/components/common";
 import {
   Characteristics,
   Conferences,
@@ -43,7 +43,9 @@ const Page: NextPage = ({
             <DownloadCVButton />
           </section>
         ) : null}
-        <SoftwareProjects projects={softwareProjects} />
+        <Section title="Projects" id="projects">
+          <SoftwareProjects projects={softwareProjects} />
+        </Section>
         <WorkExperience />
         <Education />
         <LanguageSkills languages={LANGUAGES} />
