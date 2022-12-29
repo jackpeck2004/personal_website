@@ -59,7 +59,7 @@ export const EducationSection = () => {
         school="International School of Talents - Multicampus"
         schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
       >
-        <p>
+        <p className="text-black prose">
           Final Score: 40 Subjects Taken:
           <ul>
             <li>
