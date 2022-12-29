@@ -18,12 +18,13 @@
   "author": "Giacomo Pasin<giacomo.pasin@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@heroicons/react": "^1.0.5",
+    "@heroicons/react": "^1.0.6",
     "@vercel/analytics": "^0.1.6",
     "gray-matter": "^4.0.3",
     "next": "^12.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.7.1",
     "react-scroll": "^1.8.4"
   },
   "devDependencies": {

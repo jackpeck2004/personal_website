@@ -1,5 +1,5 @@
 import { NavAnchor as Anchor, Button } from "@/components/common";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { FiMenu as MenuIcon, FiX as XIcon } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { NAV_ITEMS } from "@/components/navigation/navbar";
