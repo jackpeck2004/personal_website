@@ -45,9 +45,11 @@ const SoftwareProject: FC<Omit<ISoftwareProject, "slug">> = ({
   );
 };
 
-export const SoftwareProjects: FC<{ projects: Array<ISoftwareProject> }> = ({ projects }) => {
+export const SoftwareProjects: FC<{ projects: Array<ISoftwareProject> }> = ({
+  projects
+}) => {
   return (
-    <Section title="Software Projects" sectionId="projects">
+    <Section title="Software Projects" sectionId="projects" subsection>
       <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
         {projects &&
           projects.map((project, idx) => {
