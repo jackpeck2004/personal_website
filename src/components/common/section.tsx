@@ -15,7 +15,7 @@ export const Section: FC<PropsWithChildren<ISectionProps>> = ({
 }) => {
   if (subsection)
     return (
-      <section className="my-8">
+      <section className="mt-8">
         <h2 className="text-3xl">{title}</h2>
         <LineDivider />
         {children}
