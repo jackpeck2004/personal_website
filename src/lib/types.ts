@@ -14,6 +14,15 @@ export interface ISoftwareProject {
   slug: string;
 }
 
+export interface IResearchPaper {
+  title: string;
+  scope: string;
+  date: string;
+  url: string;
+  subject: string;
+  type: string;
+}
+
 export interface ILanguage {
   language: string;
   understading: string;

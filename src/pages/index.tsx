@@ -12,7 +12,7 @@ import {
 } from "@/components/partials";
 import constants from "@/lib/constants";
 import { useMediaQuery } from "@/lib/hooks";
-import { ISoftwareProject } from "@/lib/types";
+import { ISoftwareProject, IResearchPaper } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -22,9 +22,11 @@ import {
   DIGITAL_SKILLS,
   CHARACTERISTICS
 } from "@/lib/contents";
+import Link from "next/link";
 
 const Page: NextPage = ({
-  softwareProjects
+  softwareProjects,
+  researchPapers
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const isDesktop = useMediaQuery(constants.mediaQueries.IS_XLARGE);
 
@@ -43,8 +45,41 @@ const Page: NextPage = ({
             <DownloadCVButton />
           </section>
         ) : null}
-        <Section title="Projects" id="projects">
+        <Section title="Projects" sectionId="projects">
           <SoftwareProjects projects={softwareProjects} />
+        </Section>
+        <Section title="Research and Papers" sectionId="research">
+          <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
+            {researchPapers.map((p: IResearchPaper) => (
+              <div
+                className="border border-gray-200 rounded p-4 mb-8"
+                key={p.title.split(" ").join("-").toLowerCase()}
+              >
+                <div>
+                  <h4 className="font-semibold text-xl">
+                    <span className="text-blue-500">
+                      {p.subject}:<br />
+                    </span>{" "}
+                    {p.title}
+                  </h4>
+                  <h6 className="mb-2 text-gray-600">
+                    {p.date}
+                    <br />
+                    {p.scope} - {p.type}
+                  </h6>
+                  <div className="pt-2">
+                    {p.url && (
+                      <Link href={p.url}>
+                        <a className="link" target="_blank">
+                          Read the {p.type}
+                        </a>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </Section>
         <WorkExperience />
         <Education />
@@ -58,8 +93,8 @@ const Page: NextPage = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = "_content/software-projects";
-  const files = fs.readdirSync(filePath);
+  let filePath = "_content/software-projects";
+  let files = fs.readdirSync(filePath);
 
   const softwareProjects: Array<ISoftwareProject> = files
     .map((file): ISoftwareProject => {
@@ -89,9 +124,22 @@ export const getStaticProps: GetStaticProps = async () => {
     })
     .sort((a, b) => (b.title < a.title ? 1 : -1));
 
+  filePath = "_content/research-and-papers";
+  files = fs.readdirSync(filePath);
+
+  const researchAndPapers: Array<IResearchPaper> = files.map(
+    (file): IResearchPaper => {
+      const data = fs.readFileSync(`${filePath}/${file}`).toString();
+      const d = matter(data).data;
+
+      return d;
+    }
+  );
+
   return {
     props: {
-      softwareProjects: softwareProjects
+      softwareProjects,
+      researchPapers: researchAndPapers
     }
   };
 };
