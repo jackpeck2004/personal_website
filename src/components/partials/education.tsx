@@ -89,7 +89,7 @@ export const EducationSection = () => {
         school="The European House - Ambrosetti"
         schoolUrl="https://leaderdelfuturo.eu"
       >
-      <p>Community Member</p>
+        <p>Community Member</p>
       </Education>
       <Education
         startDate="21 Jul 2019"
@@ -98,8 +98,7 @@ export const EducationSection = () => {
         school="Oxford Royale Academy"
         schoolUrl="https://www.oxford-royale.com/"
         city="Oxford, UK"
-      >
-      </Education>
+      ></Education>
       <Education
         startDate="22 May 2017"
         endDate="26 May 2017"
@@ -108,19 +107,20 @@ export const EducationSection = () => {
         schoolUrl="https://enforex.es"
         city="Salamanca, Spain"
       >
-      <p className="text-black prose">Evaluation:
-      <ul>
-      <li>Langauge contents: 9/10</li>
-      <li>Vocabulary: 8/10</li>
-      <li>Listening comprehension: 9/10</li>
-      <li>Reading comprehension: 9/10</li>
-      <li>Spaking expression: 8/10</li>
-      <li>Written expression: 8/10</li>
-      <li>Pronounciation: 9/10</li>
-      <li>Sociocultural understanding: 9/10</li>
-      </ul>
-      <em>Total: Level C1</em>
-      </p>
+        <p className="text-black prose">
+          Evaluation:
+          <ul>
+            <li>Langauge contents: 9/10</li>
+            <li>Vocabulary: 8/10</li>
+            <li>Listening comprehension: 9/10</li>
+            <li>Reading comprehension: 9/10</li>
+            <li>Spaking expression: 8/10</li>
+            <li>Written expression: 8/10</li>
+            <li>Pronounciation: 9/10</li>
+            <li>Sociocultural understanding: 9/10</li>
+          </ul>
+          <em>Total: Level C1</em>
+        </p>
       </Education>
       <Education
         startDate="Summer 2017"
@@ -128,32 +128,28 @@ export const EducationSection = () => {
         title="Special Effects (Adobe After Effects) Summer Camp"
         school="Sparx Camps"
         schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
-      >
-      </Education>
+      ></Education>
       <Education
         startDate="Summer 2016"
         endDate="Summer 2016"
         title="Digital Fabrication Summer Camp"
         school="H-Farm Digital Summer Camps"
         schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
-      >
-      </Education>
+      ></Education>
       <Education
         startDate="Summer 2015"
         endDate="Summer 2015"
         title="Electronics Summer Camp"
         school="Digital Native Summer Camp"
         schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
-      >
-      </Education>
+      ></Education>
       <Education
         startDate="Summer 2015"
         endDate="Summer 2015"
         title="Makers Summer Camp"
         school="Digital Nativa Summer Camp"
         schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
-      >
-      </Education>
+      ></Education>
     </Section>
   );
 };
