@@ -17,6 +17,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     label: "Projects",
     anchorId: "projects"
   },
+  { label: "Research and Papers", anchorId: "research" },
   {
     label: "Work Experience",
     anchorId: "experience"
