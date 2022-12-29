@@ -1,41 +1,41 @@
 {
-    "name": "giacomopasin.com",
-    "version": "1.0.0",
-    "description": "Giacomo Pasin personal website made to showcase projects and get to know him",
-    "main": "index.js",
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "dev:opt": "NODE_OPTIONS=--openssl-legacy-provider next dev -H 0.0.0.0",
-        "build:opt": "NODE_OPTIONS=-openssl-legacy-provider next build",
-        "prettier": "prettier --write .",
-        "lint": "next lint",
-        "deploy:dev": "git checkout dev && git push origin dev",
-        "deploy:fromdev": "git checkout main && git merge dev && git push origin main && git checkout dev"
-    },
-    "keywords": [],
-    "author": "Giacomo Pasin<giacomo.pasin@gmail.com>",
-    "license": "ISC",
-    "dependencies": {
-        "@heroicons/react": "^1.0.5",
-        "@vercel/analytics": "^0.1.6",
-        "gray-matter": "^4.0.3",
-        "next": "^12.3.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-scroll": "^1.8.4"
-    },
-    "devDependencies": {
-        "@tailwindcss/typography": "^0.5.8",
-        "@types/node": "^18.8.2",
-        "@types/react": "^18.0.21",
-        "autoprefixer": "^10.4.12",
-        "eslint": "^7.32.0",
-        "eslint-config-next": "^11.1.2",
-        "postcss": "^8.4.17",
-        "prettier": "^2.4.1",
-        "tailwindcss": "^3.1.8",
-        "typescript": "^4.8.4"
-    }
+  "name": "giacomopasin.com",
+  "version": "1.0.0",
+  "description": "Giacomo Pasin personal website made to showcase projects and get to know him",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dev:opt": "NODE_OPTIONS=--openssl-legacy-provider next dev -H 0.0.0.0",
+    "build:opt": "NODE_OPTIONS=-openssl-legacy-provider next build",
+    "prettier": "prettier --write .",
+    "lint": "next lint",
+    "deploy:dev": "git checkout dev && git push origin dev",
+    "deploy:fromdev": "git checkout main && git merge dev && git push origin main && git checkout dev"
+  },
+  "keywords": [],
+  "author": "Giacomo Pasin<giacomo.pasin@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@heroicons/react": "^1.0.5",
+    "@vercel/analytics": "^0.1.6",
+    "gray-matter": "^4.0.3",
+    "next": "^12.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scroll": "^1.8.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/node": "^18.8.2",
+    "@types/react": "^18.0.21",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "postcss": "^8.4.17",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.4"
+  }
 }
