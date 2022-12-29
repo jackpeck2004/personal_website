@@ -50,7 +50,7 @@ const Page: NextPage = ({
         </Section>
         <Section title="Research and Papers" sectionId="research">
           <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
-            {researchPapers.map((p: IResearchPaper) => (
+            {researchPapers.sort().map((p: IResearchPaper) => (
               <div
                 className="border border-gray-200 rounded p-4 mb-8"
                 key={p.title.split(" ").join("-").toLowerCase()}
@@ -71,7 +71,7 @@ const Page: NextPage = ({
                     {p.url && (
                       <Link href={p.url}>
                         <a className="link" target="_blank">
-                          Read the {p.type}
+                          Read the {p.type.toLowerCase()}
                         </a>
                       </Link>
                     )}
