@@ -88,7 +88,72 @@ export const EducationSection = () => {
         title="Leader of the Future"
         school="The European House - Ambrosetti"
         schoolUrl="https://leaderdelfuturo.eu"
-      ></Education>
+      >
+      <p>Community Member</p>
+      </Education>
+      <Education
+        startDate="21 Jul 2019"
+        endDate="3 Aug 2019"
+        title="Introduction to Engineering (Summer Camp)"
+        school="Oxford Royale Academy"
+        schoolUrl="https://www.oxford-royale.com/"
+        city="Oxford, UK"
+      >
+      </Education>
+      <Education
+        startDate="22 May 2017"
+        endDate="26 May 2017"
+        title="Curso de Lengua y Conversación"
+        school="Enforex"
+        schoolUrl="https://enforex.es"
+        city="Salamanca, Spain"
+      >
+      <p className="text-black prose">Evaluation:
+      <ul>
+      <li>Langauge contents: 9/10</li>
+      <li>Vocabulary: 8/10</li>
+      <li>Listening comprehension: 9/10</li>
+      <li>Reading comprehension: 9/10</li>
+      <li>Spaking expression: 8/10</li>
+      <li>Written expression: 8/10</li>
+      <li>Pronounciation: 9/10</li>
+      <li>Sociocultural understanding: 9/10</li>
+      </ul>
+      <em>Total: Level C1</em>
+      </p>
+      </Education>
+      <Education
+        startDate="Summer 2017"
+        endDate="Summer 2017"
+        title="Special Effects (Adobe After Effects) Summer Camp"
+        school="Sparx Camps"
+        schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
+      >
+      </Education>
+      <Education
+        startDate="Summer 2016"
+        endDate="Summer 2016"
+        title="Digital Fabrication Summer Camp"
+        school="H-Farm Digital Summer Camps"
+        schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
+      >
+      </Education>
+      <Education
+        startDate="Summer 2015"
+        endDate="Summer 2015"
+        title="Electronics Summer Camp"
+        school="Digital Native Summer Camp"
+        schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
+      >
+      </Education>
+      <Education
+        startDate="Summer 2015"
+        endDate="Summer 2015"
+        title="Makers Summer Camp"
+        school="Digital Nativa Summer Camp"
+        schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
+      >
+      </Education>
     </Section>
   );
 };
