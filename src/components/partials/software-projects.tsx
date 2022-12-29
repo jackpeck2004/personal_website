@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { FC } from "react";
 import { Section } from "@/components/common";
-import { IProject } from "@/lib/types";
+import { ISoftwareProject } from "@/lib/types";
 
-const Project: FC<Omit<IProject, "slug">> = ({
+const SoftwareProject: FC<Omit<ISoftwareProject, "slug">> = ({
   title,
   languages: langs,
   frameworks,
@@ -45,14 +45,14 @@ const Project: FC<Omit<IProject, "slug">> = ({
   );
 };
 
-export const Projects: FC<{ projects: Array<IProject> }> = ({ projects }) => {
+export const SoftwareProjects: FC<{ projects: Array<ISoftwareProject> }> = ({ projects }) => {
   return (
-    <Section title="Projects" sectionId="projects">
+    <Section title="Software Projects" sectionId="projects">
       <div className="mt-[2vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] grid-y-[40px]">
         {projects &&
           projects.map((project, idx) => {
             return (
-              <Project
+              <SoftwareProject
                 key={idx}
                 title={project.title}
                 languages={project.languages}
@@ -67,5 +67,3 @@ export const Projects: FC<{ projects: Array<IProject> }> = ({ projects }) => {
     </Section>
   );
 };
-
-export default Projects;

@@ -4,7 +4,7 @@ export interface ICharacteristic {
   sectionLinkId?: string;
 }
 
-export interface IProject {
+export interface ISoftwareProject {
   title: string;
   description: string;
   languages: Array<string>;
