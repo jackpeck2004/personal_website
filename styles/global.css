@@ -6,4 +6,8 @@
   .link {
     @apply text-blue-500 pr-4 cursor-pointer;
   }
+
+  .social-link {
+    @apply text-black transition hover:text-blue-500 text-3xl pr-4;
+  }
 }

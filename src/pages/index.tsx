@@ -23,6 +23,29 @@ import {
   DIGITAL_SKILLS,
   CHARACTERISTICS
 } from "@/lib/contents";
+import Link from "next/link";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import { ReactNode } from "react";
+
+export interface ISocial {
+  url: string;
+  icon: ReactNode;
+}
+
+const SOCIALS: Array<ISocial> = [
+  {
+    url: "https://github.com/jackpeck2004",
+    icon: <FiGithub />
+  },
+  {
+    url: "https://linkedin.com/in/jackpasin",
+    icon: <FiLinkedin />
+  },
+  {
+    url: "mailto:giacomopasin.com",
+    icon: <FiMail />
+  }
+];
 
 const Page: NextPage = ({
   softwareProjects,
@@ -39,6 +62,15 @@ const Page: NextPage = ({
         <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> STEM Enthusiast
         </h1>
+        <div className="flex mt-4">
+          {SOCIALS.map(({ url, icon }) => (
+            <Link href={url} passHref key={url}>
+              <a target="_blank" className="social-link">
+                {icon}
+              </a>
+            </Link>
+          ))}
+        </div>
         <Characteristics characteristics={CHARACTERISTICS} />
         {!isDesktop ? (
           <section className="my-4 flex justify-center">
