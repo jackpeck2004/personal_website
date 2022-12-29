@@ -23,9 +23,7 @@ const Main = ({ children, router: _router }) => {
       ) : (
         <HamburgerNavbar />
       )}
-      <main className="overflow-x-hidden">
-      {children}
-      </main>
+      <main className="overflow-x-hidden">{children}</main>
       <Footer />
     </>
   );

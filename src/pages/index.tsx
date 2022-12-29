@@ -16,8 +16,12 @@ import { ISoftwareProject } from "@/lib/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import { LANGUAGES, SOFT_SKILLS, DIGITAL_SKILLS, CHARACTERISTICS } from "@/lib/contents";
-
+import {
+  LANGUAGES,
+  SOFT_SKILLS,
+  DIGITAL_SKILLS,
+  CHARACTERISTICS
+} from "@/lib/contents";
 
 const Page: NextPage = ({
   softwareProjects

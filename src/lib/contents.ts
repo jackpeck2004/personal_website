@@ -78,4 +78,3 @@ export const CHARACTERISTICS: Array<ICharacteristic> = [
     sectionLinkId: "experience"
   }
 ];
-

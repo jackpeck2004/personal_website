@@ -65,8 +65,8 @@ export const ConferencesSection = () => {
         name="The scenario of today and tomorrow for competitive strategies"
         url="https://www.leaderdelfuturo.eu/incontri/view/9127"
         organizer={{
-            name: "Leader of the Future (The European House - Ambrosetti)",
-            url: "https://www.leaderdelfuturo.eu/",
+          name: "Leader of the Future (The European House - Ambrosetti)",
+          url: "https://www.leaderdelfuturo.eu/"
         }}
       >
         <p>
@@ -83,8 +83,8 @@ export const ConferencesSection = () => {
         name="The scenario of the economy and finance"
         url="https://www.leaderdelfuturo.eu/incontri/view/9127"
         organizer={{
-            name: "Leader of the Future (The European House - Ambrosetti)",
-            url: "https://www.leaderdelfuturo.eu/",
+          name: "Leader of the Future (The European House - Ambrosetti)",
+          url: "https://www.leaderdelfuturo.eu/"
         }}
       >
         <p>
@@ -101,8 +101,8 @@ export const ConferencesSection = () => {
         name="Geneva: a look at the future between leadership and innovation"
         url="https://www.leaderdelfuturo.eu/incontri/view/9157"
         organizer={{
-            name: "Leader of the Future (The European House - Ambrosetti)",
-            url: "https://www.leaderdelfuturo.eu/",
+          name: "Leader of the Future (The European House - Ambrosetti)",
+          url: "https://www.leaderdelfuturo.eu/"
         }}
       >
         <div>
