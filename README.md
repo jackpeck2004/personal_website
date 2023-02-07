@@ -6,4 +6,4 @@ TODO:
 - [ ] Add Engineering projects to website
 - [x] Add Research and papers (create section)
 - [x] Add ORA, Enforex (spanish),
-- [ ] Add Social Media Links
+- [x] Add Social Media Links
