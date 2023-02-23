@@ -42,7 +42,7 @@ const SOCIALS: Array<ISocial> = [
     icon: <FiLinkedin />
   },
   {
-    url: "mailto:giacomopasin.com",
+    url: "mailto:giacomo.pasin+contact@gmail.com",
     icon: <FiMail />
   }
 ];
