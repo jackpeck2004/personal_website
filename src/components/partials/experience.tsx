@@ -56,7 +56,11 @@ export const WorkExperienceSection = () => {
           permissions and update programs to adhere to GDPR and privacy
           standards, handle setup and maintenance of software platforms and
           integrate new technologies into the workflow of the company to enhance
-          productivity of employees.
+          productivity of employees. Design, build and deploy the {' '}
+          <a href="https://twin.services" target="_blank">
+            latest company website
+          </a>
+          , as well as custom internal tooling.
         </p>
       </Experience>
       <Experience
