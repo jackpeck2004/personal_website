@@ -59,7 +59,7 @@ const Page: NextPage = ({
       id="home"
     >
       <div className="px-4 lg:px-52">
-        <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
+        <h1 className="2xl:text-8xl lg:text-6xl text-5xl font-bold pt-[20vh]">
           I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> STEM Enthusiast
         </h1>
         <div className="flex mt-4">
