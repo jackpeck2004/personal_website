@@ -132,7 +132,7 @@ export const getStaticProps: GetStaticProps = async () => {
       const data = fs.readFileSync(`${filePath}/${file}`).toString();
       const d = matter(data).data as IResearchPaper;
 
-      return d
+      return d;
     }
   );
 
