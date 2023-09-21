@@ -35,20 +35,16 @@ const Conference: FC<PropsWithChildren<IConferenceProps>> = ({
           {organizer && " - "}
         </h4>
         {organizer && (
-          <Link href={organizer.url} passHref>
-            <a className="link" target={"_blank"}>
+          <Link href={organizer.url} className="link" target={"_blank"}>
               {organizer.name}
-            </a>
           </Link>
         )}
       </span>
       <LineDivider />
       <div className="prose text-black max-w-none">{children}</div>
       {url && (
-        <Link href={url} passHref>
-          <a className="link" target={"_blank"}>
+        <Link href={url} className="link" target={"_blank"}>
             {url}
-          </a>
         </Link>
       )}
     </div>

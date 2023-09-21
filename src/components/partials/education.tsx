@@ -28,20 +28,16 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
       {city && <span className="block text-gray-400">{city}</span>}
       <span className="text-2xl">
         <h4 className="font-bold inline">{title} – </h4>
-        <Link href={schoolUrl} passHref>
-          <a className="link" target={"_blank"}>
+        <Link href={schoolUrl} className="link" target={"_blank"}>
             {school}
-          </a>
         </Link>
       </span>
       <LineDivider />
       {children}
       <p className="pt-4 truncate">
         <span className="font-bold">Website </span>
-        <Link href={schoolUrl} passHref>
-          <a className="link" target={"_blank"}>
+        <Link href={schoolUrl} className="link" target={"_blank"}>
             {schoolUrl}
-          </a>
         </Link>
       </p>
     </div>
@@ -51,6 +47,14 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
 export const EducationSection = () => {
   return (
     <Section title="Education and Training" sectionId="education">
+      <Education
+        startDate="4 Sep 2023"
+        endDate="ONGOING"
+        city="Eindhoven, Netherlands"
+        title="Bachelor in Computer Science and Engineering"
+        school="Eindhoven University of Technology"
+        schoolUrl="https://tue.nl"
+      />
       <Education
         startDate="1 Sep 2020"
         endDate="21 May 2022"
@@ -81,10 +85,44 @@ export const EducationSection = () => {
         title="IB Middle Years Program (High School grades 9 and 10)"
         school="H-Farm International School - Treviso"
         schoolUrl="https://www.h-farm.com/en/h-farm-school/treviso/middle-school"
-      ></Education>
+      />
+      <Education
+        startDate="2 Jul 2023"
+        endDate="15 Jul 2023"
+        title="Physics (Summer Camp)"
+        school="Oxford Summer Courses"
+        schoolUrl="https://oxfordsummercourses.com"
+        city="Oxford, UK"
+      >
+      <p className="text-black">
+        During the course we explored the applications of physics in medicine,
+        including imaging techniques such as X-rays, CT scans, SPECT, MRIs and PET scans.
+        <br />
+        Furthermore, during the course, we had the opportunity to create computer
+        simulations for the SPECT scanning techniques independently.
+        <br />
+        I implemented both a SPECT scanner simulation and also a collimator grid to
+        filter our results not hitting the detector at a proper angle.
+        <br />
+        Personally, I implemented it using Python and the Google Colab environment for data analysis.
+        This simulation can be found <a className="link" href="https://github.com/jackpeck2004/SPECT_scanner_simulation">here.</a>
+        </p>
+        <p className="prose text-black mt-4">
+        Topics covered:
+        <ul>
+        <li>Waves</li>
+        <li>Particle Physics</li>
+        <li>Radioactivity</li>
+        <li>Electromagnetism</li>
+        <li><em>+ an introduction to special relativity</em></li>
+        </ul>
+
+        <a href="https://drive.google.com/file/d/1wG_8PDvZSA_lLhZ1trzj-i-_O918-YIq/view?usp=sharing">Reference letter</a>
+      </p>
+      </Education>
       <Education
         startDate="4 Sep 2021"
-        endDate="Current"
+        endDate="4 SEP 2022"
         title="Leader of the Future"
         school="The European House - Ambrosetti"
         schoolUrl="https://leaderdelfuturo.eu"

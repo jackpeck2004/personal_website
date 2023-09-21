@@ -64,10 +64,8 @@ const Page: NextPage = ({
         </h1>
         <div className="flex mt-4">
           {SOCIALS.map(({ url, icon }) => (
-            <Link href={url} passHref key={url}>
-              <a target="_blank" className="social-link">
+            <Link href={url} key={url} target="_blank" className="social-link">
                 {icon}
-              </a>
             </Link>
           ))}
         </div>
