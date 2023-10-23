@@ -60,7 +60,7 @@ const Page: NextPage = ({
     >
       <div className="px-4 lg:px-52">
         <h1 className="2xl:text-8xl lg:text-6xl text-5xl font-bold pt-[20vh]">
-          I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> STEM Enthusiast
+          I&apos;m Giacomo Pasin. <br /> CSE Student and <br /> STEM Enthusiast
         </h1>
         <div className="flex mt-4">
           {SOCIALS.map(({ url, icon }) => (
