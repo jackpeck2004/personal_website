@@ -29,7 +29,7 @@ export const ResearchAndPapers = ({
             <div className="pt-2">
               {p.url && (
                 <Link href={p.url} className="link" target="_blank">
-                    Read the {p.type.toLowerCase()}
+                  Read the {p.type.toLowerCase()}
                 </Link>
               )}
             </div>

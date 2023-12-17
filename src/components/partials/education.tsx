@@ -29,7 +29,7 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
       <span className="text-2xl">
         <h4 className="font-bold inline">{title} – </h4>
         <Link href={schoolUrl} className="link" target={"_blank"}>
-            {school}
+          {school}
         </Link>
       </span>
       <LineDivider />
@@ -37,7 +37,7 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
       <p className="pt-4 truncate">
         <span className="font-bold">Website </span>
         <Link href={schoolUrl} className="link" target={"_blank"}>
-            {schoolUrl}
+          {schoolUrl}
         </Link>
       </p>
     </div>
@@ -63,7 +63,7 @@ export const EducationSection = () => {
         school="International School of Talents - Multicampus"
         schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
       >
-        <p className="text-black prose">
+        <div className="text-black prose">
           Final Score: 40 Subjects Taken:
           <ul>
             <li>
@@ -76,7 +76,7 @@ export const EducationSection = () => {
             <li>English A Language and Literature (6 out of 7)</li>
           </ul>
           <em>+1 extra core point</em>
-        </p>
+        </div>
       </Education>
       <Education
         startDate="4 Sep 2018"
@@ -94,31 +94,41 @@ export const EducationSection = () => {
         schoolUrl="https://oxfordsummercourses.com"
         city="Oxford, UK"
       >
-      <p className="text-black">
-        During the course we explored the applications of physics in medicine,
-        including imaging techniques such as X-rays, CT scans, SPECT, MRIs and PET scans.
-        <br />
-        Furthermore, during the course, we had the opportunity to create computer
-        simulations for the SPECT scanning techniques independently.
-        <br />
-        I implemented both a SPECT scanner simulation and also a collimator grid to
-        filter our results not hitting the detector at a proper angle.
-        <br />
-        Personally, I implemented it using Python and the Google Colab environment for data analysis.
-        This simulation can be found <a className="link" href="https://github.com/jackpeck2004/SPECT_scanner_simulation">here.</a>
+        <p className="text-black">
+          During the course we explored the applications of physics in medicine,
+          including imaging techniques such as X-rays, CT scans, SPECT, MRIs and
+          PET scans.
+          <br />
+          Furthermore, during the course, we had the opportunity to create
+          computer simulations for the SPECT scanning techniques independently.
+          <br />
+          I implemented both a SPECT scanner simulation and also a collimator
+          grid to filter our results not hitting the detector at a proper angle.
+          <br />
+          Personally, I implemented it using Python and the Google Colab
+          environment for data analysis. This simulation can be found{" "}
+          <a
+            className="link"
+            href="https://github.com/jackpeck2004/SPECT_scanner_simulation"
+          >
+            here.
+          </a>
         </p>
-        <p className="prose text-black mt-4">
-        Topics covered:
-        <ul>
-        <li>Waves</li>
-        <li>Particle Physics</li>
-        <li>Radioactivity</li>
-        <li>Electromagnetism</li>
-        <li><em>+ an introduction to special relativity</em></li>
-        </ul>
-
-        <a href="https://drive.google.com/file/d/1wG_8PDvZSA_lLhZ1trzj-i-_O918-YIq/view?usp=sharing">Reference letter</a>
-      </p>
+        <div className="prose text-black mt-4">
+          Topics covered:
+          <ul>
+            <li>Waves</li>
+            <li>Particle Physics</li>
+            <li>Radioactivity</li>
+            <li>Electromagnetism</li>
+            <li>
+              <em>+ an introduction to special relativity</em>
+            </li>
+          </ul>
+          <a href="https://drive.google.com/file/d/1wG_8PDvZSA_lLhZ1trzj-i-_O918-YIq/view?usp=sharing">
+            Reference letter
+          </a>
+        </div>
       </Education>
       <Education
         startDate="4 Sep 2021"
@@ -145,7 +155,7 @@ export const EducationSection = () => {
         schoolUrl="https://enforex.es"
         city="Salamanca, Spain"
       >
-        <p className="text-black prose">
+        <div className="text-black prose">
           Evaluation:
           <ul>
             <li>Langauge contents: 9/10</li>
@@ -158,7 +168,7 @@ export const EducationSection = () => {
             <li>Sociocultural understanding: 9/10</li>
           </ul>
           <em>Total: Level C1</em>
-        </p>
+        </div>
       </Education>
       <Education
         startDate="Summer 2017"

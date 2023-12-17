@@ -7,4 +7,3 @@ export const NavAnchor: FC<PropsWithChildren<{}>> = ({ children }) => {
     </a>
   );
 };
-

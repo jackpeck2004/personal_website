@@ -36,7 +36,7 @@ const Conference: FC<PropsWithChildren<IConferenceProps>> = ({
         </h4>
         {organizer && (
           <Link href={organizer.url} className="link" target={"_blank"}>
-              {organizer.name}
+            {organizer.name}
           </Link>
         )}
       </span>
@@ -44,7 +44,7 @@ const Conference: FC<PropsWithChildren<IConferenceProps>> = ({
       <div className="prose text-black max-w-none">{children}</div>
       {url && (
         <Link href={url} className="link" target={"_blank"}>
-            {url}
+          {url}
         </Link>
       )}
     </div>
