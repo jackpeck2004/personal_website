@@ -55,8 +55,10 @@ export const EducationSection = () => {
         school="International School of Talents - Multicampus"
         schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
       >
-        <p className="text-black prose">
+        <div className="text-black prose">
+        <p>
           Final Score: 40 Subjects Taken:
+          </p>
           <ul>
             <li>
               Higher Level Mathematics Analysis and Approaches (6 out of 7)
@@ -68,7 +70,7 @@ export const EducationSection = () => {
             <li>English A Language and Literature (6 out of 7)</li>
           </ul>
           <em>+1 extra core point</em>
-        </p>
+        </div>
       </Education>
       <Education
         startDate="4 Sep 2018"
@@ -103,8 +105,10 @@ export const EducationSection = () => {
         schoolUrl="https://enforex.es"
         city="Salamanca, Spain"
       >
-        <p className="text-black prose">
+        <div className="text-black prose">
+        <p>
           Evaluation:
+              </p>
           <ul>
             <li>Langauge contents: 9/10</li>
             <li>Vocabulary: 8/10</li>
@@ -116,7 +120,7 @@ export const EducationSection = () => {
             <li>Sociocultural understanding: 9/10</li>
           </ul>
           <em>Total: Level C1</em>
-        </p>
+        </div>
       </Education>
       <Education
         startDate="Summer 2017"
