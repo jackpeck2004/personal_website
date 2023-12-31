@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .link {
+    @apply text-blue-500 pr-4 cursor-pointer;
+  }
+
+  .social-link {
+    @apply text-black transition hover:text-blue-500 text-3xl pr-4;
+  }
+
+  .button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    display: flex;
+    align-items: center;
+    @apply p-[10px] border border-transparent rounded-xl hover:bg-gray-200 transition;
+  }
+}

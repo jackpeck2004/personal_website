@@ -1,0 +1,24 @@
+---
+import { useState } from "react";
+import Head from "next/head";
+import Navbar from "@/components/navigation/navbar";
+import constants from "@/lib/constants";
+import HamburgerNavbar from "@/components/navigation/hamburger";
+---
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="black" />
+    <title>Giacomo Pasin</title>
+  </head>
+  <!-- {isDesktop ? ( -->
+  <!-- <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} /> -->
+  <!-- ) : ( -->
+  <!-- <HamburgerNavbar /> -->
+  <!-- )} -->
+  <main class="overflow-x-hidden"><slot /></main>
+  <!-- <Footer /> -->
+
+
+</html>

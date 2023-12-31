@@ -1,0 +1,19 @@
+---
+import { ICharacteristic } from "@/lib/types";
+
+interface Props extends ICharacteristic {}
+
+const { title, description, sectionLinkId } = Astro.props;
+---
+
+<div class="border-t-4 border-gray-200">
+  <h3 class="lg:text-3xl font-semibold mt-[10px]">{title}</h3>
+  <p>{description}</p>
+  {
+    sectionLinkId && (
+      <a class="link" href={`#${sectionLinkId}`}>
+        Read more
+      </a>
+    )
+  }
+</div>

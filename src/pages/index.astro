@@ -1,16 +1,70 @@
 ---
-
+import "../styles/base.css";
+import DownloadCVButton from "@/components/common/download-cv-button.astro";
+import Section from "@/components/common/section.astro";
+import { Linkedin, Github, Mail } from "lucide-astro";
+import Characteristics from "@/components/partials/characteristics.astro";
+import SoftwareProjects from "@/components/partials/software-projects.astro";
+import constants from "@/lib/constants";
+import { ISoftwareProject, IResearchPaper } from "@/lib/types";
+import fs from "fs";
+import matter from "gray-matter";
+import {
+  LANGUAGES,
+  SOFT_SKILLS,
+  DIGITAL_SKILLS,
+  CHARACTERISTICS,
+} from "@/lib/contents";
+import BaseLayout from "@/layouts/base.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <div
+    class="min-h-[94vh] bg-white text-black py-[2vh] w-screen overflow-hidden"
+    id="home"
+  >
+    <div class="px-4 lg:px-52">
+      <h1 class="2xl:text-8xl lg:text-6xl text-5xl font-bold pt-[20vh]">
+        I&apos;m Giacomo Pasin. <br /> CSE Student and <br /> STEM Enthusiast
+      </h1>
+      <div class="flex mt-4">
+        <a
+          href="https://github.com/jackpeck2004"
+          target="_blank"
+          class="social-link"
+        >
+          <Github />
+        </a>
+        <a
+          href="https://linkedin.com/in/jackpasin"
+          target="_blank"
+          class="social-link"
+        >
+          <Linkedin />
+        </a>
+        <a
+          href="mailto:giacomo.pasin+contact@gmail.com"
+          target="_blank"
+          class="social-link"
+        >
+          <Mail />
+        </a>
+      </div>
+      <Characteristics characteristics={CHARACTERISTICS} />
+      <section class="my-4 flex xl:hidden justify-center">
+        <DownloadCVButton />
+      </section>
+      <Section title="Projects" sectionId="projects">
+        <SoftwareProjects />
+      </Section>
+      <!--   <ResearchAndPapers researchPapers={researchPapers} /> -->
+      <!--   <WorkExperience /> -->
+      <!--   <Education /> -->
+      <!--   <LanguageSkills languages={LANGUAGES} /> -->
+      <!--   <SoftSkills skills={SOFT_SKILLS} /> -->
+      <!--   <DigitalSkills skills={DIGITAL_SKILLS} /> -->
+      <!--   <Conferences /> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</BaseLayout>

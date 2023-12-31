@@ -1,0 +1,43 @@
+---
+import Section from "@/components/common/section.astro";
+import { ISoftwareProject } from "@/lib/types";
+import SoftwareProjectPreview from "./software-project-preview.astro";
+
+const loadedSoftwareProjects = await Astro.glob(
+  "/_content/software-projects/*.md",
+);
+
+const projects: ISoftwareProject[] = loadedSoftwareProjects.map(
+  ({ frontmatter }) => ({
+    title: frontmatter.title,
+    description: frontmatter.description,
+    languages: frontmatter.languages ? frontmatter.languages.split(", ") : [],
+    frameworks: frontmatter.frameworks
+      ? frontmatter.frameworks.split(", ")
+      : [],
+    github: frontmatter.github,
+    live: frontmatter.live,
+  }),
+);
+---
+
+<Section title="Software" subsection>
+  <div class="md:grid md:grid-cols-2 gap-4 2xl:grid-cols-3">
+    {
+      !!projects &&
+        projects.map((project, idx) => {
+          return (
+            <SoftwareProjectPreview
+              key={idx}
+              title={project.title}
+              languages={project.languages}
+              frameworks={project.frameworks}
+              description={project.description}
+              live={project.live && project.live}
+              github={project.github && project.github}
+            />
+          );
+        })
+    }
+  </div>
+</Section>

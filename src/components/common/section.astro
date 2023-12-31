@@ -1,0 +1,26 @@
+---
+import LineDivider from "./line-divider.astro";
+
+interface Props {
+  title: string;
+  sectionId?: string;
+  subsection?: boolean;
+}
+
+const { title, sectionId, subsection } = Astro.props;
+---
+
+{
+  subsection ? (
+    <section class="mt-8">
+      <h2 class="text-3xl">{title}</h2>
+      <LineDivider />
+      <slot />
+    </section>
+  ) : (
+    <section class="mt-[10vh]" id={sectionId}>
+      <h2 class="text-5xl">{title}</h2>
+      <slot />
+    </section>
+  )
+}

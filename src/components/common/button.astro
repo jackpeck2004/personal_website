@@ -1,0 +1,20 @@
+---
+import { MouseEventHandler, PropsWithChildren, FC } from "react";
+
+interface Props {
+  circular?: boolean;
+  border?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+}
+
+const { circular = false, border = false, onClick = () => {} } = Astro.props;
+---
+
+<button
+  className={`button ${circular ? "rounded-full" : ""} transition ${
+    border ? "hover:border-black" : ""
+  }`}
+  onClick={onClick}
+>
+  <slot />
+</button>

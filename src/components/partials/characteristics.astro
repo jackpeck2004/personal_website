@@ -1,0 +1,22 @@
+---
+import { ICharacteristic } from "@/lib/types";
+import Characteristic from "./characteristic.astro";
+interface Props {
+  characteristics: ICharacteristic[];
+}
+
+const { characteristics } = Astro.props;
+---
+
+<div class="mt-[5vh] grid md:grid-cols-3 gap-x-[40px]">
+  {
+    characteristics.map(({ title, description, sectionLinkId }) => (
+      <Characteristic
+        key={title}
+        title={title}
+        description={description}
+        sectionLinkId={sectionLinkId}
+      />
+    ))
+  }
+</div>
