@@ -1,9 +1,5 @@
 ---
-import { useState } from "react";
-import Head from "next/head";
-import Navbar from "@/components/navigation/navbar";
-import constants from "@/lib/constants";
-import HamburgerNavbar from "@/components/navigation/hamburger";
+import Footer from "@/components/navigation/footer.astro"
 ---
 
 <html lang="en">
@@ -18,7 +14,7 @@ import HamburgerNavbar from "@/components/navigation/hamburger";
   <!-- <HamburgerNavbar /> -->
   <!-- )} -->
   <main class="overflow-x-hidden"><slot /></main>
-  <!-- <Footer /> -->
+  <Footer />
 
 
 </html>
