@@ -69,7 +69,7 @@ export const CHARACTERISTICS: Array<ICharacteristic> = [
   {
     title: "my education",
     description:
-      "Recieved IB Diploma with a score of 40. Subjects taken include HL Physics, HL Maths, and HL CompSci",
+      "Current Computer Science and Engineering student and IB Graduate.",
     sectionLinkId: "education"
   },
   {

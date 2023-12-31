@@ -41,7 +41,7 @@ const SOCIALS: Array<ISocial> = [
     icon: <FiLinkedin />
   },
   {
-    url: "mailto:giacomopasin.com",
+    url: "mailto:giacomo.pasin+contact@gmail.com",
     icon: <FiMail />
   }
 ];
@@ -58,13 +58,13 @@ const Page: NextPage = ({
       id="home"
     >
       <div className="px-4 lg:px-52">
-        <h1 className="2xl:text-9xl lg:text-6xl text-5xl font-bold pt-[20vh]">
-          I&apos;m Giacomo Pasin. <br /> IB Graduate and <br /> STEM Enthusiast
+        <h1 className="2xl:text-8xl lg:text-6xl text-5xl font-bold pt-[20vh]">
+          I&apos;m Giacomo Pasin. <br /> CSE Student and <br /> STEM Enthusiast
         </h1>
         <div className="flex mt-4">
           {SOCIALS.map(({ url, icon }) => (
-            <Link href={url} target='_blank' className="social-link" key={url}>
-                {icon}
+            <Link href={url} key={url} target="_blank" className="social-link">
+              {icon}
             </Link>
           ))}
         </div>
@@ -127,7 +127,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const researchAndPapers: Array<IResearchPaper> = files.map(
     (file): IResearchPaper => {
       const data = fs.readFileSync(`${filePath}/${file}`).toString();
-      const d = matter(data).data;
+      const d = matter(data).data as IResearchPaper;
 
       return d;
     }

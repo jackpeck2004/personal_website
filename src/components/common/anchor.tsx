@@ -7,14 +7,3 @@ export const NavAnchor: FC<PropsWithChildren<{}>> = ({ children }) => {
     </a>
   );
 };
-
-export const Anchor: FC<PropsWithChildren<{ target?: string }>> = ({
-  children,
-  target
-}) => {
-  return (
-    <a className="link" target={target}>
-      {children}
-    </a>
-  );
-};

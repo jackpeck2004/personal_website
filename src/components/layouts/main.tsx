@@ -9,7 +9,7 @@ import HamburgerNavbar from "@/components/navigation/hamburger";
 const Main = ({ children, router: _router }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
 
-  const isDesktop = useMediaQuery(constants.mediaQueries.IS_XLARGE);
+  const isDesktop = useMediaQuery(constants.mediaQueries.IS_XXLARGE);
 
   return (
     <>
