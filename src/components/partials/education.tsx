@@ -28,20 +28,16 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
       {city && <span className="block text-gray-400">{city}</span>}
       <span className="text-2xl">
         <h4 className="font-bold inline">{title} – </h4>
-        <Link href={schoolUrl} passHref>
-          <a className="link" target={"_blank"}>
+        <Link href={schoolUrl} className="link" target={"_blank"}>
             {school}
-          </a>
         </Link>
       </span>
       <LineDivider />
       {children}
       <p className="pt-4 truncate">
         <span className="font-bold">Website </span>
-        <Link href={schoolUrl} passHref>
-          <a className="link" target={"_blank"}>
+        <Link href={schoolUrl} className="link" target={"_blank"}>
             {schoolUrl}
-          </a>
         </Link>
       </p>
     </div>

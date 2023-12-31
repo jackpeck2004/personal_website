@@ -28,10 +28,8 @@ const Experience: FC<PropsWithChildren<IExperienceProps>> = ({
       <span className="block text-gray-400">{city}</span>
       <span className="text-2xl">
         <h4 className="font-bold inline">{role} – </h4>
-        <Link href={companyUrl} passHref>
-          <a className="link" target={"_blank"}>
+        <Link href={companyUrl} className="link" target={"_blank"}>
             {company}
-          </a>
         </Link>
       </span>
       <LineDivider />

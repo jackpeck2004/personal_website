@@ -25,17 +25,13 @@ const SoftwareProject: FC<Omit<ISoftwareProject, "slug">> = ({
           <p>{description}</p>
           <div className="pt-2">
             {gitHubUrl && (
-              <Link href={gitHubUrl}>
-                <a className="link" target="_blank">
+              <Link href={gitHubUrl} className="link" target="_blank">
                   GitHub
-                </a>
               </Link>
             )}
             {liveUrl && (
-              <Link href={liveUrl}>
-                <a className="link" target="_blank">
+              <Link href={liveUrl} className="link" target="_blank">
                   Live
-                </a>
               </Link>
             )}
           </div>

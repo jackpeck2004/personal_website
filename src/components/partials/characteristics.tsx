@@ -13,8 +13,8 @@ export const Characteristic: FC<ICharacteristic> = ({
       <h3 className="lg:text-3xl font-semibold mt-[10px]">{title}</h3>
       <p>{description}</p>
       {sectionLinkId && (
-        <Link to={sectionLinkId} smooth spy offset={-70}>
-          <Anchor>Read more</Anchor>
+        <Link to={sectionLinkId} smooth spy offset={-70} className="link"> 
+          Read more
         </Link>
       )}
     </div>
