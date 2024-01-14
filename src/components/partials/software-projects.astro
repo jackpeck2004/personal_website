@@ -29,7 +29,7 @@ const projects: ISoftwareProjectPreview[] = loadedSoftwareProjects
   .slice(0, 5);
 ---
 
-<Section title="Recent Software Projects" subsection sectionId="recent-software-projects-wrapper">
+<Section title="Recent Software Projects" subsection>
   <div class="whitespace-nowrap no-scrollbar" id="recent-software-projects">
     {
       projects.map((project) => {
@@ -62,7 +62,7 @@ const tween = gsap.to(preview, {
 })
 
 ScrollTrigger.create({
-    trigger: "#recent-software-projects-wrapper",
+    trigger: "#projects",
     start: "top 20%",
     end: "-=" + amountToScroll,
     pin: true,
