@@ -1,43 +1,76 @@
 ---
 import Section from "@/components/common/section.astro";
-import { ISoftwareProject } from "@/lib/types";
 import SoftwareProjectPreview from "./software-project-preview.astro";
+import type { ISoftwareProjectPreview } from "@/lib/types";
+import { ArrowUpRight } from "lucide-astro";
 
 const loadedSoftwareProjects = await Astro.glob(
-  "/_content/software-projects/*.md",
+  "/src/pages/software-projects/*.md",
 );
 
-const projects: ISoftwareProject[] = loadedSoftwareProjects.map(
-  ({ frontmatter }) => ({
-    title: frontmatter.title,
-    description: frontmatter.description,
-    languages: frontmatter.languages ? frontmatter.languages.split(", ") : [],
-    frameworks: frontmatter.frameworks
-      ? frontmatter.frameworks.split(", ")
-      : [],
-    github: frontmatter.github,
-    live: frontmatter.live,
-  }),
-);
+const projects: ISoftwareProjectPreview[] = loadedSoftwareProjects
+  .map(({ frontmatter, url }) => {
+    return {
+      title: frontmatter.title,
+      languages: frontmatter.languages ? frontmatter.languages.split(", ") : [],
+      date: new Date(Date.parse(frontmatter.date)),
+      frameworks: !!frontmatter.frameworks
+        ? frontmatter.frameworks.split(", ")
+        : ([] as string[]),
+      slug: url,
+    } as ISoftwareProjectPreview;
+  })
+  .sort((a, b) => {
+    if (!a.date || !b.date) return 0;
+
+    if (a.date < b.date) return 1;
+    return -1;
+  })
+  .slice(0, 5);
 ---
 
-<Section title="Software" subsection>
-  <div class="md:grid md:grid-cols-2 gap-4 2xl:grid-cols-3">
+<Section title="Recent Software Projects" subsection sectionId="recent-software-projects-wrapper">
+  <div class="whitespace-nowrap no-scrollbar" id="recent-software-projects">
     {
-      !!projects &&
-        projects.map((project, idx) => {
-          return (
-            <SoftwareProjectPreview
-              key={idx}
-              title={project.title}
-              languages={project.languages}
-              frameworks={project.frameworks}
-              description={project.description}
-              live={project.live && project.live}
-              github={project.github && project.github}
-            />
-          );
-        })
+      projects.map((project) => {
+        return <SoftwareProjectPreview {...project} />;
+      })
     }
   </div>
+  <a
+    href="/software-projects"
+    class="button w-fit text-white bg-blue-600 px-4 hover:drop-shadow-2xl hover:bg-blue-600/70 my-4"
+    ><ArrowUpRight class="mr-2 w-5 h-5" /> Check out all my software projects</a
+  >
+  <div class="mb-16"></div>
 </Section>
+
+<script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+const preview = document.querySelector("#recent-software-projects");
+//@ts-ignore
+let previewWidth = preview!.offsetWidth;
+let amountToScroll = previewWidth - window.innerWidth - 1000;
+
+const tween = gsap.to(preview, {
+    x: amountToScroll,
+    duration: 1,
+    ease: "none",
+})
+
+ScrollTrigger.create({
+    trigger: "#recent-software-projects-wrapper",
+    start: "top 20%",
+    end: "-=" + amountToScroll,
+    pin: true,
+    scrub:1,
+    animation: tween,
+});
+
+
+
+</script>
+

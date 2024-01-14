@@ -1,53 +1,47 @@
 ---
-import Section from "@/components/common/section.astro";
-import { ISoftwareProject } from "@/lib/types";
-interface Props extends Omit<ISoftwareProject, "slug"> {}
-import { Github, ArrowUpRight } from "lucide-astro";
+interface Props extends ISoftwareProjectPreview {}
+import type { ISoftwareProjectPreview } from "@/lib/types";
+import { ArrowUpRight } from "lucide-astro";
 
-const { title, languages, frameworks, description, github, live } = Astro.props;
+const { title, languages, frameworks, slug, date } =
+  Astro.props;
 ---
 
-<div class="border border-gray-200 rounded p-4 mb-8">
+<div
+  class="border border-gray-200 rou2ded h-[200px] w-[400px] p-4 mr-5 inline-block"
+>
   <div>
-    <h5 class="text-xl font-bold">{title}</h5>
+    <a href={slug}
+      ><h5 class="text-xl font-bold hover:underline transition">{title}</h5></a
+    >
+    <span
+      >{
+        date.toLocaleDateString("en-US", { month: "long", year: "numeric" })
+      }</span
+    >
     <ul>
       <li>
         <span class="font-bold text-slate-600">Languages:</span>
         {languages.join(", ")}
       </li>
-      {
-        !!frameworks.length && (
-          <li>
-            <span class="font-bold text-slate-600">Frameworks:</span>{" "}
-            {frameworks.join(", ")}
-          </li>
-        )
-      }
-      <p class="my-2">{description}</p>
+      <li>
+        <span
+          class={`${
+            !!frameworks.length ? "hidden" : null
+          } font-bold text-slate-600`}>Frameworks:</span
+        >{" "}
+        {frameworks.join(", ")}
+      </li>
     </ul>
+  </div>
 
-    <div class="flex flex-col gap-4 md:flex-row">
-      {
-        !!github && (
-          <a
-            href={github}
-            target="_blank"
-            class="button border-gray-200 xl:mr-2 w-full md:w-48 justify-center"
-          >
-            <Github class="mr-2 h-5 w-5" /> Open in GitHub
-          </a>
-        )
-      }
-      {
-        !!live && (
-          <a
-            href={live}
-            class="button border-gray-200 xl:mr-2 w-full md:w-48 justify-center"
-          >
-            <ArrowUpRight class="mr-2 h-5 w-5" /> Open in Live
-          </a>
-        )
-      }
-    </div>
+  <div class="flex flex-col gap-4 md:flex-row">
+    <a
+      href={slug}
+      target="_blank"
+      class="button border-gray-200 xl:mr-2 w-full md:w-48 justify-center mt-4"
+    >
+      <ArrowUpRight class="mr-2 h-5 w-5" /> Read more
+    </a>
   </div>
 </div>

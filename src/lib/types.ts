@@ -7,10 +7,19 @@ export interface ICharacteristic {
 export interface ISoftwareProject {
 	title: string;
 	description: string;
+	date: Date;
 	languages: Array<string>;
-	frameworks?: Array<string>;
+	frameworks: Array<string>;
 	github?: string;
 	live?: string;
+	slug: string;
+}
+
+export interface ISoftwareProjectPreview {
+	title: string;
+	date: Date;
+	languages: Array<string>;
+	frameworks: Array<string>;
 	slug: string;
 }
 
@@ -38,4 +47,10 @@ export interface IDigitalSkill {
 export type NavItem = {
 	label: string;
 	anchorId: string;
+};
+
+export type ScrollState = {
+	isLocked: boolean;
+	scrollX: number;
+	scrollY: number;
 };

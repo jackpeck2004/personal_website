@@ -12,7 +12,7 @@ const { title, sectionId, subsection } = Astro.props;
 
 {
   subsection ? (
-    <section class="mt-8">
+    <section class="mt-8" id={sectionId}>
       <h2 class="text-3xl">{title}</h2>
       <LineDivider />
       <slot />

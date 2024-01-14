@@ -1,5 +1,6 @@
 ---
-import Footer from "@/components/navigation/footer.astro"
+import Navbar from "@/components/navigation/navbar.astro";
+import Footer from "@/components/navigation/footer.astro";
 ---
 
 <html lang="en">
@@ -8,13 +9,7 @@ import Footer from "@/components/navigation/footer.astro"
     <meta name="theme-color" content="black" />
     <title>Giacomo Pasin</title>
   </head>
-  <!-- {isDesktop ? ( -->
-  <!-- <Navbar currentTheme={isLightTheme} changeThemeFn={setIsLightTheme} /> -->
-  <!-- ) : ( -->
-  <!-- <HamburgerNavbar /> -->
-  <!-- )} -->
-  <main class="overflow-x-hidden"><slot /></main>
+  <Navbar />
+  <main class="overflow-x-hidden transition-all"><slot /></main>
   <Footer />
-
-
 </html>

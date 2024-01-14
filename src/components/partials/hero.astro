@@ -1,0 +1,33 @@
+---
+import DownloadCVButton from "@/components/common/download-cv-button.astro";
+import Characteristics from "@/components/partials/characteristics.astro";
+import { Linkedin, Github, Mail } from "lucide-astro";
+import { CHARACTERISTICS } from "@/lib/contents";
+---
+
+<h1 class="2xl:text-8xl lg:text-6xl text-5xl font-bold pt-[20vh]">
+  I&apos;m Giacomo Pasin. <br /> CSE Student and <br /> STEM Enthusiast
+</h1>
+<div class="flex mt-4">
+  <a href="https://github.com/jackpeck2004" target="_blank" class="social-link">
+    <Github />
+  </a>
+  <a
+    href="https://linkedin.com/in/jackpasin"
+    target="_blank"
+    class="social-link"
+  >
+    <Linkedin />
+  </a>
+  <a
+    href="mailto:giacomo.pasin+contact@gmail.com"
+    target="_blank"
+    class="social-link"
+  >
+    <Mail />
+  </a>
+</div>
+<Characteristics characteristics={CHARACTERISTICS} />
+<section class="my-4 flex xl:hidden justify-center">
+  <DownloadCVButton />
+</section>
