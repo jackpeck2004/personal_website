@@ -29,7 +29,7 @@ const projects: ISoftwareProjectPreview[] = loadedSoftwareProjects
   .slice(0, 5);
 ---
 
-<Section title="Recent Software Projects" subsection>
+<Section title="Recent Software Projects" subsection sectionId="recent-software-projects-wrapper">
   <div class="whitespace-nowrap no-scrollbar" id="recent-software-projects">
     {
       projects.map((project) => {
@@ -51,12 +51,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const preview = document.querySelector("#recent-software-projects");
+
+const singlePreview = document.querySelector("#recent-software-projects div");
+const singlePreviewMarginRight = parseInt(window.getComputedStyle(singlePreview!, null).getPropertyValue('margin-right').split("px")[0]);
+let previewWidth = parseInt(window.getComputedStyle(singlePreview!, null).getPropertyValue('width').split("px")[0]);
+
+
+const container = document.querySelector("main");
+const containerPaddingRight = parseInt(window.getComputedStyle(container!, null).getPropertyValue('padding-right').split("px")[0]);
 //@ts-ignore
-let previewWidth = preview!.offsetWidth;
-let amountToScroll = previewWidth - window.innerWidth - 1000;
+
+function getScrollAmount() {
+let amountToScroll = (previewWidth + singlePreviewMarginRight) * 5 - window.innerWidth + 2*containerPaddingRight;
+return -1*amountToScroll
+}
 
 const tween = gsap.to(preview, {
-    x: amountToScroll,
+    x: getScrollAmount,
     duration: 1,
     ease: "none",
 })
@@ -64,13 +75,12 @@ const tween = gsap.to(preview, {
 ScrollTrigger.create({
     trigger: "#projects",
     start: "top 20%",
-    end: "-=" + amountToScroll,
+    end: () => `+=${-1*getScrollAmount()}`,
     pin: true,
     scrub:1,
     animation: tween,
+    invalidateOnRefresh: true,
 });
-
-
 
 </script>
 
