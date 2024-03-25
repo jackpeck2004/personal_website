@@ -29,8 +29,12 @@ const projects: ISoftwareProjectPreview[] = loadedSoftwareProjects
   .slice(0, 5);
 ---
 
-<Section title="Recent Software Projects" subsection sectionId="recent-software-projects-wrapper">
-  <div class="whitespace-nowrap no-scrollbar" id="recent-software-projects">
+<Section
+  title="Recent Software Projects"
+  subsection
+  sectionId="recent-software-projects-wrapper"
+>
+  <div class="whitespace-nowrap" id="recent-software-projects">
     {
       projects.map((project) => {
         return <SoftwareProjectPreview {...project} />;
@@ -46,41 +50,85 @@ const projects: ISoftwareProjectPreview[] = loadedSoftwareProjects
 </Section>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-const preview = document.querySelector("#recent-software-projects");
+  const preview = document.querySelector("#recent-software-projects");
 
-const singlePreview = document.querySelector("#recent-software-projects div");
-const singlePreviewMarginRight = parseInt(window.getComputedStyle(singlePreview!, null).getPropertyValue('margin-right').split("px")[0]);
-let previewWidth = parseInt(window.getComputedStyle(singlePreview!, null).getPropertyValue('width').split("px")[0]);
+  const singlePreview = document.querySelector("#recent-software-projects div");
+  const singlePreviewMarginRight = parseInt(
+    window
+      .getComputedStyle(singlePreview!, null)
+      .getPropertyValue("margin-right")
+      .split("px")[0],
+  );
+  let previewWidth = parseInt(
+    window
+      .getComputedStyle(singlePreview!, null)
+      .getPropertyValue("width")
+      .split("px")[0],
+  );
 
+  const container = document.querySelector("main");
+  const containerPaddingRight = parseInt(
+    window
+      .getComputedStyle(container!, null)
+      .getPropertyValue("padding-right")
+      .split("px")[0],
+  );
+  //@ts-ignore
 
-const container = document.querySelector("main");
-const containerPaddingRight = parseInt(window.getComputedStyle(container!, null).getPropertyValue('padding-right').split("px")[0]);
-//@ts-ignore
+  function getScrollAmount() {
+    let amountToScroll =
+      (previewWidth + singlePreviewMarginRight) * 5 -
+      window.innerWidth +
+      2 * containerPaddingRight;
+    return -1 * amountToScroll;
+  }
 
-function getScrollAmount() {
-let amountToScroll = (previewWidth + singlePreviewMarginRight) * 5 - window.innerWidth + 2*containerPaddingRight;
-return -1*amountToScroll
-}
-
-const tween = gsap.to(preview, {
+  const tween = gsap.to(preview, {
     x: getScrollAmount,
     duration: 1,
     ease: "none",
-})
+  });
 
-ScrollTrigger.create({
+  // const bgTween = gsap.to(document.querySelector("main"), {
+  //   backgroundColor: "black",
+  //   color: "white",
+  //   duration: 1,
+  // });
+  //
+  // const headerAnimation = gsap.to(document.querySelector("header"), {
+  //   backgroundColor: "#e62756",
+  //   color: "white",
+  //   duration: 1,
+  // });
+  //
+  // const hamburgerAnimation = gsap.to(
+  //   document.querySelectorAll(".nav-hamburger span"),
+  //   {
+  //     backgroundColor: "white",
+  //     duration: 1,
+  //   },
+  // );
+
+  const combinedTimeline = gsap.timeline({ paused: true }); // Pause the timeline initially
+
+  combinedTimeline.add([
+    tween,
+    // bgTween,
+    // headerAnimation,
+    // hamburgerAnimation
+  ]);
+
+  ScrollTrigger.create({
     trigger: "#projects",
     start: "top 20%",
-    end: () => `+=${-1*getScrollAmount()}`,
+    end: () => `+=${-1 * getScrollAmount()}`,
     pin: true,
-    scrub:1,
-    animation: tween,
+    scrub: 1,
+    animation: combinedTimeline,
     invalidateOnRefresh: true,
-});
-
+  });
 </script>
-

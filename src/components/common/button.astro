@@ -11,7 +11,7 @@ const { circular = false, border = false, onClick = () => {} } = Astro.props;
 ---
 
 <button
-  className={`button ${circular ? "rounded-full" : ""} transition ${
+  class={`button ${circular ? "rounded-full" : ""} transition ${
     border ? "hover:border-black" : ""
   }`}
   onClick={onClick}

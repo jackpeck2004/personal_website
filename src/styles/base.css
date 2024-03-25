@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
   .animation-delay-2000 {
     animation-delay: 2s;
@@ -34,6 +34,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    @apply p-[10px] border border-transparent rounded-xl hover:bg-gray-200 transition;
+    @apply p-[10px] border border-transparent rounded-xl bg-white hover:bg-gray-200 transition;
   }
 }

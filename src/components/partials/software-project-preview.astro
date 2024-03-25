@@ -3,12 +3,11 @@ interface Props extends ISoftwareProjectPreview {}
 import type { ISoftwareProjectPreview } from "@/lib/types";
 import { ArrowUpRight } from "lucide-astro";
 
-const { title, languages, frameworks, slug, date } =
-  Astro.props;
+const { title, languages, frameworks, slug, date } = Astro.props;
 ---
 
 <div
-  class="border border-gray-200 rou2ded h-[200px] w-[400px] p-4 mr-5 inline-block"
+  class="border border-gray-200 rounded h-[200px] w-[400px] p-4 mr-5 inline-block"
 >
   <div>
     <a href={slug}

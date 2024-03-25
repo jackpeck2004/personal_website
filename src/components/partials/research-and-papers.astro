@@ -1,0 +1,47 @@
+---
+import { type IResearchPaper } from "@/lib/types";
+import Badge from "@/components/common/badge.astro";
+import { FileText, FlaskConical } from "lucide-astro";
+
+const loadedSoftwareProjects = await Astro.glob(
+  "/src/content/research-and-papers/*.md",
+);
+
+const projects: IResearchPaper[] = loadedSoftwareProjects
+  .map(({ frontmatter }) => {
+    return {
+      title: frontmatter.title,
+      scope: frontmatter.scope,
+      date: frontmatter.date,
+      url: frontmatter.url,
+      subject: frontmatter.subject,
+      type: frontmatter.type,
+    } as IResearchPaper;
+  })
+  .sort((a, b) => {
+    if (!a.date || !b.date) return 0;
+
+    if (new Date(a.date) < new Date(b.date)) return 1;
+    return -1;
+  })
+  // .slice(0, 5);
+
+---
+{projects.map(({title, scope, date, url, subject, type}) => (
+    <div class="border border-gray-200 p-4 rounded my-4">
+        <h4><a href={url} target="_blank" class="hover:underline font-bold text-xl">{title}</a></h4>
+        <p>{date} - {scope}</p>
+        <div class="my-4">
+        <Badge>
+            {subject}
+        </Badge>
+        <Badge variant="outline" class="mx-2">
+            {type}
+        </Badge>
+        </div>
+         <a class="button border-gray-200 md:w-64 sm:w-full mt-4 justify-center" href={url} target="_blank">
+         { type === "Paper" ? (<FileText class="mr-2 h-5 w-5" />) : (<FlaskConical class="mr-2 w-5 h-5" /> )} Read the {type}</a>
+    </div>
+))}
+
+

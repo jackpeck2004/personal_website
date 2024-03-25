@@ -1,6 +1,6 @@
 ---
 import Scaffold from "@/layouts/scaffold.astro";
-import type {ISoftwareProject} from "@/lib/types";
+import type { ISoftwareProject } from "@/lib/types";
 import { Github } from "lucide-astro";
 
 const loadedSoftwareProjects = await Astro.glob(
@@ -18,7 +18,7 @@ const projects: ISoftwareProject[] = loadedSoftwareProjects
         : ([] as string[]),
       slug: url,
       github: frontmatter.github,
-      live: frontmatter.live
+      live: frontmatter.live,
     } as ISoftwareProject;
   })
   .sort((a, b) => {
@@ -26,48 +26,54 @@ const projects: ISoftwareProject[] = loadedSoftwareProjects
 
     if (a.date < b.date) return 1;
     return -1;
-  })
+  });
 ---
 
 <Scaffold>
-    <main class="bg-black min-w-screen text-white py-32 2xl:px-32">
+  <main class="bg-black min-w-screen text-white py-32 2xl:px-32">
     <!-- <pre>{JSON.stringify(projects, null, 2)}</pre> -->
     <div class="grid grid-cols-4 gap-4">
-    {projects.map(({ title, languages, date, frameworks, slug, github, live }) => (
-    <div class="bg-white w-full h-[400px] rounded-xl px-4 py-4 border-2 border-white text-black">
-        <h2 class="text-xl font-bold">{title}</h2>
-        <div>
-        {!!github ? (
-        <a href={github} 
-          class="button border-gray-200 xl:mr-2 w-full md:w-48 justify-center mt-4"
-        > <Github /></a>) : null}
-        </div>
+      {
+        projects.map(
+          ({ title, languages, date, frameworks, slug, github, live }) => (
+            <div class="bg-white w-full h-[400px] rounded-xl px-4 py-4 border-2 border-white text-black">
+              <h2 class="text-xl font-bold">{title}</h2>
+              <div>
+                {!!github ? (
+                  <a
+                    href={github}
+                    class="button border-gray-200 xl:mr-2 w-full md:w-48 justify-center mt-4"
+                  >
+                    {" "}
+                    <Github />
+                  </a>
+                ) : null}
+              </div>
+            </div>
+          ),
+        )
+      }
     </div>
-    ))}
-    </div>
-    </main>
+  </main>
 </Scaffold>
 
 <style>
+  main {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #000, #16161d, #0e2761);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
 
-main {
-	min-height: 100vh;
-	background: linear-gradient(-45deg, #000, #16161d, #0e2761);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 </style>
-

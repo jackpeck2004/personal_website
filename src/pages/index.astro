@@ -8,19 +8,28 @@ import { ISoftwareProject, IResearchPaper } from "@/lib/types";
 import matter from "gray-matter";
 import { LANGUAGES, SOFT_SKILLS, DIGITAL_SKILLS } from "@/lib/contents";
 import BaseLayout from "@/layouts/base.astro";
+import ResearchAndPapers from "@/components/partials/research-and-papers.astro";
+import Education from "@/components/partials/education.astro";
+import Experience from "@/components/partials/experience.astro";
 ---
 
 <BaseLayout>
-      <Hero />
-      <Section title="Projects" sectionId="projects">
-        <SoftwareProjects />
-      </Section>
-      <!--   <ResearchAndPapers researchPapers={researchPapers} /> -->
-      <!--   <WorkExperience /> -->
-      <!--   <Education /> -->
-      <!--   <LanguageSkills languages={LANGUAGES} /> -->
-      <!--   <SoftSkills skills={SOFT_SKILLS} /> -->
-      <!--   <DigitalSkills skills={DIGITAL_SKILLS} /> -->
-      <!--   <Conferences /> -->
-      <!-- </div> -->
+  <Hero />
+  <Section title="Projects" sectionId="projects">
+    <SoftwareProjects />
+  </Section>
+  <Section title="Research and Papers" sectionId="research">
+    <ResearchAndPapers />
+  </Section>
+  <Section title="Education" sectionId="education">
+    <Education />
+  </Section>
+  <Section title="Work Experience" sectionId="experience">
+    <Experience />
+  </Section>
+  <!--   <LanguageSkills languages={LANGUAGES} /> -->
+  <!--   <SoftSkills skills={SOFT_SKILLS} /> -->
+  <!--   <DigitalSkills skills={DIGITAL_SKILLS} /> -->
+  <!--   <Conferences /> -->
+  <!-- </div> -->
 </BaseLayout>

@@ -54,3 +54,18 @@ export type ScrollState = {
 	scrollX: number;
 	scrollY: number;
 };
+
+export type Education = {
+    title: string;
+    institution: {
+        logoUrl: string;
+        name: string;
+        url: string;
+        location: string;
+        bg?: string;
+        color: string;
+    };
+    description?: any;
+    startDate: string;
+    endDate: string;
+}
