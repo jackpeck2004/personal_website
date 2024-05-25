@@ -5,4 +5,5 @@ languages: php, Blade, JavaScript, css
 frameworks: WordPress, Laravel, React, Tailwind CSS
 live: https://twin.services/media-center
 date: 2023-07
+preview-image: twin-media-center.svg
 ---

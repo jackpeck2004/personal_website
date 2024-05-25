@@ -4,4 +4,5 @@ description: A website built to announce and update Italian listed companies abo
 languages: Squarespace CMS
 live: https://nextgems.it
 date: 2020-11
+preview-image: nextgems-website.svg
 ---

@@ -1,135 +1,102 @@
 ---
 import { type Education } from "@/lib/types";
+import { education } from "@/lib/contents";
 import { ListEducation } from "./education-list";
-
-const education: Education[] = [
-    {
-        title: "BCS Computer Science & Engineering",
-        institution: {
-            logoUrl: "https://yt3.googleusercontent.com/nzeUpplZJNpdhnhh9peZ5tsJxTwfZ6Kz94kZN4tfv40Ts0XKCVMmCeDLPnzz81kronIvMMnhBg=s900-c-k-c0x00ffffff-no-rj",
-            name: "Eindhoven University of Technology",
-            color: "#c72125",
-            location: "Eindhoven, Netherlands",
-            url: "https://tue.nl"
-        },
-        startDate: "September 2023",
-        endDate: "Ongoing"
-    },
-        {
-        title: "Physics (Summer Camp)",
-        institution: {
-            logoUrl: "https://res.cloudinary.com/oxford-summer-courses/image/upload/v1687273084/static/favicon_iaayxh.png",
-            name: "Oxford Summer Courses",
-            url: "https://oxfordsummercourses.com",
-            location: "Oxford, UK",
-            color: "#EC7A2D",
-        },
-            startDate:"2 July 2023",
-            endDate:"15 July 2023",
-        },
-    {
-        title: "International Baccalaureate Diploma",
-        institution: {
-            logoUrl: "https://schools.h-farm.com/wp-content/uploads/2023/09/logo-1.svg",
-            name: "H-Farm International School",
-            url: "https://schools.h-farm.com/en//venice/ib-programmes/",
-            location: "Roncade (TV), Italy",
-            color: "#a42336",
-        },
-        startDate: "1 September 2020",
-        endDate: "21 May 2022"
-    },
-                {
-				startDate:"4 September 2021",
-				endDate:"4 September 2022",
-				title:"Leader of the Future",
-                institution: {
-				name:"The European House - Ambrosetti",
-				url:"https://leaderdelfuturo.eu",
-                logoUrl: "https://www.ambrosetti.eu/img/logo_header.svg",
-                color: "#001E60",
-                location: "Conferences held in various locations"
-                }
-                },
-    {
-        title: "IB Middle Years Program (High School grades 9 and 10)",
-        institution: {
-            logoUrl: "https://schools.h-farm.com/wp-content/uploads/2023/09/logo-1.svg",
-            name: "H-Farm International School",
-            url: "https://www.h-farm.com/en/h-farm-school/treviso/middle-school",
-            location: "Roncade (TV), Italy",
-            color: "#a42336",
-        },
-        startDate: "4 September 2018",
-        endDate: "30 June 2020",
-    },
-
-{
-				startDate:"21 Jul 2019",
-				endDate:"3 Aug 2019",
-				title:"Introduction to Engineering (Summer Camp)",
-                institution: {
-				name:"Oxford Royale Academy",
-				url:"https://www.oxford-royale.com/",
-				location:"Oxford, UK",
-                logoUrl: "https://www.oxford-royale.com/wp-content/themes/ora2021/static/images/ora-stacked-w.svg",
-                color: "#18214d",
-                }
-            },
-                {
-				startDate:"Summer 2017",
-				endDate:"Summer 2017",
-				title:"Special Effects (Adobe After Effects) Summer Camp",
-                institution: {
-				name:"Digital Native Summer Camp",
-				url:"https://plus.h-farm.com/it/sparx",
-                logoUrl: "https://d2sj0xby2hzqoy.cloudfront.net/hfarm_courses/attachments/data/000/000/175/original/200409-H-farm-Plus-Loghi-_sparx.png",
-                color: "#000000",
-                location: "Roncade (TV), Italy",
-                bg: "black"
-            }
-            },
-                {
-				startDate:"Summer 2016",
-				endDate:"Summer 2016",
-				title:"Digital Fabrication Summer Camp",
-                institution: {
-				name:"Digital Native Summer Camp",
-				url:"https://plus.h-farm.com/it/sparx",
-                logoUrl: "https://d2sj0xby2hzqoy.cloudfront.net/hfarm_courses/attachments/data/000/000/175/original/200409-H-farm-Plus-Loghi-_sparx.png",
-                color: "#000000",
-                location: "Roncade (TV), Italy",
-                bg: "black"
-                }
-                },
-                {
-				startDate:"Summer 2015",
-				endDate:"Summer 2015",
-				title:"Electronics Summer Camp",
-                institution: {
-				name:"Digital Native Summer Camp",
-				url:"https://plus.h-farm.com/it/sparx",
-                logoUrl: "https://d2sj0xby2hzqoy.cloudfront.net/hfarm_courses/attachments/data/000/000/175/original/200409-H-farm-Plus-Loghi-_sparx.png",
-                color: "#000000",
-                location: "Roncade (TV), Italy",
-                bg: "black"
-                }
-                },
-                {
-				startDate:"Summer 2015",
-				endDate:"Summer 2015",
-				title:"Makers Summer Camp",
-                institution: {
-				name:"Digital Native Summer Camp",
-				url:"https://plus.h-farm.com/it/sparx",
-                logoUrl: "https://d2sj0xby2hzqoy.cloudfront.net/hfarm_courses/attachments/data/000/000/175/original/200409-H-farm-Plus-Loghi-_sparx.png",
-                color: "#000000",
-                location: "Roncade (TV), Italy",
-                bg: "black"
-                }},
-
-]
+import { Calendar, MapPin } from "lucide-astro";
 ---
 
-<ListEducation client:visible education={education} />
-
+<!-- <ListEducation education={education} /> -->
+<div class="grid grid-cols-2 gap-8">
+  <div>
+    <h3>Academics</h3>
+    {
+      education.map(({ title, institution, startDate, endDate, type }) => {
+        if (type !== null && type === "academic")
+          return (
+            <div class="w-full border border-grary-200 rounded my-4 min-h-32 flex py-4 px-4">
+              <img
+                src={institution.logoUrl}
+                class="w-24 h-24 object-contain"
+                style={
+                  !!institution.bg ? { backgroundColor: institution.bg } : {}
+                }
+              />
+              <div class="ml-8">
+                <h3
+                  class={`font-bold text-3xl`}
+                  style={{ color: institution.color }}
+                >
+                  {title}
+                </h3>
+                <h4
+                  class={`text-2xl font-bold`}
+                  style={{ color: institution.color }}
+                >
+                  <a href={institution.url} target="_blank">
+                    {institution.name}
+                  </a>
+                </h4>
+                <span class="flex my-2 items-center">
+                  {/*<MapPin class="w-5 h-5 mr-1" />
+                   */}
+                  {institution.location}
+                </span>
+                <span class="flex my-2 items-center">
+                  {startDate} - {endDate}
+                </span>
+              </div>
+            </div>
+          );
+      })
+    }
+  </div>
+<div >
+    <h3>Extra-academic</h3>
+    <div class="grid grid-cols-2 gap-x-2 gap-y-0">
+    {
+      education.map(({ title, institution, startDate, endDate, type }) => {
+        if (type !== "academic")
+          return (
+            <div class="w-full border border-grary-200 rounded my-2 flex flex-col justify-between py-4 px-4">
+              <div class="flex items-center">
+              <!-- <img -->
+              <!--   src={institution.logoUrl} -->
+              <!--   class="w-16 h-16 object-contain mr-4" -->
+              <!--   style={ -->
+              <!--     !!institution.bg ? { backgroundColor: institution.bg } : {} -->
+              <!--   } -->
+              <!-- /> -->
+                <div>
+                <h3
+                  class={`font-bold text-xl`}
+                  style={{ color: institution.color }}
+                >
+                  {title}
+                </h3>
+<h4
+                  class={`text-md font-bold`}
+                  style={{ color: institution.color }}
+                >
+                  <a href={institution.url} target="_blank">
+                    {institution.name}
+                  </a>
+                </h4>
+                </div>
+              </div>
+              <div>
+                <span class="flex my-2 items-center">
+                  <MapPin class="w-5 h-5 mr-1" />
+                  {institution.location}
+                </span>
+                <span class="flex my-2 items-center">
+                  <Calendar class="w-5 h-5 mr-1" />
+                  {startDate} {endDate && `- ${endDate}`}
+                </span>
+              </div>
+            </div>
+          );
+      })
+    }
+    </div>
+  </div>
+</div>

@@ -4,4 +4,5 @@ description: A simple web crawler which creates an Eigenvector centrality graph 
 languages: Python
 github: https://github.com/jackpeck2004/cs/tree/main/DP1/HL_09_Crawler
 date: 2021-04
+preview-image: graph.png
 ---

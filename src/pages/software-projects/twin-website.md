@@ -5,4 +5,5 @@ languages: php, Blade, JavaScript, css
 frameworks: WordPress, Laravel, React, Tailwind CSS
 live: https://twin.services/
 date: 2023-07
+preview-image: twin-company-website.svg
 ---

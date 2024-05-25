@@ -4,4 +4,5 @@ description: A basic blockchain implementation created using linked lists. The i
 languages: Python
 github: https://github.com/jackpeck2004/Blockchain
 date: 2021-03
+preview-image: twin-company-website.svg
 ---

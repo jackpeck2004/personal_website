@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": "/home/jack/dev/personal_website_astro",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

@@ -1,24 +1,18 @@
 ---
-const {
-	startDate,
-	endDate,
-	city,
-	role,
-	company,
-	companyUrl,
-    } = Astro.props;
+const { startDate, endDate, city, role, company, companyUrl } = Astro.props;
 ---
-		<div class="py-4">
-			<span class="block text-gray-400 uppercase">
-				{startDate} - {endDate}
-			</span>
-			<span class="block text-gray-400">{city}</span>
-			<span class="text-2xl">
-				<h4 class="font-bold inline">{role} @ </h4>
-				<a href={companyUrl} class="link" target={"_blank"}>
-					{company}
-				</a>
-			</span>
-			<!-- <LineDivider /> -->
-			<div class="prose text-black max-w-none"><slot /></div>
-		</div>
+
+<div class="py-4">
+  <span class="block text-gray-400 uppercase">
+    {startDate} - {endDate}
+  </span>
+  <span class="block text-gray-400">{city}</span>
+  <span class="text-2xl">
+    <h4 class="font-bold inline">{role} @</h4>
+    <a href={companyUrl} class="link" target={"_blank"}>
+      {company}
+    </a>
+  </span>
+  <!-- <LineDivider /> -->
+  <div class="prose text-black max-w-none"><slot /></div>
+</div>
