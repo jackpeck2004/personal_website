@@ -10,18 +10,6 @@ import {
   DigitalSkills,
   ResearchAndPapers
 } from "@/components/partials";
-import constants from "@/lib/constants";
-import { useMediaQuery } from "@/lib/hooks";
-import { ISoftwareProject, IResearchPaper } from "@/lib/types";
-import fs from "fs";
-import matter from "gray-matter";
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import {
-  LANGUAGES,
-  SOFT_SKILLS,
-  DIGITAL_SKILLS,
-  CHARACTERISTICS
-} from "@/lib/contents";
 import Link from "next/link";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import { ReactNode } from "react";
@@ -63,7 +51,7 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-        <Characteristics characteristics={CHARACTERISTICS} />
+        <Characteristics />
         <section className="my-4 flex justify-center">
           <DownloadCVButton />
         </section>
@@ -72,14 +60,14 @@ export default function HomePage() {
           <SoftwareProjects />
         </Section>
         {/*
-        <ResearchAndPapers researchPapers={researchPapers} />
+        <ResearchAndPapers />
+        */}
         <WorkExperience />
         <Education />
-        <LanguageSkills languages={LANGUAGES} />
-        <SoftSkills skills={SOFT_SKILLS} />
-        <DigitalSkills skills={DIGITAL_SKILLS} />
+        <LanguageSkills />
+        <SoftSkills />
+        <DigitalSkills />
         <Conferences />
-            */}
       </div>
     </div>
   );

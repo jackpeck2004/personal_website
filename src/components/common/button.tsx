@@ -1,9 +1,11 @@
+import { cn } from "@/lib/helpers";
 import { MouseEventHandler, PropsWithChildren, FC } from "react";
 
 interface IButtonProps {
   circular?: boolean;
   border?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+    className?: string;
 }
 
 /*
@@ -26,9 +28,9 @@ const Button = styled.button`
 export const Button: FC<PropsWithChildren<IButtonProps>> = (props) => {
   return (
     <button
-      className={`bg-none p-[10px] border border-transparent ${
+      className={cn(`bg-none p-[10px] border border-transparent ${
         props.circular ? "rounded-full" : ""
-      } transition ${props.border ? "hover:border-black" : ""}`}
+      } transition ${props.border ? "hover:border-black" : ""}`, props.className)}
       onClick={props.onClick}
     >
       {props.children}

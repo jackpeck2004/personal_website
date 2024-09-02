@@ -1,8 +1,10 @@
-import Link from "next/link";
-import { FC, PropsWithChildren } from "react";
-import { Section, LineDivider } from "@/components/common";
+"use client";
 
-interface IEducationProps {
+import Link from "next/link";
+import { ReactNode, useState } from "react";
+import { Section, LineDivider, Button } from "@/components/common";
+
+interface EducationExperience {
   startDate: string;
   endDate: string;
   city?: string;
@@ -11,7 +13,7 @@ interface IEducationProps {
   schoolUrl: string;
 }
 
-const Education: FC<PropsWithChildren<IEducationProps>> = ({
+function Education({
   startDate,
   endDate,
   city,
@@ -19,7 +21,9 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
   school,
   schoolUrl,
   children
-}) => {
+}: EducationExperience & {
+    children?: ReactNode;
+}) {
   return (
     <div className="py-4 ">
       <span className="block text-gray-400 uppercase">
@@ -45,6 +49,7 @@ const Education: FC<PropsWithChildren<IEducationProps>> = ({
 };
 
 export const EducationSection = () => {
+    const [showOnlyPrimary, setShowOnlyPrimary] = useState<boolean>(true);
   return (
     <Section title="Education and Training" sectionId="education">
       <Education
@@ -78,6 +83,8 @@ export const EducationSection = () => {
           <em>+1 extra core point</em>
         </div>
       </Education>
+    {!showOnlyPrimary && (
+        <>
       <Education
         startDate="4 Sep 2018"
         endDate="30 Jun 2020"
@@ -198,6 +205,13 @@ export const EducationSection = () => {
         school="Digital Nativa Summer Camp"
         schoolUrl="https://courses.h-farm.com/sparx-summer-camp/"
       ></Education>
+    </>
+    )}
+        <Button onClick={() => setShowOnlyPrimary(!showOnlyPrimary)}
+            className="bg-blue-600 text-white text-center py-2 px-4 rounded-lg drop-shadow-2xl lowercase lg:capitalize"
+        >
+            {showOnlyPrimary ? "Show more" : "Show less"}
+        </Button>
     </Section>
   );
 };

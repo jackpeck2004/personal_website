@@ -1,17 +1,10 @@
-import { FC } from "react";
 import { Section, LineDivider } from "@/components/common";
-import { IDigitalSkill } from "@/lib/types";
+import { DIGITAL_SKILLS } from "@/lib/contents";
 
-interface IDigitalSkillsSectionProps {
-  skills: Array<IDigitalSkill>;
-}
-
-export const DigitalSkillsSection: FC<IDigitalSkillsSectionProps> = ({
-  skills
-}) => {
+export function DigitalSkillsSection() {
   return (
     <Section title="Digital Skills">
-      {skills.sort().map((skill) => (
+      {DIGITAL_SKILLS.sort().map((skill) => (
         <div
           className="py-4"
           key={skill.title.split(" ").join("-").toLowerCase()}
