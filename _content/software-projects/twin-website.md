@@ -4,4 +4,6 @@ description: The redesigned website for T.W.I.N srl boasts a visually stunning a
 languages: php, Blade, JavaScript, css
 frameworks: WordPress, Laravel, React, Tailwind CSS
 live: https://twin.services/
+date: 07/2023
+published: true
 ---

@@ -64,9 +64,7 @@ export const EducationSection = () => {
         schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
       >
         <div className="text-black prose">
-        <p>
-          Final Score: 40 Subjects Taken:
-          </p>
+          <p>Final Score: 40 Subjects Taken:</p>
           <ul>
             <li>
               Higher Level Mathematics Analysis and Approaches (6 out of 7)
@@ -158,9 +156,7 @@ export const EducationSection = () => {
         city="Salamanca, Spain"
       >
         <div className="text-black prose">
-        <p>
-          Evaluation:
-              </p>
+          <p>Evaluation:</p>
           <ul>
             <li>Langauge contents: 9/10</li>
             <li>Vocabulary: 8/10</li>

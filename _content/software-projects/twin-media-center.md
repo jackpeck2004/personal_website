@@ -4,4 +4,6 @@ description: A section of the website where the company publishes press releases
 languages: php, Blade, JavaScript, css
 frameworks: WordPress, Laravel, React, Tailwind CSS
 live: https://twin.services/media-center
+published: true
+date: 02/2021
 ---

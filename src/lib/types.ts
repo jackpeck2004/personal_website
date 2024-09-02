@@ -12,6 +12,7 @@ export interface ISoftwareProject {
   github?: string;
   live?: string;
   slug: string;
+  date: string;
 }
 
 export interface IResearchPaper {

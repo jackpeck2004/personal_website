@@ -46,12 +46,7 @@ const SOCIALS: Array<ISocial> = [
   }
 ];
 
-const Page: NextPage = ({
-  softwareProjects,
-  researchPapers
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const isDesktop = useMediaQuery(constants.mediaQueries.IS_XLARGE);
-
+export default function HomePage() {
   return (
     <div
       className="min-h-[94vh] bg-white text-black py-[2vh] w-screen overflow-hidden"
@@ -69,14 +64,14 @@ const Page: NextPage = ({
           ))}
         </div>
         <Characteristics characteristics={CHARACTERISTICS} />
-        {!isDesktop ? (
-          <section className="my-4 flex justify-center">
-            <DownloadCVButton />
-          </section>
-        ) : null}
+        <section className="my-4 flex justify-center">
+          <DownloadCVButton />
+        </section>
         <Section title="Projects" sectionId="projects">
-          <SoftwareProjects projects={softwareProjects} />
+        {/* @ts-ignore */}
+          <SoftwareProjects />
         </Section>
+        {/*
         <ResearchAndPapers researchPapers={researchPapers} />
         <WorkExperience />
         <Education />
@@ -84,61 +79,9 @@ const Page: NextPage = ({
         <SoftSkills skills={SOFT_SKILLS} />
         <DigitalSkills skills={DIGITAL_SKILLS} />
         <Conferences />
+            */}
       </div>
     </div>
   );
-};
+}
 
-export const getStaticProps: GetStaticProps = async () => {
-  let filePath = "_content/software-projects";
-  let files = fs.readdirSync(filePath);
-
-  const softwareProjects: Array<ISoftwareProject> = files
-    .map((file): ISoftwareProject => {
-      const data = fs.readFileSync(`${filePath}/${file}`).toString();
-
-      const d = matter(data).data;
-
-      let frameworks: Array<string> = [];
-      if (d.frameworks) frameworks = d.frameworks.split(", ");
-
-      let languages: Array<string> = [];
-      if (d.languages) languages = d.languages.split(", ");
-
-      if (frameworks.length) delete d["frameworks"];
-      if (languages.length) delete d["languages"];
-
-      const f = {
-        ...d,
-        frameworks,
-        languages
-      };
-
-      return {
-        ...f,
-        slug: file.split(".")[0]
-      } as ISoftwareProject;
-    })
-    .sort((a, b) => (b.title < a.title ? 1 : -1));
-
-  filePath = "_content/research-and-papers";
-  files = fs.readdirSync(filePath);
-
-  const researchAndPapers: Array<IResearchPaper> = files.map(
-    (file): IResearchPaper => {
-      const data = fs.readFileSync(`${filePath}/${file}`).toString();
-      const d = matter(data).data as IResearchPaper;
-
-      return d;
-    }
-  );
-
-  return {
-    props: {
-      softwareProjects,
-      researchPapers: researchAndPapers
-    }
-  };
-};
-
-export default Page;
