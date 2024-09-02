@@ -16,7 +16,7 @@ const constants = {
     IS_XLARGE: `(min-width: ${sizes.xl}px)`,
     IS_XXLARGE: `(min-width: ${sizes.xxl}px)`
   },
-  defaultTransition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+  defaultTransition: "all cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
 };
 
 export default constants;

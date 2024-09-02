@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { Section, LineDivider, Button } from "@/components/common";
+import { useInView } from "framer-motion";
+import constants from "@/lib/constants";
 
 interface EducationExperience {
   startDate: string;
@@ -24,13 +26,24 @@ function Education({
 }: EducationExperience & {
     children?: ReactNode;
 }) {
+
+    const ref = useRef<HTMLDivElement>(null);
+    const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="py-4 ">
+    <div className="py-4 " ref={ref} style={{
+        transform: isInView ? 'translateY(0)': 'translateY(20%)',
+        transition: constants.defaultTransition
+    }}>
       <span className="block text-gray-400 uppercase">
         {startDate} – {endDate}
       </span>
       {city && <span className="block text-gray-400">{city}</span>}
-      <span className="text-2xl">
+      <span className="text-2xl" style={{
+          transform: isInView ? 'translateY(0)': 'translateY(20%)',
+          opacity: isInView ? '1': '0',
+          transition: constants.defaultTransition
+      }}>
         <h4 className="font-bold inline">{title} – </h4>
         <Link href={schoolUrl} className="link" target={"_blank"}>
           {school}
