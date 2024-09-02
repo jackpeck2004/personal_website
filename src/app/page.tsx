@@ -8,7 +8,7 @@ import {
   LanguageSkills,
   SoftSkills,
   DigitalSkills,
-  ResearchAndPapers
+  // ResearchAndPapers
 } from "@/components/partials";
 import Link from "next/link";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
