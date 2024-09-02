@@ -1,42 +1,5 @@
-import Link from "next/link";
-import { FC, PropsWithChildren } from "react";
-import { Section, LineDivider } from "@/components/common";
-
-interface IExperienceProps {
-  startDate: string;
-  endDate: string;
-  city: string;
-  role: string;
-  company: string;
-  companyUrl: string;
-}
-
-const Experience: FC<PropsWithChildren<IExperienceProps>> = ({
-  startDate,
-  endDate,
-  city,
-  role,
-  company,
-  companyUrl,
-  children
-}) => {
-  return (
-    <div className="py-4">
-      <span className="block text-gray-400 uppercase">
-        {startDate} – {endDate}
-      </span>
-      <span className="block text-gray-400">{city}</span>
-      <span className="text-2xl">
-        <h4 className="font-bold inline">{role} – </h4>
-        <Link href={companyUrl} className="link" target={"_blank"}>
-          {company}
-        </Link>
-      </span>
-      <LineDivider />
-      <div className="prose text-black max-w-none">{children}</div>
-    </div>
-  );
-};
+import { Section } from "@/components/common";
+import { Experience } from "./experience-card";
 
 export const WorkExperienceSection = () => {
   return (

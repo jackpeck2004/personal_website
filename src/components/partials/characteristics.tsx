@@ -1,27 +1,5 @@
-"use client";
-
-import { FC } from "react";
-import { ICharacteristic } from "@/lib/types";
-import { Link } from "react-scroll";
 import { CHARACTERISTICS } from "@/lib/contents";
-
-export const Characteristic: FC<ICharacteristic> = ({
-  title,
-  description,
-  sectionLinkId
-}) => {
-  return (
-    <div className="border-t-4 border-gray-200">
-      <h3 className="lg:text-3xl font-semibold mt-[10px]">{title}</h3>
-      <p>{description}</p>
-      {sectionLinkId && (
-        <Link to={sectionLinkId} smooth spy offset={-70} className="link">
-          Read more
-        </Link>
-      )}
-    </div>
-  );
-};
+import { Characteristic } from "./characteristic-card";
 
 export function Characteristics() {
     return (
