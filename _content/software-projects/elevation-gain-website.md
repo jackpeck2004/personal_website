@@ -1,5 +1,5 @@
 ---
-title: T.W.I.N Company Website
+title: Elevation Gain Event Website
 description: An elegant website for an exclusive event. Designed and developed side-by-side with a graphic designer a single-page, easy to maintain website targeted at managers and entrepreneurs.
 languages: php, Blade, JavaScript, css
 frameworks: WordPress, Tailwind CSS
