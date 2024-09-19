@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Header } from "@/components/navigation/header";
 import '../../styles/global.css';
 
 export const metadata: Metadata = {
@@ -13,8 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="overflow-x-hidden">{children}</main>
+      {children}
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     label: "Projects",
     anchorId: "projects"
   },
-  { label: "Research and Papers", anchorId: "research" },
+  // { label: "Research and Papers", anchorId: "research" },
   {
     label: "Work Experience",
     anchorId: "experience"
@@ -33,7 +33,7 @@ export const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Conferences",
     anchorId: "conferences"
-  }
+  },
 ];
 
 const Navbar = ({
@@ -44,7 +44,7 @@ const Navbar = ({
 
   return (
     <div className="bg-white text-black py-[1vh] w-full sticky top-0 z-10">
-      <div className="px-52">
+      <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <h1
             style={{ cursor: "pointer" }}

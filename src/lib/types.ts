@@ -38,5 +38,6 @@ export interface IDigitalSkill {
 
 export type NavItem = {
   label: string;
-  anchorId: string;
+  anchorId?: string;
+  href?: string;
 };
