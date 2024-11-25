@@ -43,6 +43,7 @@ export const DIGITAL_SKILLS: Array<IDigitalSkill> = [
       "Python",
       "Git",
       "Docker",
+      "Docker Compose",
       "Linux",
       "HTML",
       "Postman",
@@ -51,7 +52,9 @@ export const DIGITAL_SKILLS: Array<IDigitalSkill> = [
       "WordPress",
       "Blade",
       "php",
-      "Squarespace CMS"
+      "Squarespace CMS",
+      "Java",
+
     ]
   },
   {

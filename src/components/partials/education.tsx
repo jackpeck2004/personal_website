@@ -72,18 +72,34 @@ export const EducationSection = () => {
         title="Bachelor in Computer Science and Engineering"
         school="Eindhoven University of Technology"
         schoolUrl="https://tue.nl"
-      />
+      >
+        <div className="text-black prose">
+            <ul>
+                <li>Achievements include:</li>
+                <ul className="list-disc list-inside">
+                    <li>Propedeutic Certificate</li>
+                </ul>
+                <li>Tutoring Offers:</li>
+                <ul className="list-disc list-inside">
+                    <li>Calculus Teacher Assistant (Accepted, duration 1 quartile)</li>
+                    <li>Foundations of Data Analytics Development Team (Accepted, duration continuous)</li>
+                    <li>Logic and Set Theory, Discrete Structures, and Data Structures Teacher Assistant</li>
+                    <li>Programming Teacher Assistant</li>
+                </ul>
+            </ul>
+        </div>
+    </Education>
       <Education
         startDate="1 Sep 2020"
         endDate="21 May 2022"
         city="Roncade, Italy"
         title="International Baccalaureate Diploma"
         school="International School of Talents - Multicampus"
-        schoolUrl="https://www.h-farm.com/it/education/h-farm-school"
+        schoolUrl="https://schools.h-farm.com/venice/"
       >
         <div className="text-black prose">
           <p>Final Score: 40 Subjects Taken:</p>
-          <ul>
+          <ul className="list-disc list-inside">
             <li>
               Higher Level Mathematics Analysis and Approaches (6 out of 7)
             </li>
@@ -104,7 +120,7 @@ export const EducationSection = () => {
         city="Roncade, Italy"
         title="IB Middle Years Program (High School grades 9 and 10)"
         school="H-Farm International School - Treviso"
-        schoolUrl="https://www.h-farm.com/en/h-farm-school/treviso/middle-school"
+        schoolUrl="https://schools.h-farm.com/venice/"
       />
       <Education
         startDate="2 Jul 2023"
