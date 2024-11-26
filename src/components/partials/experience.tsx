@@ -32,7 +32,7 @@ export const WorkExperienceSection = () => {
         companyUrl="https://tue.nl"
       >
         <p>
-            Building jupyter notebooks test frames and exercises for the course "Foundations of Data Analytics".
+            Building jupyter notebooks test frames and exercises for the course &quot;Foundations of Data Analytics&quot;.
             It involved:
                 <ul className="list-disc list-inside">
                     <li>Testing exercises and notebooks by writing the exercises</li>
@@ -49,11 +49,11 @@ export const WorkExperienceSection = () => {
         companyUrl="https://tue.nl"
       >
         <p>
-            Conducted weekly tutoring sessions for first-year bachelor students for the cource "Calculus".
+            Conducted weekly tutoring sessions for first-year bachelor students for the cource &quot;Calculus&quot;.
             It involved:
                 <ul className="list-disc list-inside">
                     <li>Teaching a group of over 15 students</li>
-                    <li>Providing feedback on the students' work and weekly homework</li>
+                    <li>Providing feedback on the students&#39; work and weekly homework</li>
                     <li>Correcting midterm and final exams</li>
                     <li>Create LaTeX/Beamer presentations</li>
                 </ul>
