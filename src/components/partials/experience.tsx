@@ -2,8 +2,7 @@ import { Section } from "@/components/common";
 import { Experience } from "./experience-card";
 
 export const WorkExperienceSection = () => {
-  return (
-    <Section title="Work Experience" sectionId="experience">
+  return ( <Section title="Work Experience" sectionId="experience">
       <Experience
         startDate="8 Aug 2021"
         endDate="current"
@@ -22,6 +21,42 @@ export const WorkExperienceSection = () => {
             latest company website
           </a>
           , as well as custom internal tooling.
+        </p>
+      </Experience>
+      <Experience
+        startDate="04 Nov 2024"
+        endDate="current"
+        city="Eindhoven, Netherlands"
+        role="Foundations of Data Analytics Development Team"
+        company="TU Eindhoven"
+        companyUrl="https://tue.nl"
+      >
+        <p>
+            Building jupyter notebooks test frames and exercises for the course &quot;Foundations of Data Analytics&quot;.
+            It involved:
+                <ul className="list-disc list-inside">
+                    <li>Testing exercises and notebooks by writing the exercises</li>
+                    <li>Writing test cases for the 1000+ student submissions</li>
+                    <li>Weekly meetings with Professors and the Foundations of Data Analytics course team</li>
+                </ul>
+        </p>
+      </Experience><Experience
+        startDate="03 Sep 2024"
+        endDate="04 Nov 2024"
+        city="Eindhoven, Netherlands"
+        role="Calculus Teacher Assistant"
+        company="TU Eindhoven"
+        companyUrl="https://tue.nl"
+      >
+        <p>
+            Conducted weekly tutoring sessions for first-year bachelor students for the cource &quot;Calculus&quot;.
+            It involved:
+                <ul className="list-disc list-inside">
+                    <li>Teaching a group of over 15 students</li>
+                    <li>Providing feedback on the students&#39; work and weekly homework</li>
+                    <li>Correcting midterm and final exams</li>
+                    <li>Create LaTeX/Beamer presentations</li>
+                </ul>
         </p>
       </Experience>
       <Experience
