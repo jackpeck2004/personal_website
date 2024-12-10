@@ -3,6 +3,69 @@ title: "This is a test"
 date: 19/09/2024
 ---
 
-# This is a test
+# Casks
+- arc (Browser)
+- basictex (Basic Latex)
+- brave-browser (Privacy Browser)
+- docker
+- font-dejavu-sans-mono-nerd-font
+- markedit (Testing - Markdown editor)
+- microsoft-outlook (Outlook for University email)
+- orcaslicer
+- safe-exam-browser
+- spotify
+- tableplus (SQL Database Tool)
+- todoist (Todo List)
+- vlc (Better Video Player)
+- zotero (Academic Research - Citation Manager)
+- discord
+- skim (Better Pdf Viewer)
+- warp (Testing - Terminal)
+- orcaslicer (3D printing slicer)
+- Obsidian (Note Taking)
+- PyCharm (for Jupyter Notebooks)
+- monitorcontrol (Monitor Control)
 
-This is a test
+# Other apps
+- folge (scribe but desktop wide)
+- 
+
+# Formulae
+- pyenv (Python Version Manager)
+- fnm (Node Version Manager)
+- Octave (Matlab Alternative)
+- rustup
+- ripgrep (Needed for grep)
+- git
+- wget
+
+# Rustup Setup
+```
+brew install rustup
+rustup-init
+```
+
+# Pyenv
+```
+pyenv install 3.13
+pyenv global 3.13
+```
+
+# Settings
+Show hidden icons on dock:
+```
+defaults write com.apple.Dock showhidden -bool YES && killall Dock
+```
+
+Disable delay to show dock when hidden
+```
+defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
+```
+Note: to reset it to default run: `defaults delete com.apple.Dock autohide-delay && killall Dock`
+ 
+# Git setup
+## Auto Setup Remote on Push
+```
+git config --global push.autoSetupRemote true
+```
+
