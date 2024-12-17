@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Link from 'next/link';
+
 export default function BlogPostContainer({ children }: {children: ReactNode}) {
     return (
         <main>

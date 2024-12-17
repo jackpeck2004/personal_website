@@ -8,17 +8,17 @@ export interface BlogPostMeta {
     slug: string;
 }
 
-async function fileExists(file: string): Promise<boolean> {
-    let flag = true;
-
-    try {
-        await fs.access(file, fs.constants.F_OK);
-    } catch (error) {
-        flag = false;
-    }
-
-    return flag;
-}
+// async function fileExists(file: string): Promise<boolean> {
+//     let flag = true;
+//
+//     try {
+//         await fs.access(file, fs.constants.F_OK);
+//     } catch (error) {
+//         flag = false;
+//     }
+//
+//     return flag;
+// }
 
 export const getBlogPosts = async (): Promise<any> => {
   const directoryPath = "src/app/blog/(posts)";
