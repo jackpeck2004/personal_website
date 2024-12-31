@@ -11,6 +11,9 @@ export default function BlogContainer({ children }: { children: ReactNode }) {
             </div>
         </nav>
             {children}
+        <footer className="container mx-auto mt-8 text-center text-sm text-gray-500">
+            <p>Copyright © 2022 Giacomo Pasin</p>
+        </footer>
         </div>
     )
 }

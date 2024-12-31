@@ -25,14 +25,14 @@ export const getBlogPosts = async (): Promise<any> => {
   const blogPosts = await fs.readdir(directoryPath);
 
   const blogPostsMeta = await Promise.all(
-    blogPosts.map(async (folder) => {
-      const filePath = path.join(directoryPath, folder, 'page.mdx');
-          const content = await fs.readFile(filePath, "utf-8");
-
-          const { data } = matter(content);
-
-          return data;
-    })
+    blogPosts.filter((folder) => !folder.includes('.')).map(async (folder) => {
+          const filePath = path.join(directoryPath, folder, 'page.mdx');
+              const content = await fs.readFile(filePath, "utf-8");
+    
+              const { data } = matter(content);
+    
+              return data;
+        })
   );
 
   console.log(blogPostsMeta)
@@ -46,4 +46,5 @@ export const getBlogPosts = async (): Promise<any> => {
   // filteredProjects.sort((a, b) => convertToDate(b.date).getTime() - convertToDate(a.date).getTime());
   //
   // return filteredProjects;
+  return blogPostsMeta
 };
