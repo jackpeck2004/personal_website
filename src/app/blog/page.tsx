@@ -1,4 +1,5 @@
 import { getBlogPosts } from "@/data/blog-posts"
+import Link from "next/link";
 
 export default async function Blog() {
     const blogPosts = await getBlogPosts();
@@ -18,19 +19,15 @@ export default async function Blog() {
                         className="p-6 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
                     >
                         <time className="text-sm text-gray-500">
-                            {new Date(post.date).toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                            })}
+                            {post.date}
                         </time>
                         <h2 className="text-xl font-semibold mt-2 mb-2">
                             {post.title}
                         </h2>
                         <div className="flex items-center mt-4">
-                            <span className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <Link className="text-gray-600 hover:text-gray-900 transition-colors" href={post.url}>
                                 Read more →
-                            </span>
+                            </Link>
                         </div>
                     </article>
                 ))}

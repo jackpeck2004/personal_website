@@ -28,10 +28,14 @@ export const getBlogPosts = async (): Promise<any> => {
     blogPosts.filter((folder) => !folder.includes('.')).map(async (folder) => {
           const filePath = path.join(directoryPath, folder, 'page.mdx');
               const content = await fs.readFile(filePath, "utf-8");
+              const url = `/blog/${folder}`;
     
               const { data } = matter(content);
     
-              return data;
+              return {
+                  url,
+                  ...data
+              };
         })
   );
 
