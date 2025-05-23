@@ -86,7 +86,7 @@ export default function BlogSearch({ initialPosts }: BlogSearchProps) {
                 </div>
                 {searchQuery && (
                     <p className="mt-2 text-sm text-gray-600">
-                        {filteredPosts.length} result{filteredPosts.length !== 1 ? 's' : ''} found for "{searchQuery}"
+                        {filteredPosts.length} result{filteredPosts.length !== 1 ? 's' : ''} found for &quot;{searchQuery}&quot;
                     </p>
                 )}
             </div>

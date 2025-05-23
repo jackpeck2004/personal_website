@@ -1,5 +1,6 @@
 import { getBlogPosts } from "@/data/blog-posts"
 import BlogSearch from "./_components/blog-search";
+import { Suspense } from 'react';
 
 export default async function Blog() {
     const blogPosts = await getBlogPosts();
@@ -9,5 +10,9 @@ export default async function Blog() {
         new Date(b.date).getTime() - new Date(a.date).getTime()
     );
 
-    return <BlogSearch initialPosts={sortedPosts} />;
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BlogSearch initialPosts={sortedPosts} />
+        </Suspense>
+    );
 }
