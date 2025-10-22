@@ -8,7 +8,16 @@ const nextConfig = {
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true
-  }
+  },
+async redirects() {
+    return [
+      {
+        source: '/blog/:path*',         // Match /blog and any sub-path
+        destination: '/articles/:path*', // Redirect to /articles with the same sub-path
+        permanent: true,                // Use 308 Permanent Redirect
+      },
+    ]
+  },
 }
  
 const withMDX = createMDX({

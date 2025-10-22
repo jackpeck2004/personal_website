@@ -21,14 +21,14 @@ export interface BlogPostMeta {
 // }
 
 export const getBlogPosts = async (): Promise<any> => {
-  const directoryPath = "src/app/blog/(posts)";
+  const directoryPath = "src/app/articles/(posts)";
   const blogPosts = await fs.readdir(directoryPath);
 
   const blogPostsMeta = await Promise.all(
     blogPosts.filter((folder) => !folder.includes('.')).map(async (folder) => {
           const filePath = path.join(directoryPath, folder, 'page.mdx');
               const content = await fs.readFile(filePath, "utf-8");
-              const url = `/blog/${folder}`;
+              const url = `/articles/${folder}`;
     
               const { data } = matter(content);
     
