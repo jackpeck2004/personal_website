@@ -12,7 +12,7 @@ export default function BlogContainer({ children }: { children: ReactNode }) {
         </nav>
             {children}
         <footer className="container mx-auto mt-8 text-center text-sm text-gray-500">
-            <p>Copyright © 2022 Giacomo Pasin</p>
+            <p>Copyright © {new Date().getFullYear()} Giacomo Pasin</p>
         </footer>
         </div>
     )
