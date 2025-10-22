@@ -53,3 +53,51 @@ Clearly we had to find a way to parse these images of spectra into actual values
 
 While tedious, this process turned out to be a good refresher on my previous encounters with OpenCV, as I had used it in the past to attempt to make a SLAM (Simultaneous Location and Mapping) inspired by a Geohot video. This was tough, with a lot of battles with the algorithm picking up an axis as if it were part of the actual spectra and so on. Finally, after a good 6-8 hours, I had a working script and it was time to parse all 60k+ spectra, converting both JCAMP-DX files and the *nightmareish* GIF images into a unified format.
 
+## Rebuilding the CNN
+
+The original model described in the 2023 Jung et al. paper was implemented in TensorFlow.
+However, for our purposes, we decided to rebuild it entirely in PyTorch. This allowed for greater control, flexibility, and ease of modification during testing (*and as you will read later it payed off big-time*).
+
+The process wasn’t straightforward. The training script initially consumed over 40 GB of RAM because of redundant data copies created during type conversions. After an intensive debugging session, I optimized the memory management manually and introduced garbage collection routines to reduce overhead.
+
+We also implemented GPU selection between CUDA (for my desktop workstation) and MPS (for Stefan’s Apple Silicon machine), ensuring we could train across different environments. 
+
+40GB of RAM on a student project is a recipie for disaster, and **disaster struck**! After 10-12 hours of training a sudden power-off meant we had loss all the progress we made, a *less-than-ideal* scenario. How could we fix it? Well an idea came to mind, *why don't we do what Assassin's Creed does*? 
+
+<Sidenote>
+Yes, checkpoints are nothing new, but they did save the day and Assassin's Creed is a fun game so why not give it the credit :)
+</Sidenote>
+
+Thats when I added a checkpointing mechanism to prevent dataloss during long training cycles: the model now automatically saves sub-models as it progresses, skipping retraining if an error interrupts the process.
+
+With these improvements, our PyTorch reimplementation not only matched the original performance benchmarks — it trained faster, used less memory, and was more resilient to interruptions. Not bad for a "*simple*" project!
+
+## Fine-Tuning and Evaluation
+
+It could've been done there, it seemed too easy no? Well, when we began testing the model on real lab data, the results weren’t as accurate as we had hoped.
+
+Spectroscopy data is notoriously complex, and even small inconsistencies in calibration can throw off predictions. Together with some teammates, we created synthetic mixtures of propanol and esters by linearly combining known spectra, the idea was to gain samples to fine-tune our model and make it perform better for specific mixture.
+
+I developed the fine-tuning script that retrained the CNN using this augmented data, and the results were striking: the model’s accuracy improved **dramatically**, showing that our architecture could generalize well beyond its initial training set.
+
+## Deploying the Model: Flask, Swagger, and a Web App
+
+Once the CNN was performing reliably, I wanted to make it accessible. I built a Flask-based web server that could take a JCAMP-DX file via a simple POST request, process it through the trained model, and return predictions about which functional groups were present in the compound.
+
+To make it easier for other team members to integrate, I added SwaggerAPI documentation to the endpoint, an interactive manual for the API.
+
+Then, using SSH port forwarding, I configured remote access so the backend could be hosted and tested directly from my desktop setup.
+
+Finally, we integrated the model into the user interface built by my teammates. This required a bit of engineering diplomacy: the frontend expected data in one format, while the backend returned another. I bridged that gap by creating a translation layer that converted the model’s boolean mask output into a dictionary of functional group names and prediction probabilities.
+
+After that, everything clicked: users could upload their spectrum and instantly visualize the predicted chemical structures through an elegant web interface. **Pretty cool to be honest!**
+
+## A Reflection on Engineering Collaboration at the Edge of Chemistry and AI
+
+Looking back, was a full engineering challenge that required building a data infrastructure, designing a model, optimizing its performance, and turning it into a real-world tool.
+
+My personal focus spanned from automation and data engineering to model optimization and software deployment essentially bridging the gap between research and product.
+As a team we delivered just a complete platform that allows chemists to upload spectra and receive near-instant predictions of molecular functional groups.
+
+This project solidified my conviction that AI’s future lies in cross-disciplinary collaboration, where a well-engineered model can make complex science more accessible, interpretable, and ultimately, faster to discover.
+
