@@ -1,0 +1,72 @@
+.sky {
+  background:
+    radial-gradient(ellipse at 50% 110%, #3b2a5c 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 0%, #1b2450 0%, transparent 55%),
+    linear-gradient(180deg, #070a1c 0%, #0d1233 55%, #1a1640 100%);
+}
+
+.star {
+  position: absolute;
+  border-radius: 9999px;
+  background: #fff;
+  animation: twinkle var(--dur) ease-in-out var(--delay) infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.mote {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #ffe9a8 0%, rgba(255, 214, 120, 0) 70%);
+  animation: rise var(--dur) linear var(--delay) infinite;
+}
+
+@keyframes rise {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.6; }
+  100% { transform: translate(var(--drift), -105vh); opacity: 0; }
+}
+
+.paper {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.7), transparent 60%),
+    radial-gradient(ellipse at 80% 90%, rgba(214, 186, 140, 0.25), transparent 55%),
+    #fbf5e8;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f6d98b 0%, #fff6d6 45%, #e8b95a 55%, #f6d98b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: -200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star, .mote, .shimmer { animation: none; }
+}
+
+.tassel {
+  transform-box: view-box;
+  transform-origin: 50px 23px;
+  animation: sway 3.2s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tassel { animation: none; }
+}
