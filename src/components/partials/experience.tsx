@@ -1,80 +1,100 @@
 import { Section } from "@/components/common";
-import { Experience } from "./experience-card";
+import { ShowMore } from "@/components/common/show-more";
+import { TimelineItem } from "@/components/common/timeline-item";
 
 export const WorkExperienceSection = () => {
-  return ( <Section title="Work Experience" sectionId="experience">
-      <Experience
-        startDate="8 Aug 2021"
-        endDate="current"
-        city="Treviso, Italy"
-        role="CTO"
-        company="T.W.I.N srl"
-        companyUrl="https://twin.services"
+  return (
+    <Section title="Work Experience" sectionId="experience">
+      <TimelineItem
+        period="Jun 2026 – Aug 2026"
+        location="Pistoia, Italy"
+        title="AI Engineering and Software Development Intern"
+        org="Mea World"
+        orgUrl="https://meaworld.com"
+      >
+        <p>Summer internship building AI-powered features and internal tooling at an AI transformation company:</p>
+        <ul>
+          <li>Improved source selection in the RAG pipeline behind Kiuwo, so answers draw on more relevant documents</li>
+          <li>Redesigned the layout algorithm that arranges Kiuwo&#39;s mind maps</li>
+          <li>Developed an internal AI agent that autonomously resolves the tickets assigned to it and reviews its own output against the original spec</li>
+        </ul>
+      </TimelineItem>
+      <TimelineItem
+        period="Aug 2021 – Present"
+        location="Treviso, Italy"
+        title="CTO"
+        org="My Twin Communication"
+        orgUrl="https://www.mytwincommunication.com/?utm_source=giacomopasin.com&utm_medium=referral&utm_campaign=personal_website&utm_content=experience_company"
       >
         <p>
-          Upgrade existing technology infrastructures, organize digital
-          permissions and update programs to adhere to GDPR and privacy
-          standards, handle setup and maintenance of software platforms and
-          integrate new technologies into the workflow of the company to enhance
-          productivity of employees. Design, build and deploy the{" "}
-          <a href="https://twin.services" target="_blank">
-            latest company website
-          </a>
-          , as well as custom internal tooling.
+          CTO of the corporate and financial communication agency born from the
+          merger of T.W.I.N srl and Mymediarelation:
         </p>
-      </Experience>
-      <Experience
-        startDate="04 Nov 2024"
-        endDate="current"
-        city="Eindhoven, Netherlands"
-        role="Foundations of Data Analytics Development Team"
-        company="TU Eindhoven"
-        companyUrl="https://tue.nl"
+        <ul>
+          <li>Merged the technological infrastructure of the two companies into a single one</li>
+          <li>
+            Designed, built and deployed the{" "}
+            <a href="https://www.mytwincommunication.com/?utm_source=giacomopasin.com&utm_medium=referral&utm_campaign=personal_website&utm_content=experience_website" target="_blank">
+              company website
+            </a>
+          </li>
+          <li>Created new internal tools to streamline the work of every department</li>
+          <li>
+            Before the merger, upgraded T.W.I.N&#39;s infrastructure, brought
+            its systems in line with GDPR and privacy standards, and built
+            the{" "}
+            <a href="https://twin.services" target="_blank">
+              T.W.I.N website
+            </a>
+          </li>
+        </ul>
+      </TimelineItem>
+      <TimelineItem
+        period="Nov 2024 – May 2026"
+        location="Eindhoven, Netherlands"
+        title="Foundations of Data Analytics Development Team"
+        org="TU Eindhoven"
+        orgUrl="https://tue.nl"
       >
-        <p>
-            Building jupyter notebooks test frames and exercises for the course &quot;Foundations of Data Analytics&quot;.
-            It involved:
-                <ul className="list-disc list-inside">
-                    <li>Testing exercises and notebooks by writing the exercises</li>
-                    <li>Writing test cases for the 1000+ student submissions</li>
-                    <li>Weekly meetings with Professors and the Foundations of Data Analytics course team</li>
-                </ul>
-        </p>
-      </Experience><Experience
-        startDate="03 Sep 2024"
-        endDate="04 Nov 2024"
-        city="Eindhoven, Netherlands"
-        role="Calculus Teacher Assistant"
-        company="TU Eindhoven"
-        companyUrl="https://tue.nl"
-      >
-        <p>
-            Conducted weekly tutoring sessions for first-year bachelor students for the cource &quot;Calculus&quot;.
-            It involved:
-                <ul className="list-disc list-inside">
-                    <li>Teaching a group of over 15 students</li>
-                    <li>Providing feedback on the students&#39; work and weekly homework</li>
-                    <li>Correcting midterm and final exams</li>
-                    <li>Create LaTeX/Beamer presentations</li>
-                </ul>
-        </p>
-      </Experience>
-      <Experience
-        startDate="4 Sept 2019"
-        endDate="8 Aug 2021"
-        city="Treviso, Italy"
-        role="Junior Technology and Web Designer"
-        company="T.W.I.N srl"
-        companyUrl="https://twin.services"
-      >
-        <p>
-          Organize new network infrastructures and secure file sharing options,
-          setting up Google Workspace for the whole company, configure new
-          domains and website addresses, create software platforms, website
-          designs and design algorithms to simplify the workflows of other
-          employees.
-        </p>
-      </Experience>
+        <p>Built Jupyter notebook test frames and exercises for the course &quot;Foundations of Data Analytics&quot;:</p>
+        <ul>
+          <li>Tested exercises and notebooks by solving them</li>
+          <li>Wrote test cases for the 1000+ student submissions</li>
+          <li>Weekly meetings with professors and the course team</li>
+        </ul>
+      </TimelineItem>
+      <ShowMore count={2}>
+        <TimelineItem
+          period="Sep 2024 – Nov 2025"
+          location="Eindhoven, Netherlands"
+          title="Calculus Teacher Assistant"
+          org="TU Eindhoven"
+          orgUrl="https://tue.nl"
+        >
+          <p>Ran weekly tutoring sessions for first-year bachelor students in the course &quot;Calculus&quot;:</p>
+          <ul>
+            <li>Taught a group of over 15 students</li>
+            <li>Gave feedback on the students&#39; work and weekly homework</li>
+            <li>Graded midterm and final exams</li>
+            <li>Created LaTeX/Beamer presentations</li>
+          </ul>
+        </TimelineItem>
+        <TimelineItem
+          period="Sep 2019 – Aug 2021"
+          location="Treviso, Italy"
+          title="Junior Technology and Web Designer"
+          org="T.W.I.N srl"
+          orgUrl="https://twin.services"
+        >
+          <p>
+            Organize new network infrastructures and secure file sharing options,
+            setting up Google Workspace for the whole company, configure new
+            domains and website addresses, create software platforms, website
+            designs and design algorithms to simplify the workflows of other
+            employees.
+          </p>
+        </TimelineItem>
+      </ShowMore>
     </Section>
   );
 };

@@ -33,7 +33,7 @@ export const SOFT_SKILLS: Array<string> = [
 
 export const DIGITAL_SKILLS: Array<IDigitalSkill> = [
   {
-    title: "Programming Languages and Technologies",
+    title: "Technologies",
     contents: [
       "TypeScript",
       "CSS",
@@ -47,19 +47,19 @@ export const DIGITAL_SKILLS: Array<IDigitalSkill> = [
       "Linux",
       "HTML",
       "Postman",
-      "GitHub Redis",
+      "GitHub",
+      "Redis",
       "MongoDB",
       "WordPress",
       "Blade",
-      "php",
+      "PHP",
       "Squarespace CMS",
       "Java",
-
     ]
   },
   {
     title: "Office Tools",
-    contents: ["Google", "Workspace", "Microsoft", "Office", "Windows", "MacOS"]
+    contents: ["Google Workspace", "Microsoft Office", "Windows", "macOS"]
   }
 ];
 
@@ -72,12 +72,12 @@ export const CHARACTERISTICS: Array<ICharacteristic> = [
   {
     title: "my education",
     description:
-      "Current Computer Science and Engineering student and IB Graduate.",
+      "MSc Computer Science student at ETH Zürich and Cum Laude BSc graduate from TU Eindhoven.",
     sectionLinkId: "education"
   },
   {
     title: "my work experience",
-    description: "I'm currently the CTO at T.W.I.N srl",
+    description: "I'm currently the CTO at My Twin Communication",
     sectionLinkId: "experience"
   }
 ];

@@ -5,5 +5,6 @@ languages: Python
 frameworks: PyTorch, NumPy, OpenCV, Scikit-learn, Pandas, Matplotlib
 date: 06/2025
 live: https://giacomopasin.com/articles/20250620-ml-for-ir-spectroscopy
+featured: true
 published: true
 ---

@@ -13,6 +13,7 @@ export interface ISoftwareProject {
   live?: string;
   slug: string;
   date: string;
+  featured?: boolean;
 }
 
 export interface IResearchPaper {

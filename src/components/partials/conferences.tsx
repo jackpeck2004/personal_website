@@ -1,122 +1,56 @@
-import Link from "next/link";
-import { FC, PropsWithChildren } from "react";
-import { Section, LineDivider } from "@/components/common";
+import { Section } from "@/components/common";
+import { ShowMore } from "@/components/common/show-more";
+import { TimelineItem } from "@/components/common/timeline-item";
 
-interface IConferenceProps {
-  startDate: string;
-  endDate: string;
-  location: string;
-  name: string;
-  url?: string;
-  organizer?: {
-    name: string;
-    url: string;
-  };
-}
-
-const Conference: FC<PropsWithChildren<IConferenceProps>> = ({
-  startDate,
-  endDate,
-  location,
-  name,
-  url,
-  organizer,
-  children
-}) => {
-  return (
-    <div className="py-4">
-      <span className="block text-gray-400 uppercase">
-        {startDate} – {endDate}
-      </span>
-      <span className="block text-gray-400">{location}</span>
-      <span className="text-2xl">
-        <h4 className="font-bold inline">
-          {name}
-          {organizer && " - "}
-        </h4>
-        {organizer && (
-          <Link href={organizer.url} className="link" target={"_blank"}>
-            {organizer.name}
-          </Link>
-        )}
-      </span>
-      <LineDivider />
-      <div className="prose text-black max-w-none">{children}</div>
-      {url && (
-        <Link href={url} className="link" target={"_blank"}>
-          {url}
-        </Link>
-      )}
-    </div>
-  );
-};
+const LEADER_OF_THE_FUTURE = "Leader of the Future (The European House - Ambrosetti)";
+const LEADER_OF_THE_FUTURE_URL = "https://www.leaderdelfuturo.eu/";
 
 export const ConferencesSection = () => {
   return (
     <Section title="Conferences and Seminars" sectionId="conferences">
-      <Conference
-        startDate="4 SEP 2021"
-        endDate="5 SEP 2021"
-        location="Villa D'Este Via Regina, 40 - 22012 Cernobbio (CO), Italy"
-        name="The scenario of today and tomorrow for competitive strategies"
-        url="https://www.leaderdelfuturo.eu/incontri/view/9127"
-        organizer={{
-          name: "Leader of the Future (The European House - Ambrosetti)",
-          url: "https://www.leaderdelfuturo.eu/"
-        }}
-      >
-        <p>
-          During this event reserved for young managers and entrepreneurs,
-          participants are able to listen to speeches and debate with global
-          leaders and experts of various fields regarding how they envision the
-          future of the world and of business.
-        </p>
-      </Conference>
-      <Conference
-        startDate="1 APR 2022"
-        endDate="1 APR 2022"
-        location="Villa D'Este Via Regina, 40 - 22012 Cernobbio (CO), Italy"
-        name="The scenario of the economy and finance"
-        url="https://www.leaderdelfuturo.eu/incontri/view/9127"
-        organizer={{
-          name: "Leader of the Future (The European House - Ambrosetti)",
-          url: "https://www.leaderdelfuturo.eu/"
-        }}
-      >
-        <p>
-          Throughout the day, young managers and entrepreneurs have the
-          opportunity to discuss the topics of the current state of finance,
-          leadership, career growth and the economy with leading experts in the
-          fields.
-        </p>
-      </Conference>
-      <Conference
-        startDate="7 AUG 2022"
-        endDate="9 AUG 2022"
+      <TimelineItem
+        period="Aug 2022"
         location="Geneva, Switzerland"
-        name="Geneva: a look at the future between leadership and innovation"
-        url="https://www.leaderdelfuturo.eu/incontri/view/9157"
-        organizer={{
-          name: "Leader of the Future (The European House - Ambrosetti)",
-          url: "https://www.leaderdelfuturo.eu/"
-        }}
+        title="Geneva: a look at the future between leadership and innovation"
+        org={LEADER_OF_THE_FUTURE}
+        orgUrl="https://www.leaderdelfuturo.eu/incontri/view/9157"
       >
-        <div>
+        <p>
+          During two and a half days in Geneva, the community of the
+          &quot;Leaders of the Future&quot; visited and interacted with global
+          organisations, discussing with their members how they envision the
+          future of their field and of the planet: CERN, the United Nations,
+          Campus Biotech and ST Microelectronics.
+        </p>
+      </TimelineItem>
+      <ShowMore count={2}>
+        <TimelineItem
+          period="Apr 2022"
+          location="Cernobbio (CO), Italy"
+          title="The scenario of the economy and finance"
+          org={LEADER_OF_THE_FUTURE}
+          orgUrl={LEADER_OF_THE_FUTURE_URL}
+        >
           <p>
-            During this two and a half days in Geneva, the community of the
-            &quot;Leaders of the Future&quot; had the opportunity to visit and
-            interact with global level organisations and discuss with their
-            members how they envision the future of their field and in general
-            the planet.
+            Young managers and entrepreneurs discussed the current state of
+            finance, leadership, career growth and the economy with leading
+            experts in the fields.
           </p>
-          <ul>
-            <li>CERN (European Organization for Nuclear Research)</li>
-            <li>United Nations</li>
-            <li>Campus Biotech</li>
-            <li>ST Microelectronics</li>
-          </ul>
-        </div>
-      </Conference>
+        </TimelineItem>
+        <TimelineItem
+          period="Sep 2021"
+          location="Cernobbio (CO), Italy"
+          title="The scenario of today and tomorrow for competitive strategies"
+          org={LEADER_OF_THE_FUTURE}
+          orgUrl="https://www.leaderdelfuturo.eu/incontri/view/9127"
+        >
+          <p>
+            An event reserved for young managers and entrepreneurs to listen to
+            and debate with global leaders and experts about how they envision
+            the future of the world and of business.
+          </p>
+        </TimelineItem>
+      </ShowMore>
     </Section>
   );
 };

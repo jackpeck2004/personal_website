@@ -3,7 +3,7 @@ import { Characteristic } from "./characteristic-card";
 
 export function Characteristics() {
     return (
-      <div className="mt-[5vh] grid md:grid-cols-3 gap-x-[40px]">
+      <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
         {CHARACTERISTICS.map(({ title, description, sectionLinkId }) => (
           <Characteristic
             key={title}

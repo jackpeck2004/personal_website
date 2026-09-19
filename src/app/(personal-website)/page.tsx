@@ -5,56 +5,26 @@ import {
   SoftwareProjects,
   WorkExperience,
   Education,
-  LanguageSkills,
-  SoftSkills,
-  DigitalSkills,
+  Skills,
   // ResearchAndPapers
 } from "@/components/partials";
-import Link from "next/link";
-import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
-import { ReactNode } from "react";
-
-export interface ISocial {
-  url: string;
-  icon: ReactNode;
-}
-
-const SOCIALS: Array<ISocial> = [
-  {
-    url: "https://github.com/jackpeck2004",
-    icon: <FiGithub />
-  },
-  {
-    url: "https://linkedin.com/in/jackpasin",
-    icon: <FiLinkedin />
-  },
-  {
-    url: "mailto:giacomo.pasin+contact@gmail.com",
-    icon: <FiMail />
-  }
-];
+import { Socials } from "@/components/common/socials";
 
 export default function HomePage() {
   return (
     <div
-      className="min-h-[94vh] bg-white text-black py-[2vh] w-screen overflow-hidden"
+      className="min-h-[94vh] w-full overflow-hidden bg-white text-black"
       id="home"
     >
-      <div className="px-4 lg:px-52">
-        <h1 className="2xl:text-8xl lg:text-6xl text-5xl font-bold pt-[20vh]">
-          I&apos;m Giacomo Pasin. <br /> CSE Student and <br /> STEM Enthusiast
+      <div className="mx-auto max-w-5xl px-4 pb-16 sm:px-6">
+        <h1 className="pt-24 text-4xl font-bold leading-tight tracking-tight sm:pt-32 sm:text-5xl lg:text-6xl">
+          I&apos;m Giacomo Pasin. <br /> CS Student and <br /> STEM Enthusiast
         </h1>
-        <div className="flex mt-4">
-          {SOCIALS.map(({ url, icon }) => (
-            <Link href={url} key={url} target="_blank" className="social-link">
-              {icon}
-            </Link>
-          ))}
+        <div className="mt-5 flex items-center gap-6 text-2xl">
+          <Socials />
+          <DownloadCVButton />
         </div>
         <Characteristics />
-        <section className="my-4 flex justify-center">
-          <DownloadCVButton />
-        </section>
         <Section title="Projects" sectionId="projects">
         {/* @ts-ignore */}
           <SoftwareProjects />
@@ -62,11 +32,9 @@ export default function HomePage() {
         {/*
         <ResearchAndPapers />
         */}
-        <WorkExperience />
         <Education />
-        <LanguageSkills />
-        <SoftSkills />
-        <DigitalSkills />
+        <WorkExperience />
+        <Skills />
         <Conferences />
       </div>
     </div>

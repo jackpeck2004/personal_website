@@ -1,5 +1,4 @@
 import { FC, PropsWithChildren } from "react";
-import { LineDivider } from "./line-divider";
 
 interface ISectionProps {
   title: string;
@@ -15,16 +14,15 @@ export const Section: FC<PropsWithChildren<ISectionProps>> = ({
 }) => {
   if (subsection)
     return (
-      <section className="mt-8">
-        <h2 className="text-3xl">{title}</h2>
-        <LineDivider />
+      <section className="mt-6">
+        <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-500">{title}</h3>
         {children}
       </section>
     );
 
   return (
-    <section className="mt-[10vh]" id={sectionId}>
-      <h2 className="text-5xl">{title}</h2>
+    <section className="pt-16 sm:pt-20" id={sectionId}>
+      <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
       {children}
     </section>
   );
