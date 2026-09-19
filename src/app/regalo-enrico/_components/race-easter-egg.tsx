@@ -9,19 +9,82 @@ const CIRCUIT =
   "M22 62 C10 62 8 46 20 41 L46 29 C56 24 58 12 71 12 L100 12 C113 12 115 27 104 31 L89 37 C80 41 84 50 94 50 L100 50 C113 50 113 67 100 67 L30 67 C26 67 24 64 22 62 Z";
 
 // Top-down F1-style car pointing along +x, centred on the origin.
-function Car() {
+export function Car() {
   return (
     <g>
-      <rect x="-6.2" y="-3.2" width="1.6" height="6.4" rx="0.4" fill="#1f1f1f" />
-      <rect x="4.6" y="-3.4" width="1.3" height="6.8" rx="0.4" fill="#e11d2e" />
-      <rect x="-3.8" y="-3.3" width="2.2" height="1.3" rx="0.4" fill="#111" />
-      <rect x="-3.8" y="2" width="2.2" height="1.3" rx="0.4" fill="#111" />
-      <rect x="2" y="-3.1" width="1.8" height="1.1" rx="0.4" fill="#111" />
-      <rect x="2" y="2" width="1.8" height="1.1" rx="0.4" fill="#111" />
-      <path d="M-5 -1.8 L3 -1.2 L5.4 -0.4 L5.4 0.4 L3 1.2 L-5 1.8 Z" fill="#e11d2e" />
-      <rect x="-4.6" y="-0.35" width="9.6" height="0.7" fill="#fff" opacity="0.85" />
-      <circle cx="-0.4" cy="0" r="0.9" fill="#fde68a" />
+      <defs>
+        <linearGradient id="car-body" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ff4d4d" />
+          <stop offset="0.5" stopColor="#d7141f" />
+          <stop offset="1" stopColor="#8a0a14" />
+        </linearGradient>
+      </defs>
+      {/* suspension */}
+      <path
+        d="M-3.7 -1.6 L-3.7 -2.6 M-3.7 1.6 L-3.7 2.6 M3.1 -0.8 L3.1 -2.4 M3.1 0.8 L3.1 2.4"
+        stroke="#3f3f46"
+        strokeWidth="0.3"
+      />
+      {/* tyres */}
+      <rect x="-4.9" y="-3.7" width="2.4" height="1.5" rx="0.5" fill="#0a0a0a" />
+      <rect x="-4.9" y="2.2" width="2.4" height="1.5" rx="0.5" fill="#0a0a0a" />
+      <rect x="2.2" y="-3.4" width="1.9" height="1.2" rx="0.45" fill="#0a0a0a" />
+      <rect x="2.2" y="2.2" width="1.9" height="1.2" rx="0.45" fill="#0a0a0a" />
+      <rect x="-4.6" y="-3.5" width="1.8" height="0.25" rx="0.1" fill="#fbbf24" opacity="0.8" />
+      <rect x="-4.6" y="3.25" width="1.8" height="0.25" rx="0.1" fill="#fbbf24" opacity="0.8" />
+      {/* rear wing */}
+      <rect x="-6.5" y="-3" width="1.3" height="6" rx="0.3" fill="#18181b" />
+      <rect x="-6.5" y="-3" width="1.3" height="0.5" fill="#d7141f" />
+      <rect x="-6.5" y="2.5" width="1.3" height="0.5" fill="#d7141f" />
+      {/* body + sidepods */}
+      <path
+        d="M-5.4 -1.2 C-5 -2.1 -3 -2.4 -1.2 -2.2 C0 -2.1 0.6 -1.5 1.2 -1.1 L3.8 -0.6 L5.7 -0.25 C6 -0.1 6 0.1 5.7 0.25 L3.8 0.6 L1.2 1.1 C0.6 1.5 0 2.1 -1.2 2.2 C-3 2.4 -5 2.1 -5.4 1.2 Z"
+        fill="url(#car-body)"
+      />
+      <rect x="-5.2" y="-0.22" width="10.7" height="0.44" fill="#fff" opacity="0.9" />
+      {/* front wing */}
+      <rect x="5" y="-3.5" width="0.9" height="7" rx="0.3" fill="#18181b" />
+      <rect x="5" y="-3.5" width="0.9" height="0.6" fill="#d7141f" />
+      <rect x="5" y="2.9" width="0.9" height="0.6" fill="#d7141f" />
+      {/* cockpit, halo and helmet */}
+      <ellipse cx="-0.5" cy="0" rx="1.3" ry="0.8" fill="#111" />
+      <path d="M-1.6 -0.8 Q0.9 -1 0.9 0 Q0.9 1 -1.6 0.8" fill="none" stroke="#27272a" strokeWidth="0.3" />
+      <circle cx="-0.6" cy="0" r="0.55" fill="#facc15" />
+      <rect x="-0.4" y="-0.15" width="0.4" height="0.3" rx="0.1" fill="#1e3a8a" />
     </g>
+  );
+}
+
+// A big car racing across the whole screen, with speed lines. With `pause` it
+// stops in the middle for a moment before leaving.
+export function CarPass({ pause = false }: { pause?: boolean }) {
+  return (
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center overflow-hidden">
+      {Array.from({ length: 14 }, (_, i) => (
+        <motion.span
+          key={i}
+          className="absolute left-0 h-px bg-gradient-to-r from-transparent via-amber-100/70 to-transparent"
+          style={{ top: `${38 + ((i * 37) % 24)}%`, width: `${30 + ((i * 53) % 40)}vw` }}
+          initial={{ x: "-60vw" }}
+          animate={{ x: "160vw" }}
+          transition={{ duration: 0.7, delay: 0.1 + (i % 5) * 0.08, ease: "easeIn" }}
+        />
+      ))}
+
+      <motion.svg
+        viewBox="-8 -5 16 10"
+        className="absolute w-[min(70vw,460px)] drop-shadow-[0_0_24px_rgba(255,90,90,.6)]"
+        initial={{ x: "-120vw" }}
+        animate={pause ? { x: ["-120vw", "0vw", "0vw", "120vw"] } : { x: "120vw" }}
+        transition={
+          pause
+            ? { duration: 2.6, times: [0, 0.3, 0.62, 1], ease: ["easeOut", "linear", "easeIn"] }
+            : { duration: 1.2, ease: [0.45, 0, 0.55, 1] }
+        }
+      >
+        <Car />
+      </motion.svg>
+    </div>
   );
 }
 
@@ -71,28 +134,7 @@ export function RaceEasterEgg() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
-            {/* speed lines */}
-            {Array.from({ length: 14 }, (_, i) => (
-              <motion.span
-                key={i}
-                className="absolute left-0 h-px bg-gradient-to-r from-transparent via-amber-100/70 to-transparent"
-                style={{ top: `${38 + ((i * 37) % 24)}%`, width: `${30 + ((i * 53) % 40)}vw` }}
-                initial={{ x: "-60vw" }}
-                animate={{ x: "160vw" }}
-                transition={{ duration: 0.7, delay: 0.1 + (i % 5) * 0.08, ease: "easeIn" }}
-              />
-            ))}
-
-            <motion.svg
-              viewBox="-8 -5 16 10"
-              className="absolute w-[min(60vw,420px)] drop-shadow-[0_0_24px_rgba(255,90,90,.6)]"
-              initial={{ x: "-110vw" }}
-              animate={{ x: ["-110vw", "0vw", "0vw", "120vw"] }}
-              transition={{ duration: 2.6, times: [0, 0.3, 0.62, 1], ease: ["easeOut", "linear", "easeIn"] }}
-              aria-hidden
-            >
-              <Car />
-            </motion.svg>
+            <CarPass pause />
 
             <motion.p
               className={`${serif.className} absolute top-[64%] px-6 text-center text-2xl italic text-amber-100 sm:text-3xl`}

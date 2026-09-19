@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { script, serif } from "./fonts";
 import styles from "./gift.module.css";
 import { GraduationCap } from "./graduation-cap";
-import { RaceEasterEgg } from "./race-easter-egg";
+import { CarPass, RaceEasterEgg } from "./race-easter-egg";
 
 // ---------------------------------------------------------------------------
 // The letter.
@@ -265,11 +265,10 @@ function Note({ onClose }: { onClose: () => void }) {
       ref={ref}
       tabIndex={-1}
       className="relative z-10 my-auto w-full max-w-xl px-4 outline-none"
-      initial={{ opacity: 0, y: 80, scale: 0.85, rotateX: 20 }}
-      animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
-      exit={{ opacity: 0, y: 40, scale: 0.9 }}
-      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-      style={{ perspective: 1000 }}
+      initial={{ opacity: 0, x: "-35vw", skewX: 12 }}
+      animate={{ opacity: 1, x: 0, skewX: 0 }}
+      exit={{ opacity: 0, y: 40, scale: 0.9, transition: { duration: 0.6 } }}
+      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
       <div
         aria-hidden
@@ -280,7 +279,7 @@ function Note({ onClose }: { onClose: () => void }) {
         className={`${styles.paper} ${serif.className} relative rounded-md px-7 py-10 text-[#4a3a26] shadow-[0_40px_80px_-20px_rgba(0,0,0,.8)] sm:px-12 sm:py-14`}
         initial="hidden"
         animate="show"
-        variants={{ show: { transition: { staggerChildren: 0.35, delayChildren: 0.6 } } }}
+        variants={{ show: { transition: { staggerChildren: 0.3, delayChildren: 0.25 } } }}
       >
         <div aria-hidden className="pointer-events-none absolute inset-3 rounded border border-[#c9a96b]/40" />
 
@@ -328,6 +327,8 @@ function Note({ onClose }: { onClose: () => void }) {
 
 export function GiftLetter() {
   const [phase, setPhase] = useState<Phase>("closed");
+  const [carPassing, setCarPassing] = useState(false);
+  const reduce = useReducedMotion();
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
@@ -335,9 +336,16 @@ export function GiftLetter() {
   const open = () => {
     if (phase !== "closed") return;
     setPhase("opening");
+    if (reduce) {
+      timers.current = [setTimeout(() => setPhase("letter"), 850), setTimeout(() => setPhase("reading"), 2300)];
+      return;
+    }
+    // The letter rises, then a race car sweeps the envelope away and drags the note in.
     timers.current = [
       setTimeout(() => setPhase("letter"), 850),
-      setTimeout(() => setPhase("reading"), 2300)
+      setTimeout(() => setCarPassing(true), 2100),
+      setTimeout(() => setPhase("reading"), 2500),
+      setTimeout(() => setCarPassing(false), 3400)
     ];
   };
 
@@ -355,7 +363,13 @@ export function GiftLetter() {
             className="relative z-10 my-auto flex flex-col items-center px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 60, scale: 0.9, filter: "blur(4px)" }}
+            exit={{
+              opacity: 0,
+              x: "45vw",
+              skewX: -12,
+              filter: "blur(6px)",
+              transition: { duration: 0.3, ease: "easeIn" }
+            }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.h1
@@ -379,6 +393,8 @@ export function GiftLetter() {
           <Note onClose={() => setPhase("closed")} />
         )}
       </AnimatePresence>
+
+      {carPassing && <CarPass />}
     </main>
   );
 }
