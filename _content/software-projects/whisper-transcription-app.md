@@ -6,5 +6,5 @@ frameworks: Whisper, Flask, CSS
 github: https://github.com/jackpeck2004/whisper-transcription-app
 date: 09/2024
 featured: true
-published: true
+published: false
 ---
