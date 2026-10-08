@@ -13,6 +13,7 @@ import { useActiveSection } from "./use-active-section";
 export const NAV_ITEMS: Array<NavItem> = [
   { label: "Home", anchorId: "home" },
   { label: "Projects", anchorId: "projects" },
+  { label: "Research", anchorId: "research" },
   { label: "Education", anchorId: "education" },
   { label: "Experience", anchorId: "experience" },
   { label: "Skills", anchorId: "skills" },

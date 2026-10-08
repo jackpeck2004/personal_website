@@ -6,7 +6,7 @@ import {
   WorkExperience,
   Education,
   Skills,
-  // ResearchAndPapers
+  ResearchAndPapers
 } from "@/components/partials";
 import { Socials } from "@/components/common/socials";
 
@@ -29,9 +29,8 @@ export default function HomePage() {
         {/* @ts-ignore */}
           <SoftwareProjects />
         </Section>
-        {/*
+        {/* @ts-ignore */}
         <ResearchAndPapers />
-        */}
         <Education />
         <WorkExperience />
         <Skills />
