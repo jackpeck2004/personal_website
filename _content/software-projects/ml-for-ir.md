@@ -7,4 +7,12 @@ date: 06/2025
 live: https://giacomopasin.com/articles/20250620-ml-for-ir-spectroscopy
 featured: true
 published: true
+cv: true
+cvOrder: 2
+cvTitle: ML for IR Spectroscopy
+cvTechnologies: Python, PyTorch, OpenCV
+cvBullets:
+  - "Built a training corpus of 60,000+ IR spectra in under two days by developing two Selenium scrapers for NIST and SDBS and normalizing GIF and JCAMP-DX data."
+  - "Extended functional-group prediction from pure compounds to binary mixtures by reproducing a published CNN in PyTorch and developing a fine-tuning pipeline using synthetic mixture spectra."
+  - "Enabled spectrum uploads to return functional-group probabilities through a web interface by deploying the trained model behind a Flask API with Swagger documentation."
 ---

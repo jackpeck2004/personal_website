@@ -1,0 +1,68 @@
+{
+  "languages": [
+    {
+      "language": "English",
+      "understading": "Native",
+      "speaking": "Native",
+      "writing": "Native"
+    },
+    {
+      "language": "Italian",
+      "understading": "Native",
+      "speaking": "Native",
+      "writing": "Native"
+    },
+    {
+      "language": "Spanish",
+      "understading": "B2",
+      "speaking": "B2",
+      "writing": "B2"
+    }
+  ],
+  "digitalSkills": [
+    {
+      "title": "ML & Data",
+      "contents": [
+        "Python",
+        "PyTorch",
+        "NumPy",
+        "scikit-learn",
+        "Pandas",
+        "OpenCV",
+        "Matplotlib",
+        "Jupyter Notebooks"
+      ]
+    },
+    {
+      "title": "Technologies",
+      "contents": [
+        "TypeScript",
+        "CSS",
+        "JavaScript",
+        "JSON",
+        "Jupyter Notebooks",
+        "Python",
+        "Git",
+        "Docker",
+        "Docker Compose",
+        "Linux",
+        "HTML",
+        "Postman",
+        "GitHub",
+        "Redis",
+        "MongoDB",
+        "WordPress",
+        "Blade",
+        "PHP",
+        "Squarespace CMS",
+        "Java"
+      ],
+      "cvContents": ["TypeScript", "Git", "Docker", "Linux", "Redis", "MongoDB"]
+    },
+    {
+      "title": "Office Tools",
+      "contents": ["Google Workspace", "Microsoft Office", "Windows", "macOS"],
+      "cv": false
+    }
+  ]
+}

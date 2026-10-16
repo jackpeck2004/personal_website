@@ -1,0 +1,10 @@
+{
+  "name": "Giacomo Pasin",
+  "cvEmail": "giacomo.pasin@gmail.com",
+  "website": "https://giacomopasin.com",
+  "socials": [
+    { "label": "GitHub", "url": "https://github.com/jackpeck2004" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/jackpasin" },
+    { "label": "Email", "url": "mailto:giacomo.pasin+contact@gmail.com" }
+  ]
+}

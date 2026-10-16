@@ -1,25 +1,7 @@
+import skills from "@/data/skills.json";
 import { ILanguage, ICharacteristic, IDigitalSkill } from "@/lib/types";
 
-export const LANGUAGES: Array<ILanguage> = [
-  {
-    language: "English",
-    understading: "Native",
-    speaking: "Native",
-    writing: "Native"
-  },
-  {
-    language: "Italian",
-    understading: "Native",
-    speaking: "Native",
-    writing: "Native"
-  },
-  {
-    language: "Spanish",
-    understading: "B2",
-    speaking: "B2",
-    writing: "B2"
-  }
-];
+export const LANGUAGES: Array<ILanguage> = skills.languages;
 
 export const SOFT_SKILLS: Array<string> = [
   "Problem Solving",
@@ -31,37 +13,7 @@ export const SOFT_SKILLS: Array<string> = [
   "Independent"
 ];
 
-export const DIGITAL_SKILLS: Array<IDigitalSkill> = [
-  {
-    title: "Technologies",
-    contents: [
-      "TypeScript",
-      "CSS",
-      "JavaScript",
-      "JSON",
-      "Jupyter Notebooks",
-      "Python",
-      "Git",
-      "Docker",
-      "Docker Compose",
-      "Linux",
-      "HTML",
-      "Postman",
-      "GitHub",
-      "Redis",
-      "MongoDB",
-      "WordPress",
-      "Blade",
-      "PHP",
-      "Squarespace CMS",
-      "Java",
-    ]
-  },
-  {
-    title: "Office Tools",
-    contents: ["Google Workspace", "Microsoft Office", "Windows", "macOS"]
-  }
-];
+export const DIGITAL_SKILLS: Array<IDigitalSkill> = skills.digitalSkills;
 
 export const CHARACTERISTICS: Array<ICharacteristic> = [
   {

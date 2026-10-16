@@ -7,4 +7,10 @@ live: https://research-terminal.giacomopasin.com/?utm_source=giacomopasin.com&ut
 date: 09/2026
 featured: true
 published: true
+cv: true
+cvOrder: 3
+cvTechnologies: TypeScript, Next.js, Claude
+cvBullets:
+  - "Enabled literature discovery through three entry points (title, DOI and natural-language ideas) by combining keyword and semantic search over OpenAlex."
+  - "Made literature reviews resumable, with saved multi-paper citation graphs and per-paper AI summaries, by integrating reference/citation expansion, Claude summarization and account-based autosave."
 ---

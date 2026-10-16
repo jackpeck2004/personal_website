@@ -10,6 +10,7 @@ RUN pnpm install --frozen-lockfile
 
 # ---- builder: produce the standalone Next.js build ----
 FROM node:22-alpine AS builder
+RUN apk add --no-cache texlive texmf-dist-latexextra texmf-dist-fontsrecommended
 RUN npm install -g pnpm@11.20.0
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules

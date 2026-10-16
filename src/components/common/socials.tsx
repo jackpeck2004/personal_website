@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { ReactNode } from "react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { cn } from "@/lib/helpers";
+import profile from "@/data/profile.json";
 
-const SOCIALS: Array<{ label: string; url: string; icon: ReactNode }> = [
-  { label: "GitHub", url: "https://github.com/jackpeck2004", icon: <FiGithub /> },
-  { label: "LinkedIn", url: "https://linkedin.com/in/jackpasin", icon: <FiLinkedin /> },
-  { label: "Email", url: "mailto:giacomo.pasin+contact@gmail.com", icon: <FiMail /> }
-];
+const icons = {
+  GitHub: <FiGithub />,
+  LinkedIn: <FiLinkedin />,
+  Email: <FiMail />
+};
 
 export const Socials = ({ className }: { className?: string }) => (
   <div className={cn("flex items-center gap-4", className)}>
-    {SOCIALS.map(({ label, url, icon }) => (
+    {profile.socials.map(({ label, url }) => (
       <Link
         href={url}
         key={url}
@@ -19,7 +19,7 @@ export const Socials = ({ className }: { className?: string }) => (
         aria-label={label}
         className="text-black transition hover:text-blue-600"
       >
-        {icon}
+        {icons[label]}
       </Link>
     ))}
   </div>

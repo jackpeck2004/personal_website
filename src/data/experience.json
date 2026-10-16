@@ -1,0 +1,84 @@
+[
+  {
+    "period": "Jun 2026 – Aug 2026",
+    "location": "Pistoia, Italy",
+    "title": "AI Engineering and Software Development Intern",
+    "org": "Mea World",
+    "orgUrl": "https://meaworld.com",
+    "cv": true,
+    "details": [
+      "Summer internship building AI-powered features and internal tooling at an AI transformation company:",
+      [
+        "Improved source selection in the RAG pipeline behind Kiuwo, so answers draw on more relevant documents",
+        "Redesigned the layout algorithm that arranges Kiuwo's mind maps",
+        "Developed an internal AI agent that autonomously resolves the tickets assigned to it and reviews its own output against the original spec"
+      ]
+    ],
+    "cvBulletIndexes": [1, 3]
+  },
+  {
+    "period": "Aug 2021 – Present",
+    "location": "Treviso, Italy",
+    "title": "CTO",
+    "org": "My Twin Communication",
+    "orgUrl": "https://www.mytwincommunication.com/?utm_source=giacomopasin.com&utm_medium=referral&utm_campaign=personal_website&utm_content=experience_company",
+    "cv": true,
+    "details": [
+      "CTO of the corporate and financial communication agency born from the merger of T.W.I.N srl and Mymediarelation:",
+      [
+        "Merged the technological infrastructure of the two companies into a single one",
+        "Designed, built and deployed the [company website](https://www.mytwincommunication.com/?utm_source=giacomopasin.com&utm_medium=referral&utm_campaign=personal_website&utm_content=experience_website)",
+        "Created new internal tools to streamline the work of every department",
+        "Before the merger, upgraded T.W.I.N's infrastructure, brought its systems in line with GDPR and privacy standards, and built the [T.W.I.N website](https://twin.services)"
+      ]
+    ],
+    "cvBullets": [
+      "Consolidated infrastructure across two merging communication agencies and built internal tools supporting workflows across departments."
+    ]
+  },
+  {
+    "period": "Nov 2024 – May 2026",
+    "location": "Eindhoven, Netherlands",
+    "title": "Foundations of Data Analytics Development Team",
+    "org": "TU Eindhoven",
+    "orgUrl": "https://tue.nl",
+    "cv": true,
+    "details": [
+      "Built Jupyter notebook test frames and exercises for the course \"Foundations of Data Analytics\":",
+      [
+        "Tested exercises and notebooks by solving them",
+        "Wrote test cases for the 1000+ student submissions",
+        "Weekly meetings with professors and the course team"
+      ]
+    ],
+    "cvBulletIndexes": [0, 2]
+  },
+  {
+    "period": "Sep 2024 – Nov 2025",
+    "location": "Eindhoven, Netherlands",
+    "title": "Calculus Teacher Assistant",
+    "org": "TU Eindhoven",
+    "orgUrl": "https://tue.nl",
+    "cv": false,
+    "details": [
+      "Ran weekly tutoring sessions for first-year bachelor students in the course \"Calculus\":",
+      [
+        "Taught a group of over 15 students",
+        "Gave feedback on the students' work and weekly homework",
+        "Graded midterm and final exams",
+        "Created LaTeX/Beamer presentations"
+      ]
+    ]
+  },
+  {
+    "period": "Sep 2019 – Aug 2021",
+    "location": "Treviso, Italy",
+    "title": "Junior Technology and Web Designer",
+    "org": "T.W.I.N srl",
+    "orgUrl": "https://twin.services",
+    "cv": false,
+    "details": [
+      "Organize new network infrastructures and secure file sharing options, setting up Google Workspace for the whole company, configure new domains and website addresses, create software platforms, website designs and design algorithms to simplify the workflows of other employees."
+    ]
+  }
+]
