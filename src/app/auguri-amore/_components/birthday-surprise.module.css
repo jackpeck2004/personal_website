@@ -1,0 +1,450 @@
+.page {
+  --ink: #69413c;
+  --berry: #a95769;
+  --rose: #e8a6a4;
+  --cream: #fff9ee;
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  place-items: center;
+  padding: 44px 24px 72px;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 48% 30%, rgba(255, 255, 255, .86), transparent 45%),
+    radial-gradient(ellipse at 82% 88%, rgba(255, 220, 174, .64), transparent 34%),
+    linear-gradient(145deg, #fff2eb 0%, #f8dfe0 48%, #fbe7d0 100%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.sunshine {
+  position: fixed;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: min(92vw, 760px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .24);
+  filter: blur(3px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.decorations {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  color: rgba(181, 108, 114, .55);
+  pointer-events: none;
+}
+
+.decorations span {
+  position: absolute;
+  animation: floaty 7s ease-in-out infinite;
+}
+
+.sparkleOne { top: 14%; left: 13%; font-size: 23px; animation-delay: -2s !important; }
+.heartOne { top: 22%; right: 12%; font-size: 32px; animation-delay: -4s !important; }
+.flowerOne { bottom: 19%; left: 9%; color: rgba(193, 133, 91, .57); font-size: 30px; animation-delay: -1s !important; }
+.pawOne { top: 68%; right: 10%; font-size: 25px; animation-delay: -3s !important; }
+.heartTwo { bottom: 11%; right: 26%; color: rgba(212, 130, 136, .48); font-size: 23px; animation-delay: -5s !important; }
+.sparkleTwo { top: 49%; left: 5%; color: rgba(212, 159, 86, .6); font-size: 18px; animation-delay: -3.5s !important; }
+.pawTwo { top: 13%; right: 30%; font-size: 19px; animation-delay: -.8s !important; }
+
+.closedScene,
+.letterScene,
+.photoScene {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 900px);
+  text-align: center;
+}
+
+.closedScene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow,
+.letterKicker {
+  margin: 0;
+  color: #9b6768;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.closedTitle {
+  margin: 13px 0 5px;
+  color: #824e54;
+  font-size: clamp(2.7rem, 9vw, 5.15rem);
+  font-weight: 400;
+  line-height: .98;
+  text-shadow: 0 3px 0 rgba(255, 255, 255, .64);
+}
+
+.envelopeButton {
+  position: relative;
+  display: grid;
+  width: min(74vw, 350px);
+  aspect-ratio: 1.48;
+  margin: 30px 0 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  place-items: center;
+  -webkit-tap-highlight-color: transparent;
+  animation: envelopeFloat 4s ease-in-out infinite;
+}
+
+.envelopeButton:focus-visible {
+  outline: 3px solid var(--berry);
+  outline-offset: 8px;
+  border-radius: 24px;
+}
+
+.envelopeGlow {
+  position: absolute;
+  inset: 4% -8% -14%;
+  border-radius: 50%;
+  background: rgba(194, 118, 112, .2);
+  filter: blur(28px);
+}
+
+.envelope {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 22px 18px rgba(117, 74, 71, .2));
+  perspective: 900px;
+}
+
+.envelopeBack,
+.envelopePaper,
+.envelopeFlap {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+.envelopeBack {
+  z-index: 0;
+  background: linear-gradient(145deg, #d7a78f, #c98783);
+}
+
+.envelopePocket {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #e7baa4, #d99c91);
+  clip-path: polygon(0 43%, 50% 100%, 100% 43%, 100% 100%, 0 100%);
+}
+
+.envelopePaper {
+  z-index: 1;
+  inset: 6% 8% 12%;
+  padding-top: 10%;
+  color: #a16c5c;
+  background: #fffaf0;
+  font-size: clamp(.82rem, 3vw, 1.1rem);
+  font-style: italic;
+  letter-spacing: .08em;
+  box-shadow: 0 2px 9px rgba(89, 51, 50, .1);
+}
+
+.envelopeFlap {
+  z-index: 3;
+  background: linear-gradient(150deg, #f4d4b6, #e6b8a1);
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+  transform-origin: top center;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.envelopeButton:hover .envelopeFlap {
+  transform: rotateX(19deg);
+}
+
+.seal {
+  position: absolute;
+  z-index: 4;
+  top: 48%;
+  left: 50%;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  border: 3px solid rgba(255, 221, 195, .72);
+  border-radius: 50%;
+  color: #fff0da;
+  background: radial-gradient(circle at 35% 25%, #d9777b, #a43d57 78%);
+  box-shadow: inset 0 -4px 7px rgba(88, 25, 44, .2), 0 3px 8px rgba(95, 45, 47, .2);
+  font-size: 25px;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  animation: sealBeat 1.4s ease-in-out infinite;
+}
+
+.openHint {
+  margin: 0;
+  color: #96676a;
+  font-size: 1rem;
+  letter-spacing: .04em;
+}
+
+.letterScene {
+  width: min(100%, 660px);
+  padding: clamp(34px, 7vw, 62px) clamp(24px, 8vw, 72px) 30px;
+  border: 1px solid rgba(169, 125, 96, .24);
+  border-radius: 8px 8px 18px 18px;
+  background:
+    repeating-linear-gradient(transparent 0 37px, rgba(174, 134, 114, .09) 38px 39px),
+    radial-gradient(ellipse at 100% 0, rgba(251, 224, 205, .8), transparent 42%),
+    #fffaf1;
+  box-shadow: 0 24px 80px rgba(113, 72, 69, .2), 0 4px 0 rgba(255, 255, 255, .7) inset;
+}
+
+.letterTape {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  display: grid;
+  width: 43px;
+  height: 43px;
+  border: 3px solid rgba(255, 250, 241, .9);
+  border-radius: 50%;
+  color: #fff0da;
+  background: #b85f6f;
+  font-size: 19px;
+  place-items: center;
+  box-shadow: 0 4px 12px rgba(104, 58, 61, .2);
+  transform: translateX(-50%) rotate(-8deg);
+}
+
+.letterKicker { font-size: .7rem; }
+
+.letterTitle {
+  margin: 9px 0 11px;
+  color: #965b5d;
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.letterDivider {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin: 13px 0 24px;
+  color: #c18b65;
+  font-size: 16px;
+}
+
+.letterDivider span:nth-child(2) { color: #c56771; font-size: 20px; line-height: .8; }
+
+.letterMessage {
+  max-width: 490px;
+  margin: 0 auto;
+  color: #654743;
+  font-size: clamp(1.06rem, 3.8vw, 1.46rem);
+  line-height: 1.74;
+  text-wrap: pretty;
+}
+
+.letterFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+  color: #925c60;
+  font-size: 1.07rem;
+  font-style: italic;
+}
+
+.signatureHeart { color: #c16473; font-size: 1rem; }
+
+.waitNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: #a2726b;
+  font-family: Arial, sans-serif;
+  font-size: .81rem;
+  letter-spacing: .015em;
+}
+
+.waitPaw { display: inline-block; animation: pawWiggle 1.2s ease-in-out infinite; }
+
+.progressTrack {
+  height: 4px;
+  margin: 11px auto 0;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #f1ddd3;
+}
+
+.progressFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d99387, #c36778);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: wait 30s linear forwards;
+}
+
+.photoScene {
+  width: min(100%, 1080px);
+  padding: 0 0 14px;
+}
+
+.photoHeading { margin: 0 auto 25px; }
+
+.photoTitle {
+  margin: 11px 0 5px;
+  color: #885055;
+  font-size: clamp(2rem, 6vw, 3.7rem);
+  font-weight: 400;
+  line-height: 1.03;
+}
+
+.photoSubtitle { margin: 0; color: #96696a; font-size: clamp(.95rem, 2.7vw, 1.12rem); }
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px 18px;
+  padding: 6px 9px 14px;
+}
+
+.photoCard {
+  min-width: 0;
+  margin: 0;
+  padding: 9px 9px 12px;
+  border: 1px solid rgba(141, 99, 82, .1);
+  border-radius: 5px;
+  background: #fffdf7;
+  box-shadow: 0 8px 18px rgba(106, 69, 62, .15);
+  transform-origin: center;
+}
+
+.photoFrame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: #f6e5d5;
+}
+
+.dogPhoto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.photoCard:hover .dogPhoto { transform: scale(1.07); }
+
+.photoHeart {
+  position: absolute;
+  right: 8px;
+  bottom: 7px;
+  color: #fffaf1;
+  font-size: 19px;
+  filter: drop-shadow(0 1px 4px rgba(75, 38, 42, .55));
+}
+
+.photoCard figcaption {
+  padding-top: 9px;
+  color: #9b6b68;
+  font-size: clamp(.76rem, 1.7vw, .93rem);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.photoFooter {
+  margin: 15px 0 0;
+  color: #88565a;
+  font-size: clamp(.95rem, 2.7vw, 1.12rem);
+  font-style: italic;
+}
+
+.pageFooter {
+  position: absolute;
+  right: 16px;
+  bottom: max(17px, env(safe-area-inset-bottom));
+  left: 16px;
+  color: rgba(127, 84, 83, .62);
+  font-size: .75rem;
+  letter-spacing: .07em;
+  text-align: center;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-13px) rotate(7deg); }
+}
+
+@keyframes envelopeFloat {
+  0%, 100% { transform: translateY(0) rotate(-.5deg); }
+  50% { transform: translateY(-9px) rotate(.5deg); }
+}
+
+@keyframes sealBeat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  45% { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+@keyframes pawWiggle {
+  0%, 100% { transform: rotate(-12deg) translateY(0); }
+  50% { transform: rotate(11deg) translateY(-2px); }
+}
+
+@keyframes wait {
+  to { transform: scaleX(1); }
+}
+
+@media (max-width: 680px) {
+  .page { padding: 34px 18px 66px; }
+  .photoScene { align-self: start; margin-top: 2px; }
+  .photoGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 13px; padding: 4px 5px 12px; }
+  .photoHeading { margin-bottom: 17px; }
+  .letterScene { padding-top: 45px; padding-bottom: 24px; }
+  .letterMessage { line-height: 1.62; }
+  .waitNote { margin-top: 20px; }
+}
+
+@media (max-width: 380px) {
+  .page { padding-inline: 14px; }
+  .closedTitle { font-size: 2.55rem; }
+  .envelopeButton { width: 82vw; }
+  .letterScene { padding-inline: 20px; }
+  .photoCard { padding: 7px 7px 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decorations span,
+  .envelopeButton,
+  .seal,
+  .waitPaw {
+    animation: none;
+  }
+
+  .envelopeFlap,
+  .dogPhoto {
+    transition: none;
+  }
+
+  .progressFill { animation-duration: 30s; }
+}
